@@ -1,0 +1,1752 @@
+nom_prot
+AcamarTOPa_M_B
+AcamarTOPb_M_B
+AccphoTOPz_X_B
+AcearaTOPz_X_B
+AcepasTOPz_X_B
+AcewooTOPz_X_B
+AchlaiTOPz_M_B
+AchxylTOPa_X_B
+AchxylTOPb_X_B
+AciaveTOPz_X_B
+AcibauTOPz_X_B
+AcibayTOPz_X_B
+#AcibooRGz_T_A	AcibooRGz_t_A
+#AcibooTOPz_T_A	AcibooTOPz_t_A
+#AcalE1TOPa_X_B	AcicalE1TOPa_X_B
+#AcalE1TOPb_X_B	AcicalE1TOPb_X_B	
+#AcalE1TOPc_X_B	AcicalE1TOPc_X_B
+AcicalTOPz_X_B
+AcicapTOPz_M_B
+#AcicelTOPz_T_B	AcicelTOPz_t_B
+AcicitTOPa_M_B
+AcicitTOPb_M_B
+AcicryTOPz_M_B
+AciebrTOPz_M_B
+#AferE1TOPa_M_B	AciferE1TOPa_M_B
+#AcerE1TOPb_M_B	AciferE1TOPb_M_B
+#AferE1TOPc_M_B	AciferE1TOPc_M_B
+#AferE2TOPz_M_B	AciferE2TOPz_M_B
+#AferE3TOPa_X_B	AciferE3TOPa_X_B
+#AferE3TOPb_X_B	AciferE3TOPb_X_B
+#AferE3TOPc_X_B	AciferE3TOPc_X_B
+#AciferTOPz_T_B	AciferTOPz_t_B
+AcihosRGa_X_A
+AcihosRGb_X_A
+AcihosTOPz_X_A
+AciintTOPz_X_B
+AcimulTOPz_X_B
+AcioleTOPz_X_B
+AcisacRGz_T_A
+AcisacTOPz_T_A
+#Aci.E1TOPa_M_B	Acisp.E1TOPa_M_B
+#Aci.E1TOPb_M_B	Acisp.E1TOPb_M_B
+#Aci.E1TOPc_M_B	Acisp.E1TOPc_M_B
+#Aci.E1TOPd_M_B	Acisp.E1TOPd_M_B
+Acisp.TOPa_X_B
+Acisp.TOPb_X_B
+ActmirTOPz_M_B
+ActpleTOPa_X_B
+ActpleTOPb_X_B
+Actsp.TOPz_X_B
+ActsucTOPa_M_B
+ActsucTOPb_M_B
+AerhydTOPa_X_B
+AerhydTOPb_X_B
+AerperTOPa_T_A
+AerperTOPb_T_A
+AerperTOPc_T_A
+AersalTOPa_M_B
+AersalTOPb_M_B
+AeruriTOPz_M_B
+AerverTOPa_X_B
+AerverTOPb_X_B
+AggactTOPa_X_B
+AggactTOPb_X_B
+AggaphTOPa_X_B
+AggaphTOPb_X_B
+AgrradTOPz_M_B
+Agrsp.TOPz_X_B
+AgrtumTOPz_X_B
+AgrvitTOPz_M_B
+AkkmucTOPz_M_B
+AlcborTOPz_M_B
+#AliaciTOPz_T_B	AliaciTOPz_t_B
+AlidenTOPa_X_B
+AlidenTOPb_X_B
+AlisalTOPa_P_B
+AlisalTOPb_P_B
+AlishaTOPa_M_B
+AlishaTOPb_M_B
+AlishaTOPc_M_B
+AlkehrTOPz_X_B
+AlkmetTOPa_M_B
+AlkmetTOPb_M_B
+AlkmetTOPc_M_B
+AlkoreTOPa_M_B
+AlkoreTOPb_M_B
+AlkoreTOPc_M_B
+AllvinTOPz_M_B
+Altsp.TOPz_X_B
+AmicolTOPz_M_B
+#AmmdegRGz_T_B	AmmdegRGz_t_B
+#AmmdegTOPz_T_B	AmmdegTOPz_t_B
+AmymedTOPz_M_B
+AmysubTOPz_X_B
+AnacenTOPz_M_B
+AnadehTOPz_M_B
+AnamarTOPz_X_B
+AnaphaTOPz_M_B
+AnapreTOPz_X_B
+Anasp.TOPz_X_B
+AnatheTOPz_X_B
+AnavarTOPa_X_B
+AnavarTOPb_X_B
+#AnoflaTOPa_T_B	AnoflaTOPa_t_B
+#AnoflaTOPb_T_B	AnoflaTOPb_t_B
+AquaeoTOPa_T_B
+AquaeoTOPb_T_B
+AquaeoTOPc_T_B
+ArathaTOPa_X_E
+ArathaTOPb_X_E
+ArcbutTOPz_X_B
+ArcfulTOPa_T_A
+ArcfulTOPb_T_A
+ArchaeTOPz_M_B
+ArcnitTOPz_M_B
+ArcproRGz_T_A
+ArcproTOPz_T_A
+Arcsp.TOPz_X_B
+ArcvenRGz_T_A
+ArcvenTOPz_T_A
+AroaroTOPa_M_B
+AroaroTOPb_M_B
+ArtariTOPz_X_B
+ArtaurTOPz_M_B
+ArtchlTOPz_M_B
+ArtpheTOPz_M_B
+ArtplaTOPz_X_B
+#ArtE1.TOPz_M_B	Artsp.E1TOPz_M_B
+Artsp.TOPz_X_B
+AstexcTOPz_M_B
+AstyelTOPz_M_B
+AtethaTOPz_X_B
+AtoparTOPz_M_B
+AzobraTOPz_X_B
+AzocauTOPz_X_B
+AzolipTOPa_M_B
+AzolipTOPb_M_B
+AzooryTOPa_X_B
+AzooryTOPb_X_B
+AzopseTOPz_X_B
+#AzoE1.TOPa_M_B	Azosp.E1TOPa_M_B
+#AzoE1.TOPb_M_B	Azosp.E1TOPb_M_B
+Azosp.TOPz_M_B
+AzovinTOPa_M_B
+AzovinTOPb_M_B
+BacamyTOPa_X_B
+BacamyTOPb_X_B
+#BantE1TOPa_X_B	BacantE1TOPa_X_B
+#BantE1TOPb_X_B	BacantE1TOPb_X_B
+#BantE1TOPc_X_B	BacantE1TOPc_X_B
+BacantTOPa_X_B
+BacantTOPb_X_B
+BacantTOPc_X_B
+BacatrTOPa_X_B
+BacatrTOPb_X_B
+BaccelTOPa_M_B
+BaccelTOPb_M_B
+BaccelTOPc_M_B
+BaccerTOPa_X_B
+BaccerTOPb_X_B
+BacclaTOPa_M_B
+BacclaTOPb_M_B
+BaccoaTOPa_X_B
+BaccoaTOPb_X_B
+BaccoaTOPc_X_B
+BacfraTOPa_X_B
+BacfraTOPb_X_B
+BacfraTOPc_X_B
+BachalTOPa_M_B
+BachalTOPb_M_B
+BachelTOPa_M_B
+BachelTOPb_M_B
+BachelTOPc_M_B
+BaclicTOPa_M_B
+BaclicTOPb_M_B
+BacmarTOPz_X_B
+BacmegTOPa_X_B
+BacmegTOPb_X_B
+BacmegTOPc_X_B
+BacmycTOPa_X_B
+BacmycTOPb_X_B
+BacmycTOPc_X_B
+#BpseE1TOPa_M_B	BacpseE1TOPa_M_B
+#BpseE1TOPb_M_B	BacpseE1TOPb_M_B
+#BpseE1TOPc_M_B	BacpseE1TOPc_M_B
+BacpseTOPa_M_B
+BacpseTOPb_M_B
+BacpseTOPc_M_B
+BacpumTOPa_M_B
+BacpumTOPb_M_B
+BacsalTOPa_M_B
+BacsalTOPb_M_B
+BacsalTOPc_M_B
+BacsalTOPd_M_B
+BacsalTOPe_M_B
+BacselTOPa_M_B
+BacselTOPb_M_B
+BacsubTOPa_X_B
+BacsubTOPb_X_B
+BactheTOPa_M_B
+BactheTOPb_M_B
+BactheTOPc_M_B
+BactheTOPd_M_B
+BactheTOPe_M_B
+BacthuTOPa_X_B
+BacthuTOPb_X_B
+BacvulTOPa_M_B
+BacvulTOPb_M_B
+BacvulTOPc_M_B
+BacvulTOPd_M_B
+BacweiTOPa_X_B
+BacweiTOPb_X_B
+BacweiTOPc_X_B
+BacxylTOPa_M_B
+BacxylTOPb_M_B
+BacxylTOPc_M_B
+BacxylTOPd_M_B
+BarbacTOPz_M_B
+BarclaTOPz_X_B
+BargraTOPz_M_B
+BarhenTOPz_M_B
+BarquiTOPz_M_B
+BartriTOPz_M_B
+BaucicTOPz_X_B
+BdebacTOPz_X_B
+BeiindTOPz_M_B
+BeucavTOPz_M_B
+BifadoTOPz_M_B
+BifaniTOPz_X_B
+BifbifTOPz_X_B
+BifbreTOPa_X_B
+BifbreTOPb_X_B
+BifdenTOPz_X_B
+BiflonTOPa_X_B
+BiflonTOPb_X_B
+Blasp.TOPz_X_B
+BorafzTOPa_X_B
+BorafzTOPb_X_B
+BoraviTOPz_X_B
+BorbisTOPz_M_B
+BorbroTOPz_M_B
+BorburTOPz_M_B
+BordutTOPz_P_B
+BorgarTOPz_M_B
+BorherTOPz_M_B
+BorparTOPz_M_B
+BorperTOPz_X_B
+BorpetTOPa_M_B
+BorpetTOPb_M_B
+BorpetTOPc_M_B
+BorpetTOPd_M_B
+BorrecTOPz_M_B
+BorturTOPz_M_B
+BradiaTOPz_X_B
+BrafaeTOPz_X_B
+BrahyoTOPz_M_B
+BraintTOPz_X_B
+BrajapTOPz_X_B
+BramurTOPz_M_B
+BrapilTOPz_X_B
+Brasp.TOPz_X_B
+BrebreTOPa_M_B
+BrebreTOPb_M_B
+BrebreTOPc_M_B
+BresubTOPz_M_B
+BruaboTOPz_X_B
+BrucanTOPz_X_B
+BrumelTOPz_X_B
+BrumicTOPz_X_B
+BruoviTOPz_M_B
+BrusuiTOPz_X_B
+BucaphTOPz_X_B
+BurambTOPz_M_B
+BurcenTOPz_X_B
+BurglaTOPz_X_B
+BurgluTOPa_M_B
+BurgluTOPb_M_B
+BurmalTOPz_X_B
+BurmulTOPz_X_B
+#BphyE1TOPz_M_B	BurphyE1TOPz_M_B
+BurphyTOPz_M_B
+BurpseTOPz_X_B
+BurrhiTOPz_X_B
+Bursp.TOPz_X_B
+BurthaTOPz_X_B
+BurvieTOPa_X_B
+BurvieTOPb_X_B
+BurxenTOPa_M_B
+BurxenTOPb_M_B
+ButfibTOPz_M_B
+ButproTOPa_M_B
+ButproTOPb_M_B
+CaeeleTOPz_X_E
+#CalbesRGz_T_B	CalbesRGz_t_B
+#CalbesTOPz_T_B	CalbesTOPz_t_B
+CalhydRGz_T_B
+CalhydTOPz_T_B
+CalkriRGz_T_B
+CalkriTOPz_T_B
+CalkroRGz_X_B
+CalkroTOPz_X_B
+#CallacRGz_T_B	CallacRGz_t_B
+#CallacTOPz_T_B	CallacTOPz_t_B
+CalmaqRGz_T_A
+CalmaqTOPz_T_A
+#CalnitTOPz_T_B	CalnitTOPz_t_B
+CalobsRGz_T_B
+CalobsTOPz_T_B
+CaloweRGz_T_B
+CaloweTOPz_T_B
+#CalsacRGz_T_B	CalsacRGz_t_B
+#CalsacTOPz_T_B	CalsacTOPz_t_B
+CamconTOPz_X_B
+CamcurTOPz_M_B
+CamfetTOPz_X_B
+CamhomTOPa_M_B
+CamhomTOPb_M_B
+CamjejTOPz_X_B
+CamlarTOPz_X_B
+#CammedRGz_T_B	CammedRGz_t_B
+#CammedTOPz_T_B	CammedTOPz_t_B
+CanArtTOPz_X_B
+CanCalRGz_X_A
+CanCalTOPz_X_A
+CanMetTOPz_X_B
+CanNitTOPz_M_B
+CanalbTOPz_X_E
+CandubTOPz_X_E
+CapcanTOPz_M_B
+CapochTOPz_M_B
+CarhydTOPz_T_B
+Carsp.TOPa_X_B
+Carsp.TOPb_X_B
+Carsp.TOPc_X_B
+CataciTOPz_M_B
+CaucreTOPz_M_B
+CausegTOPz_M_B
+Causp.TOPz_M_B
+CelalgTOPa_M_B
+CelalgTOPb_M_B
+CelfimTOPz_M_B
+CelflaTOPz_M_B
+CelgilTOPz_M_B
+CeljapTOPz_M_B
+CellenTOPa_X_B
+CellenTOPb_X_B
+CellenTOPc_X_B
+CellytTOPa_X_B
+CellytTOPb_X_B
+ChipinTOPa_M_B
+ChipinTOPb_M_B
+ChlaboTOPz_X_B
+ChlaetTOPz_X_E
+#ChlaggTOPz_T_B	ChlaggTOPz_t_B
+#ChlaurTOPz_T_B	ChlaurTOPz_t_B
+ChlcavTOPz_M_B
+ChlchlTOPz_M_B
+ChlfelTOPz_M_B
+ChllimTOPz_M_B
+ChlmurTOPz_X_B
+ChlparTOPz_M_B
+ChlpecTOPz_X_B
+ChlphaTOPz_M_B
+#CpneE1TOPz_X_B	ChlpneE1TOPz_X_B
+ChlpneTOPz_M_B
+#CpsiE1TOPz_X_B	ChlpsiE1TOPz_X_B
+ChlpsiTOPz_X_B
+#ChltepTOPz_T_B	ChltepTOPz_t_B
+ChlthaTOPz_M_B
+ChltheTOPz_X_B
+ChltraTOPz_X_B
+ChrsalTOPa_M_B
+ChrsalTOPb_M_B
+ChrvioTOPz_M_B
+CitrodTOPa_M_B
+CitrodTOPb_M_B
+ClamicTOPz_M_B
+CloaceTOPa_X_B
+CloaceTOPb_X_B
+CloaceTOPc_X_B
+CloaciTOPz_X_B
+ClobeiTOPa_M_B
+ClobeiTOPb_M_B
+ClobeiTOPc_M_B
+ClobotTOPa_X_B
+ClobotTOPb_X_B
+ClobotTOPc_X_B
+#CcelE1TOPa_M_B	ClocelE1TOPa_M_B
+#CcelE1TOPb_M_B	ClocelE1TOPa_M_B
+ClocelTOPa_M_B
+ClocelTOPb_M_B
+ClocelTOPc_M_B
+Clocf.TOPa_M_B
+Clocf.TOPb_M_B
+Clocf.TOPc_M_B
+Clocf.TOPd_M_B
+Clocf.TOPe_M_B
+CloclaTOPa_X_B
+CloclaTOPb_X_B
+ClodifTOPa_X_B
+ClodifTOPb_X_B
+ClodifTOPc_X_B
+ClodifTOPd_X_B
+ClodifTOPe_X_B
+ClodifTOPf_X_B
+ClogenTOPz_X_B
+ClokluTOPa_M_B
+ClokluTOPb_M_B
+CloljuTOPa_M_B
+CloljuTOPb_M_B
+CloljuTOPc_M_B
+ClonovTOPa_X_B
+ClonovTOPb_X_B
+ClonovTOPc_X_B
+CloperTOPa_X_B
+CloperTOPb_X_B
+ClophyTOPa_M_B
+ClophyTOPb_M_B
+ClosacTOPa_M_B
+ClosacTOPb_M_B
+ClosacTOPc_M_B
+ClosacTOPd_M_B
+Closp.TOPa_X_B
+Closp.TOPb_X_B
+ClostiTOPa_M_B
+ClostiTOPb_M_B
+ClotetTOPa_M_B
+ClotetTOPb_M_B
+ClotetTOPc_M_B
+#ClotheTOPz_T_B	ClotheTOPz_t_B
+ColfunTOPz_X_B
+ColpsyTOPa_P_B
+ColpsyTOPb_P_B
+ComtesTOPz_X_B
+ConwoeTOPz_M_B
+CopcatTOPa_M_B
+CopcatTOPb_M_B
+#CopproTOPz_T_B	CopproTOPz_t_B
+Copsp.TOPa_M_B
+Copsp.TOPb_M_B
+CorakaTOPz_M_B
+CoraurTOPz_M_B
+CordipTOPz_M_B
+CoreffTOPz_M_B
+CorgloTOPz_M_B
+CorgluTOPa_M_B
+CorgluTOPb_M_B
+CorjeiTOPz_M_B
+CorkroTOPz_M_B
+CorpseTOPz_X_B
+CorresTOPz_X_B
+CorulcTOPz_X_B
+CorureTOPz_M_B
+CorvarTOPz_M_B
+CoxburTOPz_M_B
+CrigriTOPz_X_E
+CroatlTOPz_X_B
+CroturTOPa_X_B
+CroturTOPb_X_B
+CrycurTOPz_X_B
+CryneoTOPz_X_E
+CupnecTOPz_X_B
+CuppinTOPz_X_B
+CuptaiTOPz_M_B
+Cyasp.TOPa_X_B
+Cyasp.TOPb_X_B
+CycmarTOPa_X_B
+CycmarTOPb_X_B
+CythutTOPa_M_B
+CythutTOPb_M_B
+DaucarTOPz_X_E
+DecaroTOPz_X_B
+#DefdesTOPz_T_B	DefdesTOPz_t_B
+DehethTOPz_M_B
+DehlykTOPz_M_B
+Dehsp.TOPz_X_B
+DeidesTOPz_M_B
+DeigeoTOPz_M_B
+DeimarTOPa_M_B
+DeimarTOPb_M_B
+DeiproTOPz_M_B
+DeiradTOPz_M_B
+DelaciTOPa_M_B
+DelaciTOPb_M_B
+Delsp.TOPz_M_B
+DenaceTOPz_M_B
+#DaceE1TOPz_X_B	DesaceE1TOPz_X_B
+DesaceTOPa_M_B
+DesaceTOPb_M_B
+DesaceTOPc_M_B
+DesaesTOPz_M_B
+DesafrTOPz_X_B
+#DalkE1TOPz_M_B	DesalkE1TOPz_M_B
+DesalkTOPz_M_B
+DesaudTOPz_X_B
+DesautTOPa_M_B
+DesautTOPb_M_B
+DesbaaTOPz_X_B
+DesbacTOPa_M_B
+DesbacTOPb_M_B
+DescarTOPz_X_B
+DesdesTOPa_M_B
+DesdesTOPb_M_B
+DeshafTOPa_M_B
+DeshafTOPb_M_B
+DeshafTOPc_M_B
+DesindTOPz_X_B
+DeskamRGa_T_A
+DeskamRGb_T_A
+DeskamTOPz_T_A
+DeskuzTOPa_X_B
+DeskuzTOPb_X_B
+DesmagTOPz_X_B
+DesmucRGa_T_A
+DesmucRGb_T_A
+DesmucTOPz_T_A
+DesoleTOPz_M_B
+DesoriTOPa_X_B
+DesoriTOPb_X_B
+DesoriTOPc_X_B
+DesproTOPz_M_B
+DespsyTOPz_P_B
+DesredTOPa_M_B
+DesredTOPb_M_B
+DesredTOPc_M_B
+DesredTOPd_M_B
+DesretTOPz_M_B
+DesrumTOPa_M_B
+DesrumTOPb_M_B
+DesrumTOPc_M_B
+DessalTOPa_M_B
+DessalTOPb_M_B
+#DestheRGz_T_B	DestheRGz_t_B
+#DestheTOPz_T_B	DestheTOPz_t_B
+DesvulTOPa_M_B
+DesvulTOPb_M_B
+DicdadTOPa_M_B
+DicdadTOPb_M_B
+DicdisTOPa_X_E
+DicdisTOPb_X_E
+DicnodTOPz_M_B
+#DictheRGz_T_B	DictheRGz_t_B
+#DictheTOPz_T_B	DictheTOPz_t_B
+#DicturRGz_T_B	DicturRGz_t_B
+#DicturTOPz_T_B	DicturTOPz_t_B
+DiczeaTOPa_X_B
+DiczeaTOPb_X_B
+DiczeaTOPc_X_B
+DinshiTOPz_M_B
+DromelTOPa_X_E
+DromelTOPb_X_E
+DyaferTOPa_M_B
+DyaferTOPb_M_B
+EdwictTOPa_X_B
+EdwictTOPb_X_B
+EdwictTOPc_X_B
+EdwtarTOPa_X_B
+EdwtarTOPb_X_B
+EgglenTOPa_M_B
+EgglenTOPb_M_B
+EhrcanTOPz_X_B
+EhrchaTOPz_X_B
+EhrrumTOPz_X_B
+EluminTOPz_M_B
+EnccunTOPz_X_E
+EntaerTOPa_X_B
+EntaerTOPb_X_B
+EntasbTOPa_M_B
+EntasbTOPb_M_B
+EntcloTOPa_X_B
+EntcloTOPb_X_B
+EntfaeTOPa_X_B
+EntfaeTOPb_X_B
+EntfaeTOPc_X_B
+EntligTOPa_X_B
+EntligTOPb_X_B
+#Ent.E1TOPa_X_B	Entsp.E1TOPa_X_B
+#Ent.E1TOPb_X_B	Entsp.E1TOPb_X_B
+Entsp.TOPa_X_B
+Entsp.TOPb_X_B
+ErwamyTOPa_X_B
+ErwamyTOPb_X_B
+ErwbilTOPa_M_B
+ErwbilTOPb_M_B
+ErwcarTOPa_X_B
+ErwcarTOPb_X_B
+ErwcarTOPc_X_B
+ErwpyrTOPa_M_B
+ErwpyrTOPb_M_B
+Erwsp.TOPa_X_B
+Erwsp.TOPb_X_B
+Erwsp.TOPc_X_B
+ErwtasTOPa_M_B
+ErwtasTOPb_M_B
+ErylitTOPz_X_B
+EryrhuTOPz_M_B
+EsccolTOPa_X_B
+EsccolTOPb_X_B
+EscferTOPa_X_B
+EscferTOPb_X_B
+EthharTOPa_M_B
+EthharTOPb_M_B
+EubeliTOPa_M_B
+EubeliTOPb_M_B
+EublimTOPa_X_B
+EublimTOPb_X_B
+EublimTOPc_X_B
+EubrecTOPa_X_B
+EubrecTOPb_X_B
+EubrecTOPc_X_B
+EubsirTOPa_M_B
+EubsirTOPb_M_B
+ExisibTOPa_P_B
+ExisibTOPb_P_B
+#Exisp.TOPa_T_B	Exisp.TOPa_t_B
+#Exisp.TOPb_T_B	Exisp.TOPb_t_B
+FaepraTOPa_M_B
+FaepraTOPb_M_B
+FaepraTOPc_M_B
+FaepraTOPd_M_B
+FerbalTOPa_M_B
+FerbalTOPb_M_B
+#FernodRGz_T_B	FernodRGz_t_B
+#FernodTOPz_T_B	FernodTOPz_t_B
+FerplaRGz_X_A
+FerplaTOPz_X_A
+FibsucTOPa_M_B
+FibsucTOPb_M_B
+FilaloTOPa_M_B
+FilaloTOPb_M_B
+FilaloTOPc_M_B
+FinmagTOPa_X_B
+FinmagTOPb_X_B
+FlabacTOPz_X_B
+FlabraTOPz_X_B
+FlacolTOPz_X_B
+FlajohTOPa_M_B
+FlajohTOPb_M_B
+FlajohTOPc_M_B
+FlapsyTOPz_P_B
+FlesinTOPz_X_B
+FlutafTOPa_X_B
+FlutafTOPb_X_B
+FraalnTOPz_M_B
+Fracf.TOPz_X_B
+FraphiTOPz_M_B
+#Fra.E1TOPz_X_B	Frasp.E1TOPz_X_B
+Frasp.TOPz_X_B
+FrasymTOPz_M_B
+FratulTOPz_X_B
+FrefasTOPz_X_B
+FusnucTOPz_X_B
+GalanaTOPa_X_B
+GalanaTOPb_X_B
+GalanaTOPc_X_B
+GalcapTOPa_M_B
+GalcapTOPb_M_B
+GalcapTOPc_M_B
+GalcapTOPd_M_B
+GalgalTOPz_X_E
+GarvagTOPz_X_B
+GemaurTOPz_M_B
+GeobemTOPz_M_B
+GeodalTOPz_X_B
+#GeokauTOPa_T_B	GeokauTOPa_t_B
+#GeokauTOPb_T_B	GeokauTOPb_t_B
+#GeokauTOPc_T_B	GeokauTOPc_t_B
+GeolovTOPz_M_B
+GeometTOPz_M_B
+GeoobsTOPz_M_B
+#Geo.E1TOPz_X_B	Geosp.E1TOPz_X_B
+Geosp.TOPz_X_B
+GeosulTOPz_X_B
+#GtheE1TOPa_T_B	GeotheE1TOPa_T_B
+#GtheE1TOPb_T_B	GeotheE1TOPb_T_B
+#GtheE2TOPa_T_B	GeotheE2TOPa_t_B
+#GtheE2TOPb_T_B	GeotheE2TOPb_t_B
+#GtheE2TOPc_T_B	GeotheE2TOPc_t_B
+GeotheTOPa_X_B
+GeotheTOPb_X_B
+GeotheTOPc_X_B
+GeouraTOPz_M_B
+GlanitTOPa_X_B
+GlanitTOPb_X_B
+Glasp.TOPa_X_B
+Glasp.TOPb_X_B
+GlovioTOPa_M_B
+GlovioTOPb_M_B
+GludiaTOPa_M_B
+GludiaTOPb_M_B
+GluoxyTOPz_M_B
+GluxylTOPz_X_B
+GorbroTOPz_X_B
+GorpolTOPz_X_B
+GrabetTOPz_X_B
+GraforTOPz_M_B
+GramalTOPz_X_B
+HaeducTOPa_X_B
+HaeducTOPb_X_B
+HaeducTOPc_X_B
+HaeinfTOPa_X_B
+HaeinfTOPb_X_B
+#HparE1TOPa_M_B	HaeparE1TOPa_M_B
+#HparE1TOPb_M_B	HaeparE1TOPb_M_B
+HaeparTOPa_X_B
+HaeparTOPb_X_B
+HaeparTOPc_X_B
+HahcheTOPz_M_B
+HalborTOPz_X_A
+HaleloTOPa_X_B
+HaleloTOPb_X_B
+HaleloTOPc_X_B
+HalhalTOPz_X_B
+HalhisTOPz_X_A
+#HhydE1TOPz_M_B	HalhydE1TOPz_M_B
+HalhydTOPz_X_B
+HaljeoTOPz_X_A
+HallacTOPz_M_A
+HalmarTOPz_M_A
+HalmukTOPz_M_A
+HalneaTOPa_X_B
+HalneaTOPb_X_B
+HalochTOPa_M_B
+HalochTOPb_M_B
+#HaloreTOPz_T_B	HaloreTOPz_t_B	
+HalpraTOPz_M_B
+#HalsalTOPz_T_A	HalsalTOPz_t_A
+HalturTOPz_X_A
+HalutaTOPz_M_A
+HalvolTOPz_X_A
+HalwalTOPz_X_A
+HalxanTOPz_X_A
+HamdefTOPz_X_B
+HelaciTOPz_M_B
+HelbizTOPa_X_B
+HelbizTOPb_X_B
+HelcanTOPz_M_B
+HelfelTOPz_X_B
+HelhepTOPz_M_B
+#HelmodTOPa_T_B	HelmodTOPa_t_B
+#HelmodTOPb_T_B	HelmodTOPb_t_B
+HelmusTOPz_M_B
+HelpylTOPa_X_B
+HelpylTOPb_X_B
+HerarsTOPa_X_B
+HerarsTOPb_X_B
+HeraurTOPz_M_B
+HerserTOPz_X_B
+#HipmarTOPz_T_B	HipmarTOPz_t_B
+HirbalTOPz_M_B
+HissomTOPa_X_B
+HissomTOPb_X_B
+HissomTOPc_X_B
+HomsapTOPa_X_E
+HomsapTOPb_X_E
+Hydsp.TOPz_X_B
+HydtheRGz_T_B
+HydtheTOPz_T_B
+HypbutRGa_T_A
+HypbutRGb_T_A
+HypbutTOPz_T_A
+HypdenTOPz_X_B
+HypnepTOPz_M_B
+Hypsp.TOPz_X_B
+IdiloiTOPz_M_B
+IgnaggRGa_T_A
+IgnaggRGb_T_A
+IgnaggTOPz_T_A
+IgnhosRGa_T_A
+IgnhosRGb_T_A
+IgnhosTOPz_T_A
+IlypolTOPz_M_B
+IntcalTOPz_M_B
+#IsopalTOPz_T_B	IsopalTOPz_t_B
+IsovarTOPz_X_B
+#Jan.E1TOPz_M_B	Jansp.E1TOPz_M_B
+Jansp.TOPz_M_B
+JondenTOPz_X_B
+KankorTOPz_M_B
+KetvulTOPz_X_B
+KinradTOPz_M_B
+KitsetTOPz_M_B
+KleoxyTOPa_X_B
+KleoxyTOPb_X_B
+KlepneTOPa_X_B
+KlepneTOPb_X_B
+KlevarTOPa_X_B
+KlevarTOPb_X_B
+KocrhiTOPz_X_B
+KompasXz_X_E
+KorcryRGz_X_A
+KorcryTOPz_X_A
+KorverTOPz_X_B
+KosoleTOPz_M_B
+KriflaTOPz_M_B
+Krosp.TOPz_X_B
+KyrtusTOPz_X_B
+KytsedTOPz_M_B
+LacaciTOPz_X_B
+LacamyTOPz_M_B
+#LbreE1TOPz_X_B	LacbreE1TOPz_X_B
+LacbreTOPz_X_B
+LacbucTOPz_M_B
+LaccasTOPz_X_B
+LaccriTOPz_X_B
+LacdelTOPa_X_B
+LacdelTOPb_X_B
+LacferTOPz_X_B
+LacgarTOPz_X_B
+LacgasTOPz_X_B
+LachelTOPz_X_B
+LacjohTOPz_X_B
+LackefTOPz_X_B
+LaclacTOPz_X_B
+LacplaTOPz_X_B
+LacreuXz_X_B
+LacrhaTOPz_X_B
+LacrumTOPa_X_B
+LacrumTOPb_X_B
+LacsakTOPa_M_B
+LacsakTOPb_M_B
+LacsalTOPa_X_B
+LacsalTOPb_X_B
+LacsanTOPz_M_B
+Lacsp.TOPa_X_B
+Lacsp.TOPb_X_B
+LarhonTOPz_M_B
+LawintTOPz_M_B
+LeabysTOPa_M_B
+LeabysTOPb_M_B
+LeglonTOPz_X_B
+LegpneTOPz_X_B
+LeibraTOPa_X_E
+LeibraTOPb_X_E
+LeibraTOPc_X_E
+LeidonTOPa_X_E
+LeidonTOPb_X_E
+LeidonTOPc_X_E
+LeiinfTOPa_X_E
+LeiinfTOPb_X_E
+LeiinfTOPc_X_E
+LeimajTOPa_X_E
+LeimajTOPb_X_E
+LeimajTOPc_X_E
+LeimexTOPa_X_E
+LeimexTOPb_X_E
+LeimexTOPc_X_E
+LeixylTOPz_M_B
+LepbifTOPz_M_B
+LepborTOPz_M_B
+LepbucTOPa_M_B
+LepbucTOPb_M_B
+LepchoTOPz_M_B
+LepintTOPz_X_B
+LeucitTOPa_M_B
+LeucitTOPb_M_B
+LeugasTOPa_X_B
+LeugasTOPb_X_B
+LeukimTOPa_M_B
+LeukimTOPb_M_B
+LeumesTOPz_M_B
+Leusp.TOPa_X_B
+Leusp.TOPb_X_B
+LibasiTOPz_X_B
+LibsolTOPz_X_B
+LisivaTOPa_M_B
+LisivaTOPb_M_B
+LismonTOPa_X_B
+LismonTOPb_X_B
+LisseeTOPa_M_B
+LisseeTOPb_M_B
+LiswelTOPa_M_B
+LiswelTOPb_M_B
+LyssphTOPa_M_B
+LyssphTOPb_M_B
+MaccasTOPa_M_B
+MaccasTOPb_M_B
+MacmulTOPz_X_E
+MagmagTOPz_M_B
+Magsp.TOPa_X_B
+Magsp.TOPb_X_B
+#MahausTOPz_T_B	MahausTOPz_t_B
+MansucTOPa_M_B
+MansucTOPb_M_B
+MaradhTOPa_X_B
+MaradhTOPb_X_B
+MaraquTOPa_M_B
+MaraquTOPb_M_B
+#MarhydTOPz_T_B	MarhydTOPz_t_B
+MarmarTOPz_M_B
+MarmedTOPa_X_B
+MarmedTOPb_X_B
+MarpieTOPz_X_B
+MarposTOPa_X_B
+MarposTOPb_X_B
+#Mar.E1TOPa_X_B	Marsp.E1TOPa_X_B
+#Mar.E1TOPb_X_B	Marsp.E1TOPb_X_B
+Marsp.TOPz_X_B
+MartraTOPz_M_B
+MeghypTOPz_M_B
+#MeirubTOPz_T_B	MeirubTOPz_t_B
+#MeisilTOPz_T_B	MeisilTOPz_t_B
+MelpluTOPa_X_B
+MelpluTOPb_X_B
+MescicTOPz_X_B
+MesfloTOPz_M_B
+MesoppTOPz_M_B
+Messp.TOPz_X_B
+MetaceTOPa_M_A
+MetaceTOPb_M_A
+MetaeoTOPz_M_A
+MetalcTOPz_X_B
+MetbarTOPa_M_A
+MetbarTOPb_M_A
+MetbooTOPz_M_A
+MetburTOPa_M_A
+MetburTOPb_M_A
+#MetcapTOPz_T_B	MetcapTOPz_t_B
+MetconTOPz_X_A
+MetcupRGa_X_A
+MetcupRGb_X_A
+MetcupTOPz_X_A
+#MeteveTOPa_T_A	MeteveTOPa_t_A
+#MeteveTOPb_T_A	MeteveTOPb_t_A
+MetextTOPa_X_B
+MetextTOPb_X_B
+MetextTOPc_X_B
+#MferE1RGz_T_A	MetferE1RGz_T_A
+#MferE1TOPz_T_A	MetferE1TOPz_T_A
+#MetferRGz_T_A	MetferRGz_t_A
+#MetferTOPz_T_A	MetferTOPz_t_A
+MetflaTOPz_M_B
+MetharTOPz_X_A
+MethunTOPz_M_A
+MetignRGz_X_A
+MetignTOPz_X_A
+#MinfE1RGz_T_A	MetinfE1RGz_T_A
+#MinfE1TOPz_T_A	MetinfE1TOPz_T_A
+#MetinfTOPz_T_B	MetinfTOPz_t_B
+MetjanTOPa_T_A
+MetjanTOPb_T_A
+MetkanTOPz_T_A
+MetlabTOPz_M_A
+MetmahTOPa_M_A
+MetmahTOPb_M_A
+#MmarE1TOPz_T_A	MetmarE1TOPz_t_A
+#MmarE2TOPz_X_A	MetmarE2TOPz_X_A
+MetmarTOPz_M_A
+MetmazTOPa_M_A
+MetmazTOPb_M_A
+MetmetTOPz_X_B
+MetmobTOPz_M_B
+MetnodTOPa_M_B
+MetnodTOPb_M_B
+#MetokiRGz_T_A	MetokiRGz_t_A
+#MetokiTOPz_T_A	MetokiTOPz_t_A
+#MpalE1TOPa_X_A	MetpalE1TOPa_X_A
+#MpalE1TOPb_X_A	MetpalE1TOPb_X_A
+MetpalTOPz_M_A
+#MpetE1TOPa_M_B	MetpetE1TOPa_M_B
+#MpetE1TOPb_M_B	MetpetE1TOPb_M_B
+MetpetTOPz_M_A
+MetpopTOPz_M_B
+MetradTOPz_M_B
+MetrumTOPz_M_A
+#MetsedRGa_T_A	MetsedRGa_t_A
+#MetsedRGb_T_A	MetsedRGb_t_A
+#MetsedTOPz_T_A	MetsedTOPz_t_A
+MetsilTOPz_M_B
+MetsmiTOPz_X_A
+#Met.E1RGz_T_A	Metsp.E1RGz_T_A
+#Met.E1TOPz_T_A	Metsp.E1TOPz_T_A
+#Met.E2TOPz_X_A	Metsp.E2TOPz_X_A
+#Met.E3TOPz_X_B	Metsp.E3TOPz_X_B
+#Met.E4TOPz_X_B	Metsp.E4TOPz_X_B
+Metsp.TOPa_M_B
+Metsp.TOPb_M_B
+MetstaTOPz_M_A
+#MtheE1TOPz_X_A	MettheE1TOPz_X_A
+#MettheTOPz_T_A	MettheTOPz_t_A
+MetvanTOPz_M_A
+MetvolTOPz_M_A
+MetvulRGz_T_A
+MetvulTOPz_T_A
+MetzhiTOPa_X_A
+MetzhiTOPb_X_A
+#MaerE1TOPz_X_B	MicaerE1TOPz_X_B
+MicaerTOPz_M_B
+MicaurTOPz_M_B
+MiclutTOPz_X_B
+MicphoTOPz_X_B
+Micsp.TOPz_M_B
+MictesTOPz_X_B
+MidmitTOPz_X_B
+MobcurTOPz_X_B
+#MootheTOPa_T_B	MootheTOPa_t_B
+#MootheTOPb_T_B	MootheTOPb_t_B
+MorcatTOPz_X_B
+MorendTOPz_X_B
+MurrueTOPz_X_B
+MusmusTOPa_X_E
+MusmusTOPb_X_E
+MycabsTOPz_X_B
+MycafrTOPz_X_B
+MycagaTOPz_M_B
+MycartTOPz_M_B
+MycaviTOPz_X_B
+#MbovE1TOPz_X_B	MycbovE1TOPz_X_B
+MycbovTOPz_X_B
+MyccanTOPz_X_B
+MyccapTOPz_X_B
+MyccroTOPz_M_B
+MycferTOPz_M_B
+MycgalTOPz_X_B
+MycgenTOPz_M_B
+MycgilTOPz_M_B
+MychaeTOPz_X_B
+MychomTOPz_X_B
+#MhyoE1TOPz_X_B	MychyoE1TOPz_X_B
+MychyoTOPz_X_B
+MycleaTOPz_X_B
+MyclepTOPz_X_B
+MycmarTOPz_M_B
+MycmobTOPz_M_B
+MycmycTOPz_X_B
+MycparTOPz_X_B
+MycpenTOPz_M_B
+MycpneTOPz_X_B
+MycpulTOPz_M_B
+MycputTOPz_M_B
+MycrhoTOPz_X_B
+MycsmeTOPz_X_B
+Mycsp.TOPz_X_B
+MycsuiTOPz_M_B
+MycsynTOPz_M_B
+#MtubE1TOPz_X_B	MyctubE1TOPz_X_B
+MyctubTOPz_X_B
+MyculcTOPz_M_B
+MycvanTOPz_M_B
+MyxfulTOPz_M_B
+MyxxanTOPa_M_B
+MyxxanTOPb_M_B
+NakmulTOPz_M_B
+NanequRGz_T_A
+NanequTOPz_T_A
+NatmagTOPz_M_A
+NatphaTOPz_X_A
+#NattheTOPz_T_B	NattheTOPz_t_B
+NauproRGz_M_B
+NauproTOPz_M_B
+NeigonTOPz_X_B
+NeilacTOPz_X_B
+NeimenTOPz_X_B
+NeorisTOPz_M_B
+NeosenTOPz_X_B
+NiakorTOPa_M_B
+NiakorTOPb_M_B
+NiteurTOPz_M_B
+NiteutTOPa_X_B
+NiteutTOPb_X_B
+NithalTOPz_M_B
+NithamTOPz_M_B
+NitmulTOPz_M_B
+NitoceTOPz_X_B
+NitsalTOPz_M_B
+#Nit.E1RGz_T_B	Nitsp.E1RGz_t_B
+#Nit.E1TOPz_T_B	Nitsp.E1TOPz_t_B
+Nitsp.TOPz_X_B
+NitwatTOPz_X_B
+NitwinTOPz_M_B
+NoccyrTOPz_X_B
+NocfarTOPz_M_B
+Nocsp.TOPz_X_B
+NosazoTOPz_X_B
+NospunTOPa_X_B
+NospunTOPb_X_B
+Nossp.TOPa_M_B
+Nossp.TOPb_M_B
+NovaroTOPz_X_B
+Novsp.TOPz_X_B
+OceiheTOPa_M_B
+OceiheTOPb_M_B
+#OceproTOPz_T_B	OceproTOPz_t_B
+Ocesp.TOPa_X_B
+Ocesp.TOPb_X_B
+OchantTOPz_M_B
+OdosplTOPa_X_B
+OdosplTOPb_X_B
+OenoenTOPa_X_B
+OenoenTOPb_X_B
+OlicarTOPz_X_B
+OlsuliTOPz_M_B
+OniyelTOPz_M_B
+OpiterTOPa_M_B
+OpiterTOPb_M_B
+OritsuTOPz_X_B
+OscvalTOPa_M_B
+OscvalTOPb_M_B
+OwehonTOPa_X_B
+OwehonTOPb_X_B
+PaemucTOPa_X_B
+PaemucTOPb_X_B
+PaemucTOPc_X_B
+PaepolTOPa_X_B
+PaepolTOPb_X_B
+PaepolTOPc_X_B
+Paesp.TOPa_X_B
+Paesp.TOPb_X_B
+Paesp.TOPc_X_B
+PaeterTOPa_X_B
+PaeterTOPb_X_B
+PaeterTOPc_X_B
+PalproTOPa_M_B
+PalproTOPb_M_B
+PananaTOPa_X_B
+PananaTOPb_X_B
+PananaTOPc_X_B
+Pansp.TOPa_X_B
+Pansp.TOPb_X_B
+PanvagTOPa_X_B
+PanvagTOPb_X_B
+ParacaTOPz_X_B
+ParberTOPz_M_B
+PardenTOPz_M_B
+PardisTOPa_M_B
+PardisTOPb_M_B
+ParlavTOPa_M_B
+ParlavTOPb_M_B
+PasmulTOPa_X_B
+PasmulTOPb_X_B
+PasmulTOPc_X_B
+PeccarTOPa_X_B
+PeccarTOPb_X_B
+PecwasTOPa_M_B
+PecwasTOPb_M_B
+PecwasTOPc_M_B
+PecwasTOPd_M_B
+PedclaTOPa_M_B
+PedclaTOPb_M_B
+PedhepTOPa_M_B
+PedhepTOPb_M_B
+PedpenTOPz_M_B
+PedsalTOPa_M_B
+PedsalTOPb_M_B
+PedsalTOPc_M_B
+PedsalTOPd_M_B
+PelcarTOPz_M_B
+PelhalTOPz_X_B
+PellutTOPz_X_B
+PelphaTOPz_M_B
+PelproTOPz_M_B
+Pelsp.TOPz_X_B
+#PeltheTOPz_T_B	PeltheTOPz_t_B
+PelubiTOPz_X_B
+#PermarRGz_T_B	PermarRGz_t_B
+#PermarTOPz_T_B	PermarTOPz_t_B
+#PetmobTOPz_T_B	PetmobTOPz_t_B
+PhezucTOPz_M_B
+PhoasyTOPa_X_B
+PhoasyTOPb_X_B
+PholumTOPa_M_B
+PholumTOPb_M_B
+PhoproTOPa_P_B
+PhoproTOPb_P_B
+PhyausTOPz_X_B
+PhymalTOPz_X_B
+#PictorTOPz_T_A	PictorTOPz_t_A
+PirstaTOPz_M_B
+PlabraTOPz_X_B
+PlafalTOPz_X_E
+PlalimTOPz_M_B
+PolgilTOPz_X_B
+PolnapTOPz_M_B
+PolnecTOPz_M_B
+Polsp.TOPz_M_B
+PorasaTOPa_X_B
+PorasaTOPb_X_B
+PorginTOPa_X_B
+PorginTOPb_X_B
+PorginTOPc_X_B
+PorginTOPd_X_B
+PredenTOPa_X_B
+PredenTOPb_X_B
+PredenTOPc_X_B
+PredenTOPd_X_B
+PremelTOPa_X_B
+PremelTOPb_X_B
+PremelTOPc_X_B
+PrerumTOPa_X_B
+PrerumTOPb_X_B
+ProacnTOPz_X_B
+ProaesTOPz_M_B
+ProamoTOPz_X_B
+ProfreTOPz_M_B
+PromarTOPz_X_B
+PromirTOPa_M_B
+PromirTOPb_M_B
+PromirTOPc_M_B
+ProvibTOPz_X_B
+PseaerTOPa_X_B
+PseaerTOPb_X_B
+PseatlTOPa_M_B
+PseatlTOPb_M_B
+PsebraTOPa_X_B
+PsebraTOPb_X_B
+PsebraTOPc_X_B
+PsedioTOPz_M_B
+PseentTOPa_X_B
+PseentTOPb_X_B
+PsefluTOPa_X_B
+PsefluTOPb_X_B
+PsefluTOPc_X_B
+PsefulTOPa_X_B
+PsefulTOPb_X_B
+PsehalTOPa_M_B
+PsehalTOPb_M_B
+PsemenTOPz_X_B
+PseputTOPa_X_B
+PseputTOPb_X_B
+PseputTOPc_X_B
+#Pse.E1TOPz_M_B	Psesp.E1TOPz_M_B
+#Pse.E2TOPz_X_B	Psesp.E2TOPz_X_B
+Psesp.TOPa_X_B
+Psesp.TOPb_X_B
+PsespaTOPa_X_B
+PsespaTOPb_X_B
+PsestuTOPa_X_B
+PsestuTOPb_X_B
+PsesuwTOPz_X_B
+PsesyrTOPa_X_B
+PsesyrTOPb_X_B
+PsesyrTOPc_X_B
+PsyarcTOPz_P_B
+PsycryTOPz_P_B
+PsyingTOPa_P_B
+PsyingTOPb_P_B
+Psysp.TOPz_X_B
+PunmarTOPz_X_B
+Pussp.TOPz_X_B
+PyrabyTOPa_T_A
+PyrabyTOPb_T_A
+PyraerTOPa_T_A
+PyraerTOPb_T_A
+PyrarsRGz_T_A
+PyrarsTOPz_T_A
+PyrcalRGz_T_A
+PyrcalTOPz_T_A
+PyrfumRGa_T_A
+PyrfumRGb_T_A
+PyrfumTOPz_T_A
+PyrfurTOPa_T_A
+PyrfurTOPb_T_A
+PyrhorTOPa_T_A
+PyrhorTOPb_T_A
+#PyrislRGz_T_A	PyrislRGz_t_A
+#PyrislTOPz_T_A	PyrislTOPz_t_A
+PyrneuRGz_X_A
+PyrneuTOPz_X_A
+#Pyr.E1RGz_X_A	Pyrsp.E1RGz_X_A
+#Pyr.E1TOPz_X_A	Pyrsp.E1TOPz_X_A
+Pyrsp.RGz_X_A
+Pyrsp.TOPz_X_A
+PyryayRGz_X_A
+PyryayTOPz_X_A
+RahaquTOPa_X_B
+RahaquTOPb_X_B
+Rahsp.TOPa_X_B
+Rahsp.TOPb_X_B
+RalmetTOPa_X_B
+RalmetTOPb_X_B
+RalpicTOPz_M_B
+RalsolTOPz_X_B
+RamtatTOPz_M_B
+RatnorTOPz_X_E
+RensalTOPz_M_B
+RhietlTOPz_X_B
+RhifreTOPz_X_B
+RhilegTOPz_X_B
+RhilotTOPz_X_B
+RhimelTOPz_X_B
+Rhisp.TOPz_X_B
+RhobalTOPz_X_B
+RhocapTOPz_M_B
+RhocenTOPz_M_B
+RhoequTOPz_M_B
+RhoeryTOPz_M_B
+RhoferTOPz_M_B
+RhomarTOPz_X_B
+RhoopaTOPz_X_B
+RhopalTOPz_M_B
+RhorubTOPz_X_B
+Rhosp.TOPz_X_B
+RhosphTOPz_X_B
+RhovanTOPz_M_B
+RicafrTOPz_M_B
+RicakaTOPz_M_B
+RicbelTOPz_X_B
+RiccanTOPz_M_B
+RicconTOPz_M_B
+RicendTOPz_X_B
+RicfelTOPz_X_B
+RicheiTOPz_X_B
+RicjapTOPz_M_B
+RicmasTOPz_M_B
+RicpeaTOPz_M_B
+RicproTOPz_M_B
+RicricTOPz_M_B
+RicsloTOPz_M_B
+RictypTOPz_X_B
+RieanaTOPz_X_B
+RobbifTOPz_M_B
+#RoscasTOPz_T_B	RoscasTOPz_t_B
+RosdenTOPz_M_B
+RoshomTOPa_X_B
+RoshomTOPb_X_B
+RoshomTOPc_X_B
+RoshomTOPd_X_B
+RosintTOPz_M_B
+RoslitTOPz_X_B
+#Rossp.TOPz_T_B	Rossp.TOPz_t_B
+RotdenTOPz_M_B
+RotmucTOPz_X_B
+#RubxylTOPa_T_B	RubxylTOPa_t_B
+#RubxylTOPb_T_B	RubxylTOPb_t_B
+RuepomTOPz_X_B
+Ruesp.TOPz_X_B
+RumalbTOPa_M_B
+RumalbTOPb_M_B
+RumbroTOPa_M_B
+RumbroTOPb_M_B
+RumbroTOPc_M_B
+RumchaTOPa_X_B
+RumchaTOPb_X_B
+RumobeTOPa_M_B
+RumobeTOPb_M_B
+RumobeTOPc_M_B
+RumobeTOPd_M_B
+RumobeTOPe_M_B
+RumobeTOPf_M_B
+RumobeTOPg_M_B
+Rumsp.TOPz_M_B
+RumtorTOPa_M_B
+RumtorTOPb_M_B
+RumtorTOPc_M_B
+RunsliTOPz_M_B
+RutmagTOPz_X_B
+SaccerTOPz_X_E
+SacdegTOPa_M_B
+SacdegTOPb_M_B
+SaceryTOPz_M_B
+#SacvirTOPz_T_B	SacvirTOPz_t_B
+SalagoTOPa_X_B
+SalagoTOPb_X_B
+SalareTOPz_M_B
+SalbonTOPa_M_B
+SalbonTOPb_M_B
+SalchoTOPa_X_B
+SalchoTOPb_X_B
+SaldubTOPa_X_B
+SaldubTOPb_X_B
+#SentE1TOPa_X_B	SalentE1TOPa_X_B
+#SentE1TOPb_X_B	SalentE1TOPb_X_B
+SalentTOPa_X_B
+SalentTOPb_X_B
+SalentTOPc_X_B
+SalgalTOPa_X_B
+SalgalTOPb_X_B
+SalheiTOPa_X_B
+SalheiTOPb_X_B
+SalnewTOPa_X_B
+SalnewTOPb_X_B
+SalparTOPa_X_B
+SalparTOPb_X_B
+SalpulTOPa_X_B
+SalpulTOPb_X_B
+SalrubTOPz_M_B
+SalschTOPa_X_B
+SalschTOPb_X_B
+SaltroTOPz_M_B
+#StypE1TOPa_X_B	SaltypE1TOPa_X_B
+#StypE1TOPb_X_B	SaltypE1TOPb_X_B
+SaltypTOPa_M_B
+SaltypTOPb_M_B
+SankedTOPz_M_B
+SebterTOPz_M_B
+SegrotTOPz_M_B
+SelspuTOPa_X_B
+SelspuTOPb_X_B
+SerplyTOPa_X_B
+SerplyTOPb_X_B
+SerplyTOPc_X_B
+SerproTOPa_M_B
+SerproTOPb_M_B
+SerproTOPc_M_B
+SerproTOPd_M_B
+Sersp.TOPa_X_B
+Sersp.TOPb_X_B
+Sersp.TOPc_X_B
+SheamaTOPa_M_B
+SheamaTOPb_M_B
+ShebalTOPa_X_B
+ShebalTOPb_X_B
+ShedenTOPa_M_B
+ShedenTOPb_M_B
+ShefriTOPa_M_B
+ShefriTOPb_M_B
+ShehalTOPa_P_B
+ShehalTOPb_P_B
+SheloiTOPa_M_B
+SheloiTOPb_M_B
+SheoneTOPa_M_B
+SheoneTOPb_M_B
+ShepeaTOPa_M_B
+ShepeaTOPb_M_B
+ShepieTOPa_M_B
+ShepieTOPb_M_B
+SheputTOPa_M_B
+SheputTOPb_M_B
+ShesedTOPa_P_B
+ShesedTOPb_P_B
+Shesp.TOPa_X_B
+Shesp.TOPb_X_B
+ShevioTOPa_P_B
+ShevioTOPb_P_B
+ShewooTOPa_M_B
+ShewooTOPb_M_B
+ShiboyTOPa_X_B
+ShiboyTOPb_X_B
+ShidysTOPa_X_B
+ShidysTOPb_X_B
+#SfleE1TOPa_X_B	ShifleE1TOPa_X_B
+#SfleE1TOPb_X_B	ShifleE1TOPb_X_B
+#SfleE1TOPc_X_B	ShifleE1TOPc_X_B
+ShifleTOPa_X_B
+ShifleTOPb_X_B
+ShisonTOPa_X_B
+ShisonTOPb_X_B
+SidlitTOPz_M_B
+SimnegTOPz_X_B
+SinmedTOPz_X_B
+SinmelTOPz_M_B
+SlahelTOPz_M_B
+SodgloTOPa_M_B
+SodgloTOPb_M_B
+SolsilTOPa_X_B
+SolsilTOPb_X_B
+SolsilTOPc_X_B
+SolusiTOPa_X_B
+SolusiTOPb_X_B
+SorcelTOPa_M_B
+SorcelTOPb_M_B
+SphalaTOPz_X_B
+SphchlTOPz_X_B
+SphgloTOPa_X_B
+SphgloTOPb_X_B
+SphjapTOPz_M_B
+SphpleTOPa_X_B
+SphpleTOPb_X_B
+#Sph.E1TOPa_X_B	Sphsp.E1TOPa_X_B
+#Sph.E1TOPb_X_B	Sphsp.E1TOPb_X_B
+#Sph.E1TOPc_X_B	Sphsp.E1TOPc_X_B
+Sphsp.TOPz_X_B
+SphtheTOPz_X_B
+SphwitTOPz_X_B
+SpicocTOPa_M_B
+SpicocTOPb_M_B
+SpilinTOPz_M_B
+SpismaTOPz_M_B
+#SpitheTOPz_T_B	SpitheTOPz_t_B
+StaaurTOPa_X_B
+StaaurTOPb_X_B
+StacarTOPa_M_B
+StacarTOPb_M_B
+StaepiTOPa_X_B
+StaepiTOPb_X_B
+StahaeTOPa_M_B
+StahaeTOPb_M_B
+StahelRGa_T_A
+StahelRGb_T_A
+StahelTOPz_T_A
+StalugTOPa_X_B
+StalugTOPb_X_B
+StamarRGa_T_A
+StamarRGb_T_A
+StamarTOPz_T_A
+StanasTOPz_X_B
+StanovTOPz_X_B
+StapseTOPa_X_B
+StapseTOPb_X_B
+StasapTOPa_X_B
+StasapTOPb_X_B
+StemalTOPz_M_B
+StiaurTOPa_X_B
+StiaurTOPb_X_B
+StragaTOPz_X_B
+StraveTOPz_M_B
+StrbinTOPz_X_B
+StrcatTOPz_X_B
+StrclaTOPz_X_B
+StrcoeTOPz_M_B
+StrdysTOPz_X_B
+StrequTOPz_X_B
+StrflaTOPz_M_B
+StrgalTOPa_X_B
+StrgalTOPb_X_B
+StrgorTOPz_M_B
+StrgriTOPz_M_B
+StrhygTOPz_X_B
+StrinfTOPa_M_B
+StrinfTOPb_M_B
+StrmacTOPa_X_B
+StrmacTOPb_X_B
+StrmitTOPz_X_B
+StrmonTOPa_M_B
+StrmonTOPb_M_B
+StrmonTOPc_M_B
+StrmutTOPz_X_B
+StroraTOPz_X_B
+StrparTOPz_X_B
+StrpasTOPz_X_B
+StrpneTOPz_X_B
+StrpseTOPz_X_B
+StrpyoTOPz_X_B
+StrrosTOPz_M_B
+StrsalTOPz_X_B
+StrsanTOPz_X_B
+StrscaTOPz_X_B
+Strsp.TOPz_X_B
+StrsuiTOPz_X_B
+StrtheTOPz_X_B
+StrubeTOPz_M_B
+StrvenTOPz_X_B
+StrvioTOPz_M_B
+#SaciE1RGz_X_A	SulaciE1RGz_X_A
+#SulaciTOPz_T_B	SulaciTOPz_t_B
+SulautTOPz_X_B
+#SulazoRGz_T_B	SulazoRGz_t_B
+#SulazoTOPz_T_B	SulazoTOPz_t_B
+SuldelTOPz_M_B
+SuldenTOPz_M_B
+SulislRGa_X_A
+SulislRGb_X_A
+SulislTOPz_X_A
+SulkujTOPz_M_B
+SulsolTOPa_T_A
+SulsolTOPb_T_A
+#Sul.E1TOPz_M_B	Sulsp.E1TOPz_M_B
+#Sulsp.RGz_T_B	Sulsp.RGz_t_B
+#Sulsp.TOPz_T_B	Sulsp.TOPz_t_B
+SultokTOPa_T_A
+SultokTOPb_T_A
+#SymtheTOPa_T_B	SymtheTOPa_t_B
+#SymtheTOPb_T_B	SymtheTOPb_t_B	
+SynaciTOPz_M_B
+SyneloTOPz_M_B
+SynfumTOPz_M_B
+SynglyTOPa_M_B
+SynglyTOPb_M_B
+#SynlipTOPz_T_B	SynlipTOPz_t_B
+#Syn.E1TOPz_X_B	Synsp.E1TOPz_X_B
+Synsp.TOPz_X_B
+SynwolTOPa_X_B
+SynwolTOPb_X_B
+TanforTOPa_M_B
+TanforTOPb_M_B
+TanforTOPc_M_B
+TayasiTOPz_X_B
+TayequTOPz_X_B
+TepaceTOPa_X_B
+TepaceTOPb_X_B
+TersaaTOPz_X_B
+TerturTOPz_M_B
+TethalTOPa_X_B
+TethalTOPb_X_B
+TethalTOPc_X_B
+Thasp.TOPa_M_B
+Thasp.TOPb_M_B
+#TaciE1TOPz_T_A	TheaciE1TOPz_t_A
+#TheaciTOPz_T_B	TheaciTOPz_t_B
+#TheafrRGz_T_B	TheafrRGz_t_B
+#TheafrTOPz_T_B	TheafrTOPz_t_B
+TheaggRGa_T_A
+TheaggRGb_T_A
+TheaggTOPz_T_A
+#ThealbRGz_T_B	ThealbRGz_t_B
+#ThealbTOPz_T_B	ThealbTOPz_t_B
+#TheammRGz_T_B	TheammRGz_t_B
+#TheammTOPz_T_B	TheammTOPz_t_B
+ThebarRGz_X_A
+ThebarTOPz_X_A
+#ThebisTOPz_T_B	ThebisTOPz_t_B
+#ThebroTOPz_T_B	ThebroTOPz_t_B	
+#ThecurTOPz_T_B	ThecurTOPz_t_B
+#TheeloTOPz_T_B	TheeloTOPz_t_B
+#ThefusTOPz_T_B	ThefusTOPz_t_B
+ThegamRGz_T_A
+ThegamTOPz_T_A
+ThegeoRGz_X_B
+ThegeoTOPz_X_B
+#TheindRGz_T_B	TheindRGz_t_B	
+#TheindTOPz_T_B	TheindTOPz_t_B
+TheitaTOPz_T_B
+ThekodTOPa_X_A
+ThekodTOPb_X_A
+TheletTOPz_T_B
+#ThelieTOPz_T_B	ThelieTOPz_t_B
+#TmarE1TOPz_T_B	ThemarE1TOPz_T_B
+ThemarTOPa_X_B
+ThemarTOPb_X_B
+#ThematTOPz_T_B	ThematTOPz_t_B
+#ThemelTOPz_T_B	ThemelTOPz_t_B
+ThenapRGz_T_B
+ThenapTOPz_T_B
+TheneaRGz_T_B
+TheneaTOPz_T_B
+#TheoceTOPz_T_B	TheoceTOPz_t_B
+TheonnRGz_T_A
+TheonnTOPz_T_A
+ThepenRGz_T_A
+ThepenTOPz_T_A
+ThepetRGz_T_B
+ThepetTOPz_T_B
+#ThepotTOPz_T_B	ThepotTOPz_t_B
+#ThepseTOPz_T_B	ThepseTOPz_t_B
+#TherosTOPz_T_B	TherosTOPz_t_B
+#ThescoTOPz_T_B	ThescoTOPz_t_B
+ThesibRGz_T_A
+ThesibTOPz_T_A
+#The.E1RGz_T_B	Thesp.E1RGz_T_B
+#The.E1TOPz_T_B	Thesp.E1TOPz_T_B
+#The.E2RGz_X_B	Thesp.E2RGz_X_B
+#The.E2TOPz_X_B	Thesp.E2TOPz_X_B
+#The.E3TOPz_T_B	Thesp.E3TOPz_t_B
+Thesp.RGz_X_A
+Thesp.TOPz_X_A
+#TtenE1TOPa_T_B	ThetenE1TOPa_T_B
+#TtenE1TOPb_T_B	ThetenE1TOPb_T_B
+ThetenRGz_X_A
+ThetenTOPz_X_A
+TheterTOPz_T_B
+#TtheE1RGz_T_B	ThetheE1RGz_T_B
+#TtheE1TOPz_T_B	ThetheE1TOPz_T_B
+#TtheE2TOPz_X_B	ThetheE2TOPz_X_B
+ThetheTOPz_X_B
+TheuzoRGz_X_A
+TheuzoTOPz_X_A
+#ThevolTOPz_T_A	ThevolTOPz_t_A
+#ThewieTOPz_T_B	ThewieTOPz_t_B
+#ThexylTOPz_T_B	ThexylTOPz_t_B
+#TheyelTOPz_T_B	TheyelTOPz_t_B
+ThiarsTOPa_X_B
+ThiarsTOPb_X_B
+ThicruTOPz_M_B
+ThicycTOPz_X_B
+ThidenTOPz_M_B
+ThiintTOPa_M_B
+ThiintTOPb_M_B
+Thisp.TOPa_X_B
+Thisp.TOPb_X_B
+TolaueTOPa_M_B
+TolaueTOPb_M_B
+TreazoTOPz_M_B
+TrebreTOPz_X_B
+TrecalTOPz_X_B
+TredenTOPz_M_B
+TrepalTOPz_M_B
+TreparTOPz_M_B
+TrepriTOPz_M_B
+TresucTOPa_M_B
+TresucTOPb_M_B
+TrieryTOPz_X_B
+TrowhiTOPz_M_B
+#TruradTOPz_T_B	TruradTOPz_t_B
+TsupauTOPz_M_B
+UncmetTOPa_X_A
+UncmetTOPb_X_A
+UncterTOPz_X_B
+UreparTOPz_M_B
+UreureTOPz_M_B
+UstmayTOPz_X_E
+VarparTOPz_M_B
+VeiparTOPa_X_B
+VeiparTOPb_X_B
+VereisTOPz_M_B
+VermarTOPz_X_B
+VesokuTOPz_X_B
+VibangTOPa_X_B
+VibangTOPb_X_B
+VibchoTOPa_X_B
+VibchoTOPb_X_B
+VibfisTOPa_M_B
+VibfisTOPb_M_B
+VibfurTOPa_X_B
+VibfurTOPb_X_B
+VibparTOPa_X_B
+VibparTOPb_X_B
+Vibsp.TOPa_X_B
+Vibsp.TOPb_X_B
+VibsplTOPa_X_B
+VibsplTOPb_X_B
+VibvulTOPa_X_B
+VibvulTOPb_X_B
+VuldisRGz_T_A
+VuldisTOPz_T_A
+VulmouRGz_X_A
+VulmouTOPz_X_A
+WadchoTOPa_X_B
+WadchoTOPb_X_B
+WeevirTOPa_M_B
+WeevirTOPb_M_B
+WeikorTOPa_X_B
+WeikorTOPb_X_B
+WolpipTOPz_X_B
+Wolsp.TOPz_X_B
+WolsucTOPz_M_B
+XanalbTOPz_M_B
+XanautTOPz_M_B
+XanaxoTOPa_X_B
+XanaxoTOPb_X_B
+XancamTOPz_X_B
+XanoryTOPz_X_B
+XenbovTOPa_M_B
+XenbovTOPb_M_B
+XenbovTOPc_M_B
+XenlaeTOPz_X_E
+XennemTOPa_M_B
+XennemTOPb_M_B
+XennemTOPc_M_B
+XennemTOPd_M_B
+XennemTOPe_M_B
+XennemTOPf_M_B
+XylcelTOPz_X_B
+XylfasTOPa_X_B
+XylfasTOPb_X_B
+YerentTOPa_X_B
+YerentTOPb_X_B
+#YpesE1TOPa_X_B	YerpesE1TOPa_X_B
+#YpesE1TOPb_X_B	YerpesE1TOPb_X_B
+YerpesTOPa_X_B
+YerpesTOPb_X_B
+YerpseTOPa_M_B
+YerpseTOPb_M_B
+ZobgalTOPa_M_B
+ZobgalTOPb_M_B
+ZunproTOPz_M_B
+ZymmobTOPz_X_B
+#[EucylTOPa_X_B	[EucylTOPa_X_B
+#[EucylTOPb_X_B	[EucylTOPb_X_B
+#butbacTOPz_M_B	butbacTOPz_M_B
+#gamproTOPa_X_B	gamproTOPa_X_B
+#gamproTOPb_X_B	gamproTOPb_X_B	
