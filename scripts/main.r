@@ -7,13 +7,14 @@ source("functions/clique.r")
 source("functions/comparaison_groupes.r")
 
 library(cluster)
+library(seqinr)
 
 ########################################
 ####### CHARGEMENT FICHIER 403 #########
 ########################################
 
 # FICHIER 403 proteines
-# data_403 <- chargement_fichier("data/403_VLD_dist.raw", 403) #environ 7sec
+# data403 <- chargement_fichier("data/403_VLD_dist.raw", 403) #environ 7sec
 # data_403 <- remplacementNApar0(data_403)
 # names403 <- getProteinNames("data/403_VLD_dist.raw")
 

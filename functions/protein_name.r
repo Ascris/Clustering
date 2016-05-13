@@ -97,20 +97,17 @@ which_critere <- function(critere){
 
 # Retourne 1 si les elements correspondent, 0 sinon
 testRegne <- function(prot, critere){
-  if(critere == get_regne(prot)) return (1)
-  else return (0)
+  return(critere == get_regne(prot))
 }
 
 # Retourne 1 si les elements correspondent, 0 sinon
 testType <- function(prot, critere){
-  if(critere == get_type(prot)) return (1)
-  else return (0)
+  return(critere == get_type(prot))
 }
 
 # Retourne 1 si les elements correspondent, 0 sinon
 testMilieu <- function(prot, critere){
-  if(critere == get_milieu(prot)) return (1)
-  else return (0)
+  return(critere == get_milieu(prot))
 }
 
 #retourne le nom complet du critere

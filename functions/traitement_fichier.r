@@ -1,6 +1,19 @@
-#lit le fichier .raw avec la derniere proteine remontee en premiere position
-#et avec le nom de la proteine en premiere position
-lecture_raw <- function(mydata, nb_sequence){
+##############################################
+##  LECTURE ET CHARGEMENT MATRICE DISTANCES ##
+##############################################
+
+#' Place les donnees du dataframe dans une matrice de distances sans les noms des proteines
+#'
+#' @param fichier : nom du fichier .raw a lire
+#' @param nb_sequence : nombre de sequences dans le fichier
+#'
+#' @return matrice de distances issue de la matrice diagonale inferieure du fichier (matrice de reels)
+#' @export Place les donnees du dataframe dans une matrice de distances sans les noms des proteines
+#'
+#' @examples data_403 <- chargement_fichier("data/403_VLD_dist.raw", 403)
+chargement_fichier <- function(fichier, nb_sequence){
+  mydata <- read.table(fichier, sep="\t", dec= '.', fill= TRUE)
+  
   data <- matrix(nrow= nb_sequence, ncol= nb_sequence)
   for(i in 1:nb_sequence){
     #on ignore toujours la premiere colonne
@@ -10,37 +23,43 @@ lecture_raw <- function(mydata, nb_sequence){
         data[i-1,j-1] <- 0
       } else if(1 == i){
         #premiere ligne = derniere vraie ligne
-          data[nb_sequence,j-1] <- mydata[i,j]
+        data[nb_sequence,j-1] <- mydata[i,j]
       } else {
-          #premiere ligne a val > 0 - 3e ligne
-          data[i-1,j-1] <- mydata[i,j]
+        #premiere ligne a val > 0 - 3e ligne
+        data[i-1,j-1] <- mydata[i,j]
       }
     }
   }
   return (data)
 }
 
-#place les donnees du dataframe dans une matrice de distances sans les noms des proteines
-chargement_fichier <- function(fichier, nb_seq){
-  mydata <- read.table(fichier, sep="\t", dec= '.', fill= TRUE)
-  data <- lecture_raw(mydata, nb_seq)
-  return (data)
-}
-
-#remplace les valeurs NA par des 0 dnas la matrice pour faciliter les calculs
+#' Remplit la partie superieure de la matrice avec sa partie inferieure, la diagonale est mise a 0
+#'
+#' @param matriceData : matrice de distances 
+#'
+#' @return matrice de distance complete
+#' @export Remplit la partie superieure de la matrice avec sa partie inferieure, la diagonale est mise a 0
+#'
+#' @examples data_403 <- remplacementNApar0(data_403)
 remplacementNApar0 <- function(matriceData){
   tailleMat <- length(matriceData[1,])
   for(i in 1:tailleMat){
     for(j in 1:tailleMat){
       if(j > i) matriceData[i,j] <- matriceData[j,i]
-      # else if(is.na(matriceData[i,j])) matriceData[i,j] <- 0
       else if(i == j) matriceData[j,i] <- 0
     }
   }
   return (matriceData)
 }
 
-#recupere les noms des proteines dans le fichier qu'on passe en parametre
+#' Recupere les noms des proteines dans le fichier passe en parametre
+#'
+#' @param fichier : nom du fichier a lire (fichier .raw)
+#'
+#' @return noms des proteines du fichier (vecteur de chaines de caracteres)
+#' @export Recupere les noms des proteines dans le fichier passe en parametre
+#'
+#' @examples names403 <- getProteinNames("data/403_VLD_dist.raw")
 getProteinNames <- function(fichier){
   mydata <- read.table(fichier, sep="\t", dec= '.', fill= TRUE)
   names <- c()
@@ -52,10 +71,16 @@ getProteinNames <- function(fichier){
   return (names)
 }
 
-#ecrit dans des fichiers propres aux groupes les noms des proteines qui les composent
-#groupes = liste des groupes (pam$clustering); 
-#noms_prot = noms des proteines ;
-#rd = ordre dans lequel les proteines ont ete selectionnees dans la liste de 1751
+#' Ecrit dans des fichiers propres aux groupes les noms des proteines qui les composent
+#'
+#' @param groupes : liste des groupes (pam$clustering)
+#' @param noms_prot : noms des proteines
+#' @param rd : ordre dans lequel les proteines ont ete selectionnees dans la liste de 1751
+#'
+#' @return RIEN - cree les fichiers .txt correspondants aux groupes retournes par pam
+#' @export Ecrit dans des fichiers propres aux groupes les noms des proteines qui les composent
+#'
+#' @examples ecrire_fic_groupe(myPam$clustering, names1751, rd)
 ecrire_fic_groupe <- function(groupes, noms_prot, rd){
   nb_different_groupes <- getNbGroups(groupes)
   for(i in 1:nb_different_groupes){
@@ -71,7 +96,15 @@ ecrire_fic_groupe <- function(groupes, noms_prot, rd){
   }
 }
 
-#ecrit dans des fichiers les noms des proteines triees par groupes par le pam
+#' Ecrit dans des fichiers les noms des proteines triees par groupes par le pam
+#'
+#' @param groupes : resultat de pam$clustering (vecteur d'entiers)
+#' @param noms_prot : nombre de proteines (entier)
+#'
+#' @return RIEN - cree les fichiers .txt correspondants aux groupes retournes par pam
+#' @export Ecrit dans des fichiers les noms des proteines triees par groupes par le pam
+#'
+#' @examples ecrire_fic_clustering(myPam$clustering, 403)
 ecrire_fic_clustering <- function(groupes, noms_prot){
   nb_different_groupes <- getNbGroups(groupes)
   print(length(groupes))
@@ -89,7 +122,15 @@ ecrire_fic_clustering <- function(groupes, noms_prot){
   }
 }
 
-#sauvegarde l'image d'une heatmap et la stocke dans le dossier heatmaps
+#' Sauvegarde l'image d'une heatmap et la stocke dans le dossier '/resultats/heatmaps'
+#'
+#' @param heatmap : plot de la heatmap a enregistrer en .png
+#' @param taille_hM : identifiant de la heatmap (entier)
+#'
+#' @return RIEN - cree un fichier .png
+#' @export Sauvegarde l'image d'une heatmap et la stocke dans le dossier '/resultats/heatmaps'
+#'
+#' @examples ajouter_fic_heatmap(hM, 403)
 ajouter_fic_heatmap <- function(heatmap, taille_hM){
   currentDir <- getwd()
   setwd("~/R/resultats/heatmaps/")
@@ -113,7 +154,15 @@ ajouter_fic_heatmap <- function(heatmap, taille_hM){
 ##################################################
 
 
-# Creation du fichier de sommets utilise pour la clique
+#' Creation du fichier de sommets utilise pour la clique
+#'
+#' @param fic_sommets : nom du fichier 'sommets' souhaite (chaine de caracteres)
+#' @param names : noms des proteines a stocker (vecteur de chaines de caracteres)
+#'
+#' @return RIEN - cree un fichier .txt
+#' @export Creation du fichier de sommets utilise pour la clique
+#'
+#' @examples creer_fichier_sommets("sommets_file.txt", names403)
 creer_fichier_sommets <- function(fic_sommets, names){
   currentDir <- getwd()
   setwd("~/R/data/clique/")
@@ -131,7 +180,16 @@ creer_fichier_sommets <- function(fic_sommets, names){
   setwd(currentDir)
 }
 
-# Creation du fichier d'arcs utilise pour la clique
+#' Creation du fichier d'arcs utilise pour la creation de clique
+#'
+#' @param fic_arcs : nom du fichier 'arcs' a creer (chaine de caracteres)
+#' @param matRobustesse : matrice de robustesse (matrice d'entiers)
+#' @param names : noms des proteines (vecteur de chaines de caracteres)
+#'
+#' @return RIEN - cree un fichier .txt
+#' @export Creation du fichier d'arcs utilise pour la creation de clique
+#'
+#' @examples creer_fichier_arcs("arc_file.txt", matRob, names403)
 creer_fichier_arcs <- function(fic_arcs, matRobustesse, names){
   currentDir <- getwd()
   setwd("~/R/data/clique/")
@@ -154,7 +212,15 @@ creer_fichier_arcs <- function(fic_arcs, matRobustesse, names){
 }
 
 
-#sauvegarde l'image d'une heatmap et la stocke dans le dossier heatmaps
+#' Sauvegarde l'image d'une clique et la stocke dans le dossier clique
+#'
+#' @param clique_name : nom de fichier desire
+#' @param clique : resultat de la fonction plot
+#'
+#' @return RIEN - cree un fichier .png ()
+#' @export Sauvegarde l'image d'une clique et la stocke dans le dossier clique
+#'
+#' @examples ajouter_fic_clique("clique403.png", plot(clique))
 ajouter_fic_clique <- function(clique_name, clique){
   currentDir <- getwd()
   setwd("~/R/resultats/clique/")
@@ -175,6 +241,9 @@ ajouter_fic_clique <- function(clique_name, clique){
   setwd(currentDir)
 }
 
+##################################################
+##  CORRECTION DU FICHIER DES NOMS DE PROTEINES ##
+##################################################
 
 #' Retourne une matrice (nb_prot x 2) avec sur chaque ligne l'ancien nom et l'eventuel nouveau nom
 #'
@@ -287,6 +356,9 @@ get_next_filename <- function(fic_name){
   return (new_image)
 }
 
+#############################################
+#######  ECRITURE FICHIERS DE GROUPES #######
+#############################################
 
 #' Cree un fichier classant les proteines en differents groupes
 #'
