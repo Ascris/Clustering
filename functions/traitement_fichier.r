@@ -175,6 +175,45 @@ ajouter_fic_clique <- function(clique_name, clique){
   setwd(currentDir)
 }
 
+
+#' Retourne une matrice (nb_prot x 2) avec sur chaque ligne l'ancien nom et l'eventuel nouveau nom
+#'
+#' @param fic_name: nom du fichier de correction (chaine de caracteres)
+#' @param nb_prot : nombre de proteines dans le fichier (entier)
+#'
+#' @return matrice (nb_prot x 2) avec sur chaque ligne l'ancien nom et l'eventuel nouveau nom
+#' @export Retourne une matrice (nb_prot x 2) avec sur chaque ligne l'ancien nom et l'eventuel nouveau nom
+#'
+#' @examples tab_real_names <- get_tab_real_names("new_names1751.txt", 1751)
+get_tab_real_names <- function(fic_name, nb_prot){
+  currentDir <- getwd()
+  setwd("~/R/data/")
+  
+  frame_noms <- read.table(fic_name, header= FALSE, sep="\n", comment.char= "")
+  noms <- matrix(nrow= nb_prot, ncol= 2)
+  for(i in 1:nb_prot+1) #parcours des lignes du fichier lu par read.table
+  {
+    ligne <- unlist(strsplit(as.character(frame_noms[i,]), "\t")) #traite un vector et pas une liste avec 'unlist'
+    noms[i-1, 1] <- ligne[1] #ancien nom de proteine
+    if(2 == length(ligne)) noms[i-1, 2] <- ligne[2]
+    else noms[i-1, 2] <- "" #pas de nouveau nom de proteine donc chaine vide
+  }
+  setwd(currentDir)
+  return (noms)
+}
+
+
+#' Verifie que le fichier de correction des noms de proteines est correct selon 3 criteres :
+#'  1) ancien nom different de nouveau nom
+#'  2) base du nom de la proteine faisant bien 6 caracteres (AcamarTOP... est correct, nchar("Acamar") == 6 )
+#'  3) aucune proteine dupliquee parmi la liste
+#'
+#' @param tab_real_names : resultat de 'get_tab_real_names'
+#'
+#' @return ensemble des noms des proteines (vecteur de chaines de caracteres)
+#' @export Verifie que le fichier de correction des noms de proteines est correct selon certains criteres
+#'
+#' @examples real_names <- get_real_names(tab_real_names)
 get_real_names <- function(tab_real_names){
   nb_egalites <- 0
   nb_mauvais_format <- 0
@@ -220,13 +259,21 @@ get_real_names <- function(tab_real_names){
 }
 
 
+#' Retourne le prochain 'fic_name' non-existant dans le dossier '~R/resultats/clique/' se basant sur 'fic_name'
+#'
+#' @param fic_name : nom du fichier voulu
+#'
+#' @return fic_name si le fichier n'existe pas, fic_name(X) si le fichier existe (avec X un entier)
+#' @export Retourne le prochain 'fic_name' non-existant dans le dossier '~R/resultats/clique/' se basant sur 'fic_name'
+#'
+#' @examples fic_name <- get_next_filename("clique.txt") ; si "clique.txt" existe, "clique(1).txt" est retourne
 get_next_filename <- function(fic_name){
   currentDir <- getwd()
   setwd("~/R/resultats/clique/")
   
   new_image <- fic_name
-  nom_fichier <- substr(new_image, 1, nchar(new_image)-4)
-  extension <- substr(new_image, nchar(new_image)-3, nchar(new_image))
+  nom_fichier <- substr(new_image, 1, nchar(new_image)-4) #nom de fichier sans l'extension .png
+  extension <- substr(new_image, nchar(new_image)-3, nchar(new_image)) #extension .png ou .jpg
   
   if(file.exists(new_image)){
     new_image <- paste(nom_fichier, "(1)", extension, sep="")
@@ -240,62 +287,18 @@ get_next_filename <- function(fic_name){
   return (new_image)
 }
 
-build_fasta_tab <- function(file_name){
-  baseDir <- "~/R/data/"
-  file_path <- paste(baseDir, file_name, sep= "")
-  
-  struct_fasta <- read.fasta(file_path)
-  #   print(names(fasta_fic)[1])
-  #   print(fasta_fic[[1]][[1]])
-  taille_fasta <- length(struct_fasta)
-  
-  for(elem in struct_fasta){
-    print(elem)
-  }
-  
-  alphabet <- getAlphabet(struct_fasta)
-  taille_alphabet <- length(alphabet)
-  occurrence <- c(rep(0, taille_alphabet))
-  
-  print(length(occurrence))
-  
-  print(unlist(alphabet))
-  print(paste("taille alphabet = ", taille_alphabet))
-  
-  for(i in 1:taille_fasta) #pour chaque sequence fasta
-  {
-    for(j in 1:length(struct_fasta[[i]]))#pour chaque caractere de cette sequence
-    {
-      caract <- struct_fasta[[i]][[j]]
-      if(" " != caract){
-        print(paste("taille sequence ", length(struct_fasta[[i]])))
-        char_checked= FALSE
-        k <- 1
-        while(!char_checked){
-          print(paste("k=", k))
-          print(paste("struct=", struct_fasta[[i]][[j]]))
-          print(paste("alpha=", alphabet[[k]]))
-          
-          
-          if(alphabet[[k]] == caract) #caractere trouve
-          {
-            occurrence[k] <- occurrence[k] + 1
-            char_checked= TRUE
-          } else {
-            k <- k + 1
-          }
-        }
-      }
-    }
-  }
-  
-  #calcul des occurrences des caracteres de l'alphabet
-  
-  res_mat <- list(alphabet, as.list(occurrence))
-  
-  return (res_mat)
-}
 
+#' Cree un fichier classant les proteines en differents groupes
+#'
+#' @param folder_name : nom du dossier ou se placer (chaine de caracteres)
+#' @param fic_name : nom du fichier desire (chaine de caracteres)
+#' @param amisX : ensemble des groupes d'amis (liste de liste d'entiers)
+#' @param namesX : noms des proteines presentes dans les groupes d'amis (vecteur de chaines de caracteres)
+#'
+#' @return RIEN - cree des fichiers .txt
+#' @export Cree un fichier classant les proteines en differents groupes
+#'
+#' @examples ecriture_fichier_groupes("coupe", "coupe10.txt", amis403, names403)
 ecriture_fichier_groupes <- function(folder_name, fic_name, amisX, namesX){
   currentDir <- getwd()
   baseDir <- "~/R/resultats/"
@@ -319,10 +322,12 @@ ecriture_fichier_groupes <- function(folder_name, fic_name, amisX, namesX){
   nb_groupes <- length(amisX)
   nb_prot <- length(namesX)
   
+  #creation du fichier
   sink(fic_name, append=FALSE)
   cat("Nombre de groupes : ", nb_groupes, "\n")
   cat("Ligne : Groupe ID_proteine nom_proteine\n")
   
+  #groupe 0 - groupe particulier n'ayant pas d'amis
   singletons <- find_singletons(amisX, nb_prot)
   cat("##############################################\n")
   cat("# Singletons - ", length(singletons), " proteines\n")
@@ -330,6 +335,7 @@ ecriture_fichier_groupes <- function(folder_name, fic_name, amisX, namesX){
     cat("0 ", singletons[s], namesX[singletons[s]],"\n")
   }
   
+  #groupes d'amis
   for(i in 1:nb_groupes){
     local_friends <- sort(unlist(amisX[[i]]))
     taille_groupe <- length(local_friends)
@@ -345,34 +351,14 @@ ecriture_fichier_groupes <- function(folder_name, fic_name, amisX, namesX){
 }
 
 
-
-ecriture_fichier_occurrence <- function(fic_name, occCaract){
-  currentDir <- getwd()
-  setwd("~/R/resultats/occurrence/")
-  
-  sink(fic_name, append= FALSE)
-  
-  for(boucle in 1:length(occCaract[[1]])){
-    cat(occCaract[[1]][boucle],"-", occCaract[[2]][boucle], "\n", sep= "")
-  }
-  
-  sink(NULL)
-  setwd(currentDir)
-}
-
-
-getAlphabet <- function(struct_fasta){
-  alpha <- list()
-  for(i in 1:length(struct_fasta)) #sequences fasta
-  {
-    for(j in 1:length(struct_fasta[[i]])) #caracteres de la sequence fasta i
-    {
-      if(" " != struct_fasta[[i]][[j]]) alpha <- union(alpha, struct_fasta[[i]][[j]])
-    }
-  }
-  return (alpha)
-}
-
+#' Extrait les differents caracteres du fichier .fasta lu par 'read.fasta'
+#'
+#' @param struct_fasta : resultat de la fonction read.fasta
+#'
+#' @return alphabet du fichier fasta lu (vecteur de chaines de caracteres)
+#' @export Extrait les differents caracteres du fichier .fasta lu par 'read.fasta'
+#'
+#' @examples alphabet <- getRealAlphabet(struct_fasta)
 getRealAlphabet <- function(struct_fasta){
   alphabet <- list()
   
@@ -389,6 +375,15 @@ getRealAlphabet <- function(struct_fasta){
 
 
 
+#' Retourne la position du caractere dans l'alphabet
+#'
+#' @param alphabet : ensemble des caracteres (liste de chaines de caracteres)
+#' @param caract : caractere dont on veut l'indice (chaine de caractere)
+#'
+#' @return indice du caractere dans l'alphabet (entier)
+#' @export Retourne la position du caractere dans l'alphabet
+#'
+#' @examples positionE10 <- getCaractLocation(alphabet, "E10")
 getCaractLocation <- function(alphabet, caract){
   for(i in 1:length(alphabet)){
     if(alphabet[i] == caract) return (i)
@@ -396,6 +391,15 @@ getCaractLocation <- function(alphabet, caract){
   return (0)
 }
 
+
+#' Retourne les noms et le nombre d'occurrence de chaque caractere du fichier .fasta
+#'
+#' @param file_name : nom du fichier .fasta (doit se trouver dans '~/R/data/') (chaine de caracteres)
+#'
+#' @return caracteres presents dans 'file_name' + occurrences (liste : liste de chaines de caracteres + liste d'entiers)
+#' @export Retourne le nombre d'occurrence de chaque caractere du fichier .fasta
+#'
+#' @examples alphaOcc <- getOccCaract("myfile.fasta") ; alphabet <- alphaOcc[[1]] ; occurrence <- alphaOcc[[2]]
 getOccCaract <- function(file_name){
   baseDir <- "~/R/data/"
   file_path <- paste(baseDir, file_name, sep= "") #chemin complet du fichier a lire
@@ -423,6 +427,37 @@ getOccCaract <- function(file_name){
 
 
 
+#' Ecrit dans un fichier les differents caracteres d'un alphabet et leurs occurrences respectives
+#'
+#' @param fic_name : nom du fichier desire (sera cree dans '~/R/resultats/occurrence/') (chaine de caracteres)
+#' @param occCaract : resultat de la fonction 'getOccCaract' (liste : liste de chaines de caracteres + liste d'entiers)
+#'
+#' @return RIEN - cree un fichier .txt
+#' @export Ecrit dans un fichier les differents caracteres d'un alphabet et leurs occurrences respectives
+#'
+#' @examples ecriture_fichier_occurrence("fichierOcc.txt", alphaOcc)
+ecriture_fichier_occurrence <- function(fic_name, occCaract){
+  currentDir <- getwd()
+  setwd("~/R/resultats/occurrence/")
+  
+  sink(fic_name, append= FALSE)
+  
+  for(boucle in 1:length(occCaract[[1]])){
+    cat(occCaract[[1]][boucle],"-", occCaract[[2]][boucle], "\n", sep= "")
+  }
+  
+  sink(NULL)
+  setwd(currentDir)
+}
+
+#' Recupere les noms et sequences des proteines presentes dans le fichier
+#'
+#' @param file_name : nom du fichier .fasta (doit se trouver dans ~/R/data/) (chaine de caracteres)
+#'
+#' @return noms et sequences des proteines (liste de deux vecteurs de chaines de caracteres)
+#' @export Recuperation des noms et sequences proteiques d'un fichier fasta
+#'
+#' @examples nomsEtsequences <- getNamesAndSeq("myfile.fasta")
 getNamesAndSeq <- function(file_name){
   baseDir <- "~/R/data/"
   file_path <- paste(baseDir, file_name, sep= "") #chemin complet du fichier a lire
@@ -440,8 +475,15 @@ getNamesAndSeq <- function(file_name){
 }
 
 
-
-
+#' Cree les fichiers fasta correspondants aux groupes d'amis dans differents dossiers
+#'
+#' @param fullNamesAndSeq : resultat de getNamesAndSeq (liste de 2 vecteurs de chaines de caracteres)
+#' @param amis : ensemble des groupes d'amis trouves (liste de listes d'entiers)
+#'
+#' @return RIEN - cree des fichiers .fasta
+#' @export Creation de fichiers .fasta lies aux groupes de proteines classees ensemble
+#'
+#'@examples ecriture_all_fichiers_fasta(nomsEtsequences, amis)
 ecriture_all_fichiers_fasta <- function(fullNamesAndSeq, amis){
   
   dirName <- "~/R/resultats/coupe/coupe10"
