@@ -43,9 +43,9 @@ library(seqinr)
 ### ECHANTILLONNAGE BEST CLUSTER #######
 ########################################
 
-# nb_clusters <- get_best_clustering(data_1751, 2) #environ 4min pour tester de 2 à 5
+# nb_clusters <- get_best_clustering(data_1751, 5) #environ 4min pour tester de 2 à 5
 # print(paste("Nombre de clusters : ",nb_clusters)) #meilleur trouve = 2 clusters (bonne comparaison ?)
-# print(paste("Moyenne :", moyenne_echantillonage(data_403, names403, 250, nb_clusters, 10), " pour 10 echantillons de 500 individus"))
+# print(paste("Moyenne :", moyenne_echantillonnage(data_403, names403, 250, nb_clusters, 10), " pour 10 echantillons de 500 individus"))
 
 ########################################
 ####### DETAILS PROTEINES ALEA #########

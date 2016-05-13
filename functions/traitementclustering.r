@@ -1,7 +1,12 @@
-# Teste le clustering par 2 à nb_clust (>2) et retourne le cas où la moyenne etait maximal
-# mat : matrice de distance ou de robustesse a tester (matrice de reels ou d'entiers)
-# nb_clust : nombre de groupes maximum a former avec PAM (entier)
-# RETURN : le meilleur nombre de groupes a faire, selon la moyenne des silhouettes (entier)
+#' Teste le clustering par 2 à nb_clust (>2) et retourne le cas où la moyenne etait maximal
+#'
+#' @param mat : matrice de distance ou de robustesse a tester (matrice de reels ou d'entiers)
+#' @param nb_clust : nombre de groupes maximum a former avec PAM (entier)
+#'
+#' @return meilleur nombre de groupes a faire, selon la moyenne des silhouettes (entier)
+#' @export Teste le clustering par 2 à nb_clust (>2) et retourne le cas où la moyenne etait maximal
+#'
+#' @examples nb_clusters <- get_best_clustering(data_1751, 5)
 get_best_clustering <- function(mat, nb_clust){
   if(nb_clust <= 2) return (2)
   res <- 2
@@ -16,8 +21,14 @@ get_best_clustering <- function(mat, nb_clust){
   return (res)
 }
 
-# Compte le nombre de valeurs differentes presentes dans 'groupes'
-# groupes : vecteur d'entiers (resultat de pam$clustering par exemple)
+#' Compte le nombre de groupes differents presents dans 'groupes'
+#'
+#' @param groupes : vecteur d'entiers (resultat de pam$clustering par exemple)
+#'
+#' @return nombre de groupes differents (entier)
+#' @export Compte le nombre de groupes differents presents dans 'groupes'
+#'
+#' @examples diff_groups <- getNbGroups(myPam$clustering)
 getNbGroups <- function(groupes){
   nb_groups <- 0
   checked_groups <- c()
@@ -36,41 +47,45 @@ getNbGroups <- function(groupes){
 ######## ECHANTILLONNAGE ##########
 ###################################
 
-# A partir des donnees 'data_1751', preleve 'taille_ech' individus et y applique PAM
-# puis stocke les groupes dans des fichiers
-# data_X : matrice de distance des X proteines (matrice de reels)
-# names_prot : vecteur des noms des proteines (vecteur de chaines de caracteres)
-# X : taille de l'echantillon a prelever (entier)
-# Cl : le nombre de clusters a former dans le PAM (entier)
-
-echantillonnage <- function(data_X, names_prot, X, Cl){
+#' A partir de 'data1751', releve 'taille_ech' individus, y applique PAM puis stocke les groupes dans des fichiers
+#'
+#' @param data_X : matrice de distance des X proteines (matrice de reels)
+#' @param names_prot : noms des proteines (vecteur de chaines de caracteres)
+#' @param pourcentage : pourcentage de l'echantillon a prelever (entier)
+#' @param Cl : nombre de clusters a former dans le PAM (entier)
+#'
+#' @return moyenne des silhouettes retournees par PAM
+#' @export A partir de 'data1751', releve 'taille_ech' individus, y applique PAM puis stocke les groupes dans des fichiers
+#'
+#' @examples res <- echantillonnage(data1751, names1751, 80, 5)
+echantillonnage <- function(data_X, names_prot, pourcentage, Cl){
   nombre_proteines <- length(data_X[1,])
-  #prelevement
-  rd <- sort(sample(1:nombre_proteines, X))
-  #extraction sous-matrice
-  mat <- data_1751[rownames=rd, colnames=rd]
   
-  #PAM
-  hm <- heatmap(mat)
-  plot(hm)
-  # pamEch_Prot <- pam(mat, Cl)
-  # plot(pamEch_Prot)
+  rd <- sort(sample(1:nombre_proteines, nombre_proteines*pourcentage/100)) #proteines selectionnees
+  mat <- data_1751[rownames=rd, colnames=rd] #extraction sous-matrice
   
-  #recuperation clusters
-  groupes <- pamEch_Prot$clustering
-  #stockage des clusters dans des fichiers
-  ecrire_fic_groupe(groupes, names_prot, rd)
+  pamEchantillon <- pam(mat, Cl)
+  plot(pamEchantillon)
   
-  return (pamEch_Prot$silinfo$avg.width)
+  groupes <- pamEchantillon$clustering #recuperation clusters
+  ecrire_fic_groupe(groupes, names_prot, rd) #stockage des clusters dans des fichiers
+  
+  return (pamEchantillon$silinfo$avg.width)
 }
 
-# Effectue la moyenne des resultats de N echantillonnages de X individus de data_X
-# data_X : matrice de distance de X proteines (matrice de reels)
-# names_prot : vecteur des noms des proteines (vecteur de chaines de caracteres)
-# X : taille de l'echantillon a prelever (entier)
-# Cl : le nombre de clusters a former dans le PAM (entier)
-# N : nombre d'echantillonnages a effectuer (entier)
-moyenne_echantillonage <- function(data_X, names_prot, X, Cl, N){
+#' Effectue la moyenne des resultats de N echantillonnages de X individus de data_X
+#'
+#' @param data_X : matrice de distance de X proteines (matrice de reels)
+#' @param names_prot : vecteur des noms des proteines (vecteur de chaines de caracteres)
+#' @param X : taille de l'echantillon a prelever (entier)
+#' @param Cl : nombre de clusters a former dans le PAM (entier)
+#' @param N : nombre d'echantillonnages a effectuer (entier)
+#'
+#' @return moyenne des echantillonnages (entier)
+#' @export Effectue la moyenne des resultats de N echantillonnages de X individus de data_X
+#'
+#' @examples moy <- moyenne_echantillonnage(data_403, names403, 80, nb_clusters, 10)
+moyenne_echantillonnage <- function(data_X, names_prot, X, Cl, N){
   tot <- 0.0
   for(i in 1:N){
     tot <- tot + echantillonnage(data_X, names_prot, X, Cl)
@@ -83,12 +98,17 @@ moyenne_echantillonage <- function(data_X, names_prot, X, Cl, N){
 ############ COMPTAGE CRITERE PAM #############
 ###############################################
 
-# Dans le cluster 'num_groupe', compte combien d'elements respectent le critere
-# pam : resultat du PAM qui nous interesse (objet de classe 'pam')
-# namesX : noms des X proteines placees dans les clusters (vecteur de chaines de caracteres)
-# num_groupe : numero du groupe interesse (entier)
-# critere : comptage des proteines selon ce critere (Thermophile, Topoisomerase, Bacteria,..etc) (chaine de caracteres)
-# ex : count_in_groupe(pam$clustering, 1, "Bacteria")
+#' Dans le cluster 'num_groupe', compte combien d'elements respectent le critere
+#'
+#' @param pam : resultat du PAM qui nous interesse (objet de classe 'pam')
+#' @param namesX  : noms des X proteines placees dans les clusters (vecteur de chaines de caracteres)
+#' @param num_groupe : numero du groupe interesse (entier)
+#' @param critere : comptage des proteines selon ce critere (Thermophile, Bacteria,..etc) (chaine de caracteres)
+#'
+#' @return nombre d'elements respectant le critere (entier)
+#' @export Dans le cluster 'num_groupe', compte combien d'elements respectent le critere
+#'
+#' @examples count_in_groupe(pam$clustering, 1, "Bacteria")
 count_in_group <- function(pam, namesX, num_groupe, critere){
   groupes <- pam$clustering #liste des individus repartis dans les clusters
   nb_individus <- pam$clusinfo[num_groupe, 1] #taille groupe 'num_groupe'
@@ -96,12 +116,12 @@ count_in_group <- function(pam, namesX, num_groupe, critere){
   type_critere <- which_critere(critere) #critere = regne(A,B ou E) | type(TOP ou RG) | milieu(T, M, P ou H)
   
   for(i in 1:length(groupes)){
-    #cluster qui nous interesse
-    if(num_groupe == groupes[i]) {
+    if(num_groupe == groupes[i]) #cluster qui nous interesse
+    {
       corresponding <- switch(type_critere,
-                              "regne"=testRegne(namesX[i], critere),
-                              "type"=testType(namesX[i], critere),
-                              "milieu"=testMilieu(namesX[i], critere))
+                              "regne"= testRegne(namesX[i], critere),
+                              "type"= testType(namesX[i], critere),
+                              "milieu"= testMilieu(namesX[i], critere))
       res <- res + corresponding
     }
   }
@@ -109,10 +129,16 @@ count_in_group <- function(pam, namesX, num_groupe, critere){
   return (res)
 }
 
-# Retourne le nombre total d'individus respectant le critere
-# pam : resultat de la fonction 'pam' (objet de la classe 'pam')
-# namesX : noms des proteines presentes dans le PAM (vecteur de chaines de caracteres)
-# critere : "RG", "A"...etc (chaine de caracteres)
+#' Retourne le nombre total d'individus respectant le critere
+#'
+#' @param pam : resultat de la fonction 'pam' (objet de la classe 'pam')
+#' @param namesX : noms des proteines presentes dans le PAM (vecteur de chaines de caracteres)
+#' @param critere : "RG", "A"...etc (chaine de caracteres)
+#'
+#' @return nombre total d'individus respectant le critere (entier)
+#' @export Retourne le nombre total d'individus respectant le critere
+#'
+#' @examples nb_ind <- count_in_all_groups(pam1751, names1751, "M")
 count_in_all_groups <- function(pam, namesX, critere){
   nb_individus <- length(pam$clustering)
   res <- 0
@@ -124,9 +150,15 @@ count_in_all_groups <- function(pam, namesX, critere){
   return (res)
 }
 
-# Verifie que la proteine respecte bien le critere
-# proteine : indice de la proteine (entier)
-# critere : "TOP", "A", ...etc (chaine de caracteres)
+#' Verifie que la proteine respecte bien le critere
+#'
+#' @param proteine : indice de la proteine (entier)
+#' @param critere : "TOP", "A", ...etc (chaine de caracteres)
+#'
+#' @return TRUE si la proteine respecte le critere
+#' @export Verifie que la proteine respecte bien le critere
+#'
+#' @examples valid <- est_valide("AcamarTOPa_M_B", "T")
 est_valide <- function(proteine, critere){
   type_critere <- which_critere(critere) #critere = regne(A,B ou E) | type(TOP ou RG) | milieu(T, M, P ou H)
   corresponding <- switch(type_critere,
@@ -137,10 +169,16 @@ est_valide <- function(proteine, critere){
   else return (FALSE)
 }
 
-# A partir du pam et des noms des proteines presentes dedans, compte combien respectent les criteres
-# pam : resultat de la fonction 'pam' (objet de classe 'pam')
-# namesX : noms des proteines presentes dans le pam (vecteur de chaines de caracteres)
-# criteres : vecteur de criteres de type "RG", "A" ..etc (chaine de caracteres)
+#' A partir du pam et des noms des proteines presentes dedans, compte combien respectent les criteres
+#'
+#' @param pam : resultat de la fonction 'pam' (objet de classe 'pam')
+#' @param namesX : noms des proteines presentes dans le pam (vecteur de chaines de caracteres)
+#' @param criteres : vecteur de criteres de type "RG", "A" ..etc (chaine de caracteres)
+#'
+#' @return nombre de proteines respectant tous les criteres
+#' @export A partir du pam et des noms des proteines presentes dedans, compte combien respectent les criteres
+#'
+#' @examples nb_ind <- count_multi_criteres(pam1751, names1751, c("M","RG"))
 count_multi_criteres <- function(pam, namesX, criteres){
   groupes <- pam$clustering #liste des individus repartis dans les clusters
   res <- 0 #nombre de proteines qui respectent le critere
@@ -163,7 +201,15 @@ count_multi_criteres <- function(pam, namesX, criteres){
 ########## FONCTIONS SUR LES GROUPES ##########
 ###############################################
 
-# Retourne TRUE si la liste est contenue dans la liste de listes
+#' Verifie si la liste est contenue dans la liste de listes
+#'
+#' @param list : liste a tester
+#' @param listOfLists : liste de listes
+#'
+#' @return TRUE si la liste est contenue dans la liste de listes (booleen)
+#' @export Verifie si la liste est contenue dans la liste de listes
+#'
+#' @examples est_contenue_dans <- is_list_of(list(1,2), list(list(1,2), list(4,5)))
 is_list_of <- function(list, listOfLists){
   list_to_compare <- sort(unlist(list))
   for(list_test in listOfLists){
@@ -173,11 +219,16 @@ is_list_of <- function(list, listOfLists){
   return (FALSE)
 }
 
-# Retourne la liste des amis 'forts' et DIRECTS de x dans la matrice de robustesse
-# matRobustesse = matrice de robustesse (matrice d'entiers)
-# x = indice de la proteine dont on veut les amis (entier)
-# force = puissance du lien qui doit lier les proteines au sein d'un groupe (entier)
-
+#' Retourne la liste des amis 'forts' et DIRECTS de x dans la matrice de robustesse
+#'
+#' @param matRobustesse : matrice de robustesse (matrice d'entiers)
+#' @param x : indice de la proteine dont on veut les amis (entier)
+#' @param force : puissance du lien qui doit lier les proteines au sein d'un groupe (entier)
+#'
+#' @return liste des amis 'forts' et DIRECTS de x
+#' @export Retourne la liste des amis 'forts' et DIRECTS de x dans la matrice de robustesse
+#'
+#' @examples amis_de_x <- get_friends(matRobustesse, 2, 19)
 get_friends <- function(matRobustesse, x, force){
   friends <- c()
   for(i in 1:length(matRobustesse[1,])){
@@ -186,23 +237,17 @@ get_friends <- function(matRobustesse, x, force){
   return (friends)
 }
 
-# Ajoute a la liste d'amis les amis des amis de la liste
-# matRobustesse = matrice de robustesse (matrice d'entiers)
-# friends_list = liste d'amis dont on veut les amis (liste d'entiers)
-# force = puissance du lien qui doit lier les proteines au sein d'un groupe (entier)
-get_friends_friends <- function(matRobustesse, friends_list, force){
-  new_friends_list <- friends_list
-  for(i in friends_list){
-    new_friends_list <- union(new_friends_list, get_friends(matRobustesse, i, force))
-  }
-  return (new_friends_list)
-}
-
-# Recupere le reseau d'amis
-# matRobustesse = matrice de robustesse (matrice d'entiers)
-# res = groupe en construction (liste d'entiers)
-# liste_amis = amis voulant entrer dans le groupe en formation (liste d'entiers)
-# force = puissance du lien qui doit lier les proteines au sein d'un groupe (entier)
+#' Recupere le reseau d'amis
+#'
+#' @param matRobustesse : matrice de robustesse (matrice d'entiers)
+#' @param res : groupe en construction (liste d'entiers)
+#' @param liste_amis : amis voulant entrer dans le groupe en formation (liste d'entiers)
+#' @param force : puissance du lien qui doit lier les proteines au sein d'un groupe (entier)
+#'
+#' @return reseau d'amis des individus de 'liste_amis'
+#' @export Recupere le reseau d'amis
+#'
+#' @examples reseau_ami <- get_res(matRobustesse, local_list, friends_i, force)
 get_res <- function(matRobustesse, res, liste_amis, force){
   if(is_list_of(liste_amis, res)) return (res)
   
@@ -210,17 +255,22 @@ get_res <- function(matRobustesse, res, liste_amis, force){
     if(ami %in% res){
       #rien ne se passe
     } else {
-        res <- union(res, ami)
+        res <- union(res, ami) #ajout de l'ami courant a la liste
         res <- union(res, get_res(matRobustesse, res, get_friends(matRobustesse, ami, force), force))
     }
   }
   return (res)
 }
 
-# Recupere les reseaux d'amis
-# matRobustesse = matrice de robustesse (matrice d'entiers)
-# force = puissance du lien qui doit lier les proteines au sein d'un groupe (entier)
-# NB : 2 proteines sont amies lorsqu'elle ont un lien fort (de valeur >= 'force')
+#' Recupere la liste des reseaux d'amis, 2 proteines sont amies lorsqu'elle ont un lien fort (de valeur >= 'force')
+#'
+#' @param matRobustesse : matrice de robustesse (matrice d'entiers)
+#' @param force : puissance du lien qui doit lier les proteines au sein d'un groupe (entier)
+#'
+#' @return liste des reseaux d'amis
+#' @export Recupere la liste des reseaux d'amis, 2 proteines sont amies lorsqu'elle ont un lien fort (de valeur >= 'force')
+#'
+#' @examples liste_de_reseaux <- get_all_friends(matRobustesse, 19)
 get_all_friends <- function(matRobustesse, force){
   liste_liste_amis <- list() #ensemble des reseaux d'amis
   for(i in 1:length(matRobustesse[1,])) #i = proteine courante
@@ -240,9 +290,15 @@ get_all_friends <- function(matRobustesse, force){
   return (real_list)
 }
 
-# Retourne les id des proteines de 1 a nb_prot qui ne sont dans aucun reseau d'amis de amisX
-# amisX : ensemble des reseaux d'amis (liste de liste d'entiers)
-# nb_prot : nombre total de proteines dans le jeu de donnees (entier)
+#' Retourne les id des proteines de 1 a nb_prot qui ne sont dans aucun reseau d'amis de amisX
+#'
+#' @param amisX : ensemble des reseaux d'amis (liste de liste d'entiers)
+#' @param nb_prot : nombre total de proteines dans le jeu de donnees (entier)
+#'
+#' @return id des proteines de 1 a nb_prot qui ne sont dans aucun reseau d'amis de amisX
+#' @export Retourne les id des proteines de 1 a nb_prot qui ne sont dans aucun reseau d'amis de amisX
+#'
+#' @examples singletons <- find_singletons(amis1751, 1751)
 find_singletons <- function(amisX, nb_prot){
   all_friends <- c() # liste des proteines presentes dans les réseaux d'amis
   for(i in 1:length(amisX)){
@@ -259,13 +315,19 @@ find_singletons <- function(amisX, nb_prot){
 ######### FONCTIONS MATRICE ROBUSTESSE ########
 ###############################################
 
-# Applique PAM a 'dataX' avec des clusters de 2 a 'max_clusters' puis stocke les resultats
-# dans une matrice[X,X] dans laquelle la case [i,j] correspond a la robustesse du lien entre
-# i et j (nombre de fois que i et j se sont retrouves dans le meme cluster)
-# dataX : matrice de distance (matrice de reels)
-# taille : dimension de la matrice de distance (entier)
-# max_clusters : nombre maximal de clusters a tester (entier)
-
+#' Applique PAM a 'dataX' avec des clusters de 2 a 'max_clusters' puis stocke les resultats
+#' dans une matrice[X,X] dans laquelle la case [i,j] correspond a la robustesse du lien entre
+#' i et j (nombre de fois que i et j se sont retrouves dans le meme cluster)
+#'
+#' @param dataX : matrice de distance (matrice de reels)
+#' @param taille : dimension de la matrice de distance (entier)
+#' @param min_clusters : nombre minimal de clusters a tester (entier)
+#' @param max_clusters : nombre maximal de clusters a tester (entier)
+#'
+#' @return matrice de robustesse
+#' @export Applique max-min fois PAM et construit la matrice de robustesse
+#'
+#' @examples matRob <- build_mat_rob(data403, 403, 5, 25)
 build_mat_rob <- function(dataX, taille, min_clusters, max_clusters){
   matRob <- matrix(nrow= taille, ncol=taille, data = rep(0,taille))
   for(c in min_clusters:max_clusters){

@@ -84,12 +84,12 @@ getProteinNames <- function(fichier){
 ecrire_fic_groupe <- function(groupes, noms_prot, rd){
   nb_different_groupes <- getNbGroups(groupes)
   for(i in 1:nb_different_groupes){
-    nom_fic <- paste("protGr", i, sep="")
-    rep <- paste("resultats/",nom_fic, ".txt", sep="")
+    nom_fic <- paste("protGr", i, sep= "")
+    rep <- paste("resultats/", nom_fic, ".txt", sep= "")
     sink(rep, append=TRUE)
     for(j in 1:length(groupes)){
       if(i == groupes[j]){
-        print(names1751[rd[j]])
+        print(noms_prot[rd[j]])
       }
     }
     sink(NULL)
