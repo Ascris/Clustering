@@ -2,6 +2,25 @@
 ##  LECTURE ET CHARGEMENT MATRICE DISTANCES ##
 ##############################################
 
+#' Remplit la partie superieure de la matrice avec sa partie inferieure, la diagonale est mise a 0
+#'
+#' @param matriceData : matrice de distances 
+#'
+#' @return matrice de distance complete
+#' @export Remplit la partie superieure de la matrice avec sa partie inferieure, la diagonale est mise a 0
+#'
+#' @examples data_403 <- remplacementNApar0(data_403)
+remplacementNApar0 <- function(matriceData){
+  tailleMat <- length(matriceData[1,])
+  for(i in 1:tailleMat){
+    for(j in 1:tailleMat){
+      if(j > i) matriceData[i,j] <- matriceData[j,i]
+      else if(i == j) matriceData[j,i] <- 0
+    }
+  }
+  return (matriceData)
+}
+
 #' Place les donnees du dataframe dans une matrice de distances sans les noms des proteines
 #'
 #' @param fichier : nom du fichier .raw a lire
@@ -30,26 +49,8 @@ chargement_fichier <- function(fichier, nb_sequence){
       }
     }
   }
+  data <- remplacementNApar0(data)
   return (data)
-}
-
-#' Remplit la partie superieure de la matrice avec sa partie inferieure, la diagonale est mise a 0
-#'
-#' @param matriceData : matrice de distances 
-#'
-#' @return matrice de distance complete
-#' @export Remplit la partie superieure de la matrice avec sa partie inferieure, la diagonale est mise a 0
-#'
-#' @examples data_403 <- remplacementNApar0(data_403)
-remplacementNApar0 <- function(matriceData){
-  tailleMat <- length(matriceData[1,])
-  for(i in 1:tailleMat){
-    for(j in 1:tailleMat){
-      if(j > i) matriceData[i,j] <- matriceData[j,i]
-      else if(i == j) matriceData[j,i] <- 0
-    }
-  }
-  return (matriceData)
 }
 
 #' Recupere les noms des proteines dans le fichier passe en parametre
@@ -422,6 +423,36 @@ ecriture_fichier_groupes <- function(folder_name, fic_name, amisX, namesX){
   setwd(currentDir)
 }
 
+#' Applique hclust a la matrice, puis cutree et enregistre les groupes trouves dans le dossier voulu
+#'
+#' @param mat : matrice de distance ou de robustesse a utiliser (matrice de reels ou d'entiers)
+#' @param typeMat : type de matrice (distance, robustesse etc) (utilise pour le nom du fichier cree) (chaine de caracteres)
+#' @param methode : nom de la methode a utiliser (ward.D, ward.D2, single, complete, average, mcquitty, median, centroid) "ward.D2" par defaut (chaine de caracteres)
+#' @param coupe : nombre de groupes a former avec hclust (entier)
+#' @param folder_name : nom du dossier dans lequel enregistrer les groupes formes (chaine de caracteres)
+#' @param namesX : noms des proteines (vecteur de chaines de caracteres)
+#'
+#' @return resultat du cutree (vecteur d'entiers)
+#' @export Applique hclust a la matrice, puis cutree et enregistre les groupes trouves dans le dossier voulu
+#'
+#' @examples groupes <- cutAndWrite(matRob403, "robustesse", "ward.D", 10, "coupe", names403)
+cutAndWrite <- function(mat, typeMat, methode= "ward.D2", nb_groupes, folder_name, namesX){
+  retMat <- mat
+  clust_retMat <- hclust(as.dist(retMat), method = methode, members= NULL)
+  plot(clust_retMat) #affichage du dendogramme associe
+  
+  coupe <- cutree(clust_retMat, k= nb_groupes)
+  amis_coupe <- build_friend_list(coupe, nb_groupes)
+  
+  #ecriture des fichiers de groupes formes par cutree
+  nb_prot <- length(namesX)
+  nom_fichier <- paste(typeMat, nb_prot, "_", methode, "_coupe", nb_groupes, ".txt", sep= "")
+  ecriture_fichier_groupes(folder_name, nom_fichier, amis_coupe, namesX)
+  
+  return (coupe)
+}
+
+
 
 #' Extrait les differents caracteres du fichier .fasta lu par 'read.fasta'
 #'
@@ -497,8 +528,6 @@ getOccCaract <- function(file_name){
   return (occCaract)
 }
 
-
-
 #' Ecrit dans un fichier les differents caracteres d'un alphabet et leurs occurrences respectives
 #'
 #' @param fic_name : nom du fichier desire (sera cree dans '~/R/resultats/occurrence/') (chaine de caracteres)
@@ -520,6 +549,30 @@ ecriture_fichier_occurrence <- function(fic_name, occCaract){
   
   sink(NULL)
   setwd(currentDir)
+}
+
+#' Recupere l'alphabet et l'occurrence de chaque caractere, les trie et les ecrit dans un fichier
+#'
+#' @param fasta_file : fichier fasta de donnees
+#' @param new_file_name : nom du fichier 'alphabet et occurrences' a creer
+#'
+#' @return l'alphabet et l'occurrence de chaque caractere
+#' @export Recupere l'alphabet et l'occurrence de chaque caractere, les trie et les ecrit dans un fichier
+#'
+#' @examples occCaractTest <- getSortAndWriteOccCaract("403_seq.vld.fasta", "occCaract403")
+getSortAndWriteOccCaract <- function(fasta_file, new_file_name){
+  occCaract <- getOccCaract(fasta_file) #recuperation de l'alphabet + occurrences
+  new_occCaract <- triAlphabet(occCaract) #tri alphabet et occurrences
+  ecriture_fichier_occurrence(new_file_name, new_occCaract) #ecriture fichier occurrences
+  
+  return (occCaract)
+}
+
+getSubAndRetMat <- function(mat, nb_prot, percent){
+  remaining_ones <- sort(sample(1:nb_prot, nb_prot - (nb_prot*percent/100)))
+  subMat <- retournementMat(mat[remaining_ones, remaining_ones], mat[1,1])
+  
+  return (subMat)
 }
 
 #' Recupere les noms et sequences des proteines presentes dans le fichier
@@ -546,6 +599,34 @@ getNamesAndSeq <- function(file_name){
   return (res)
 }
 
+#' Cree un fichier fasta avec les proteines de la liste 'amis'
+#'
+#' @param folder_name : nom du dossier cible
+#' @param fic_name : nom du fichier fasta a creer
+#' @param fullNamesAndSeq : resultat de getNamesAndSeq (liste de 2 vecteurs de chaines de caracteres)
+#' @param amis : liste des proteines du groupe
+#'
+#' @return RIEN - cree un fichier fasta avec les proteines de la liste 'amis'
+#' @export Cree un fichier fasta avec les proteines de la liste 'amis'
+#'
+#' @examples create_fichier_fasta("Fic403.fasta", fullNamesAndSeq_403, amis403)
+create_fichier_fasta <- function(folder_name, fic_name, fullNamesAndSeq, amis){
+  nb_prot <- length(amis)
+  
+  fic_path <- paste(folder_name, "/", fic_name, sep= "")
+  
+  write.fasta(unlist(fullNamesAndSeq[[2]]), unlist(fullNamesAndSeq[[1]]), fic_path)
+  
+#   sink(fic_path, append= FALSE)
+#   for(i in 1:nb_prot){
+#     nom_prot <- fullNamesAndSeq[[1]][[i]]
+#     seq_prot <- fullNamesAndSeq[[2]][[i]]
+#     cat(nom_prot, "\n")
+#     cat(seq_prot, "\n")
+#   }
+#   sink(NULL)
+  
+}
 
 #' Cree les fichiers fasta correspondants aux groupes d'amis dans differents dossiers
 #'
@@ -557,12 +638,17 @@ getNamesAndSeq <- function(file_name){
 #'
 #'@examples ecriture_all_fichiers_fasta(nomsEtsequences, amis)
 ecriture_all_fichiers_fasta <- function(fullNamesAndSeq, amis){
+  currentDir <- getwd()
   
   dirName <- "~/R/resultats/coupe/coupe10"
   if(!dir.exists(dirName)) dir.create(dirName)
+  setwd(dirName)
+  
+  fic_name <- "FIC.fasta"
+  
+  create_fichier_fasta(dirName, fic_name, fullNamesAndSeq, amis[[1]])
   
   
-  
-  
+  setwd(currentDir)
 }
 
