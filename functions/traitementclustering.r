@@ -343,12 +343,18 @@ build_mat_rob <- function(dataX, taille, min_clusters, max_clusters){
 }
 
 
-# Construit une matrice de robustesse basee sur dataX de taille m
-# dataX : matrice de distance (matrice de reels)
-# m : taille de la matrice de robustesse a creer (entier)
-# k : nombre de groupes demandes a PAM (entier)
-# n : nombre d'iterations de l'algo PAM a effectuer (entier)
-
+#' Construit une matrice de robustesse basee sur dataX de taille m.
+#' Cette derniere contient le nombre de fois que 2 proteines ont ete classees ensemble par PAM
+#'
+#' @param dataX : matrice de distance (matrice de reels)
+#' @param m : taille de la matrice de robustesse a creer (entier)
+#' @param k : nombre de groupes demandes a PAM (entier)
+#' @param n : nombre d'iterations de l'algo PAM a effectuer (entier)
+#'
+#' @return matrice de robustesse de taille m
+#' @export Construit une matrice de robustesse basee sur dataX de taille m
+#'
+#' @examples matRob <- build_k_mat_rob(data403, 403, 5, 1)
 build_k_mat_rob <- function(dataX, m, k, n){
   matRob <- matrix(nrow= m, ncol=m, data = rep(0,m)) #initilisation a 0 partout
   for(taille in 1:n){
@@ -356,7 +362,8 @@ build_k_mat_rob <- function(dataX, m, k, n){
     groupes <- current_pam$clustering
     for(i in 1:m){
       for(j in 1:i){
-        if(groupes[i] == groupes[j]) {
+        if(groupes[i] == groupes[j]) #les proteines i et j ont ete classees ensemble
+        {
           matRob[i,j] <- matRob[i,j] + 1
           if(i != j) matRob[j,i] <- matRob[j,i] + 1 #remplissage de la diagonale superieure
         }
@@ -367,13 +374,18 @@ build_k_mat_rob <- function(dataX, m, k, n){
 }
 
 
-# Construit une matrice de robustesse basee sur dataX de taille m en testant un PAM de min a max groupes
-# dataX : matrice de distance (matrice de reels)
-# m : taille de la matrice de robustesse a creer (entier)
-# n : nombre d'iterations de l'algo PAM (entier)
-# min : minimum de groupes voulus avec PAM (entier)
-# max : maximum de groupes voulus avec PAM (entier)
-
+#' Construit une matrice de robustesse basee sur dataX de taille m en testant un PAM de min a max groupes
+#'
+#' @param dataX : matrice de distance (matrice de reels)
+#' @param m : taille de la matrice de robustesse a creer (entier)
+#' @param n : nombre d'iterations de l'algo PAM (entier)
+#' @param min : minimum de groupes voulus avec PAM (entier)
+#' @param max : maximum de groupes voulus avec PAM (entier)
+#'
+#' @return matrice de robustesse basee sur dataX de taille m en testant un PAM de min a max groupes
+#' @export Construit une matrice de robustesse basee sur dataX de taille m en testant un PAM de min a max groupes
+#'
+#' @examples matRob <- build_all_mat_rob(data403, 403, 1, 2, 7)
 build_all_mat_rob <- function(dataX, m, n, min, max){
   super_matRob <- matrix(nrow= m, ncol=m, data = rep(0,m)) #initialisation a 0
   
@@ -396,22 +408,26 @@ build_all_mat_rob <- function(dataX, m, n, min, max){
 }
 
 
-# A partir des donnees, du nombre min et max de clusters a tester ainsi que des noms des proteines,
-# cree la super matrice de robustesse, les cliques regne-type et regne-milieu et le fichier contenant
-# les groupes de proteines ayant un lien fort entre elles
-# data_X : matrice de distance (matrice de reels)
-# X : nombre de proteines presentes (entier)
-# n : nombre de fois que PAM a ete repete pour definir les groupes (entier)
-# min : nombre minimum de clusters a former (entier)
-# max : nombre maximum de clusters a former (entier)
-# namesX : noms des proteines (vecteur de chaines de caracteres)
-# dim : valeur de diminution jusqu'a laquelle on va tester la robustesse des groupes (entier)
-
+#' A partir des donnees, du nombre min et max de clusters a tester ainsi que des noms des proteines,
+#' cree la super matrice de robustesse, les cliques regne-type et regne-milieu et le fichier contenant
+#' les groupes de proteines ayant un lien fort entre elles
+#'
+#' @param data_X : matrice de distance (matrice de reels)
+#' @param X : nombre de proteines presentes (entier)
+#' @param n : nombre de fois que PAM a ete repete pour definir les groupes (entier)
+#' @param min : nombre minimum de clusters a former (entier)
+#' @param max : nombre maximum de clusters a former (entier)
+#' @param namesX : noms des proteines (vecteur de chaines de caracteres)
+#' @param dim : valeur de diminution jusqu'a laquelle on va tester la robustesse des groupes (entier)
+#'
+#' @return la super matrice de robustesse
+#' @export Cree la super matrice de robustesse et les cliques associees
+#'
+#' @examples stabilite_groupes403 <- stabilite_groupes(data_403, 403, 1, 5, 25, names403, 5)
 stabilite_groupes <- function(data_X, X, n, min, max, namesX, dim){
   super_matRob <- build_all_mat_rob(data_X, X, n, min, max)
-  #quelle valeur de robustesse ? super_matRob contient des valeurs de 0 à n*length(min:max)
   for(i in 0:dim){
-    robustesse <- (n*length(min:max))-i
+    robustesse <- (n*length(min:max))-i #seuil de robustesse devant lier les proteines entre elles
     
     criteres <- c("TOP", "T")
     nom_clique_1 <- paste("clique", X, "_", criteres[1], "_n", robustesse, ".png", sep="")
@@ -426,7 +442,7 @@ stabilite_groupes <- function(data_X, X, n, min, max, namesX, dim){
     super_clique_1 <- create_clique(nom_clique_1, nom_fic_sommets, nom_fic_arcs, criteres[1], X)
     super_clique_2 <- create_clique(nom_clique_2, nom_fic_sommets, nom_fic_arcs, criteres[2], X)
     
-    super_amis <- get_all_friends(super_matRob, robustesse)
+    super_amis <- get_all_friends(super_matRob, robustesse) #recherche du reseau d'amis
     
     nom_fic_groupes <- paste("super_amis", X, "_n", robustesse, ".txt", sep="")
     ecriture_fichier_groupes("clique", nom_fic_groupes, super_amis, namesX)
@@ -434,8 +450,14 @@ stabilite_groupes <- function(data_X, X, n, min, max, namesX, dim){
    return (super_matRob)
 }
 
-# Supprime les groupes d'amis deja presents dans la liste d'amis (liste de liste d'entiers)
-# RETURN : liste de liste d'amis snas les doublons
+#' Supprime les groupes d'amis deja presents dans la liste d'amis (liste de liste d'entiers)
+#'
+#' @param liste_amis : liste dans laquelle enlever les doublons
+#'
+#' @return liste de liste d'amis sans les doublons
+#' @export Supprime les groupes d'amis deja presents dans la liste d'amis (liste de liste d'entiers)
+#'
+#' @examples real_list <- suppression_doublons(amis403)
 suppression_doublons <- function(liste_amis){
   final_list <- list()
   for(i in 1:length(liste_amis)){
@@ -453,9 +475,15 @@ suppression_doublons <- function(liste_amis){
   return (final_list)
 }
 
-# Retournement de la matrice selon le X donne
-# matRob = matrice de robustesse a inverser (matrice d'entiers)
-# X valeur d'inversement de la matrice (entier)
+#' Retournement de la matrice selon le X donne
+#'
+#' @param matRob : matrice de robustesse a inverser (matrice d'entiers)
+#' @param X : valeur d'inversement de la matrice (entier)
+#'
+#' @return matrice de robustesse inversee
+#' @export Retournement de la matrice selon le X donne
+#'
+#' @examples matRob <- retournementMat(matRob, 19)
 retournementMat <- function(matRob, X){
   for(i in 1:length(matRob[1,])){
     for(j in 1:length(matRob[1,])){
@@ -465,9 +493,15 @@ retournementMat <- function(matRob, X){
   return (matRob)
 }
 
-# A partir de la coupe faite sur le resultat d'un hclust, retourne une liste de liste d'amis
-# coupe : resultat de la fonction cutree appliquee au resultat d'un hclust (vecteur d'entiers)
-# return : les groupes classes ensemble par le cutree (liste de listes d'amis)
+#' A partir de la coupe faite sur le resultat d'un hclust, retourne une liste de liste d'amis
+#'
+#' @param coupe : resultat de la fonction cutree appliquee au resultat d'un hclust (vecteur d'entiers)
+#' @param taille : groupes classes ensemble par le cutree (liste de listes d'amis)
+#'
+#' @return liste de liste d'amis associee a la coupe par hclust et cutree
+#' @export A partir de la coupe faite sur le resultat d'un hclust, retourne une liste de liste d'amis
+#'
+#' @examples amis_coupe10 <- build_friend_list(coupe_10, 10)
 build_friend_list <- function(coupe, taille){
   taille_coupe <- length(coupe)
   friend_list <- vector(mode = "list", length = taille)
@@ -481,6 +515,14 @@ build_friend_list <- function(coupe, taille){
 }
 
 
+#' Trie la liste d'amis sur leurs valeurs decroissantes
+#'
+#' @param amis : liste de listes d'amis
+#'
+#' @return liste de listes d'amis triee
+#' @export Trie la liste d'amis sur leurs valeurs decroissantes
+#'
+#' @examples amis403 <- tri_amis_decroissant(amis403)
 tri_amis_decroissant <- function(amis){
   res <- list()
   taille <- length(amis)
@@ -492,17 +534,23 @@ tri_amis_decroissant <- function(amis){
   #tri des groupes d'amis selon leurs tailles
   indices_tri <- sort(tailles_groupes, decreasing= TRUE, index.return= 1)$ix #ix donne les indices
   
-  res <- amis[indices_tri]
+  res <- amis[indices_tri] #tri des amis selon leur taille
   
   return (res)
 }
 
 
+#' Tri de l'alphabet sur la taille des caracteres
+#'
+#' @param occCaract : alphabet et occurrence
+#'
+#' @return alphabet et occurrence tries sur la taille des caracteres
+#' @export Tri de l'alphabet sur la taille des caracteres
+#'
+#' @examples occCaract <- triAlphabet(occCaract)
 triAlphabet <- function(occCaract){
   alphabet <- occCaract[[1]]
   occurrence <- occCaract[[2]]
-  
-  print(occurrence)
   
   new_alphabet <- c()
   new_occurrence <- c()
@@ -527,6 +575,14 @@ triAlphabet <- function(occCaract){
   return (res)
 }
 
+#' Tri de l'alphabet sur la taille des caracteres
+#'
+#' @param occCaract : alphabet et occurrence
+#'
+#' @return alphabet et occurrence tries sur la taille des caracteres
+#' @export Tri de l'alphabet sur la taille des caracteres
+#'
+#' @examples occCaract <- triAlphabet(occCaract)
 triAlphabetRecode <- function(occCaract){
   occCaract_ordered <- list(vector(mode= "list", length= length(occCaract[[1]])),
                             vector(mode= "list", length= length(occCaract[[2]])))
@@ -550,7 +606,3 @@ triAlphabetRecode <- function(occCaract){
   
   return (occCaract_ordered)
 }
-
-
-
-

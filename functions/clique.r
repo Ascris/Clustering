@@ -4,15 +4,21 @@ source("functions/protein_name.r")
 
 library(igraph)
 
-# Cree et retourne la clique formee des proteines du 'fic_sommets' liees par le 'fic_arcs
-# la clique retournee est coloree en fonction du 'critere' (regne, type ou milieu) et correspond
-# au regne (A, B ou E), a le type (TOP ou RG) ou au milieu (T, M, P, H)
-# clique_name : nom du fichier clique desire (chaine de caracteres)
-# fic_sommets : fichier contenant les proteines (ex d'une ligne : nom_prot regne type milieu) (chaine de caracteres)
-# fic_arcs : fichier contenant la robustesse entre les proteines (ex ligne : prot_1 prot_2 force) (chaine de caracteres)
-# critere : selection de la coloration du graphe ("regne", "type" ou "milieu") (chaine de caracteres)
-# nb_prot : nombre de proteines prises en compte (entier)
 
+#' Cree et retourne la clique formee des proteines du 'fic_sommets' liees par le 'fic_arcs
+#' la clique retournee est coloree en fonction du 'critere' (regne, type ou milieu) et correspond
+#' au regne (A, B ou E), a le type (TOP ou RG) ou au milieu (T, M, P, H)
+#'
+#' @param clique_name : nom du fichier clique desire (chaine de caracteres)
+#' @param fic_sommets : fichier contenant les proteines (ex : "AcamarTOPa_M_B" "B" "TOP" "M") (chaine de caracteres)
+#' @param fic_arcs : fichier contenant la robustesse entre les proteines (ex : "AcibooRGz_T_A" "AcamarTOPa_M_B" 20) (chaine de caracteres)
+#' @param critere : selection de la coloration du graphe ("regne", "type" ou "milieu") (chaine de caracteres)
+#' @param nb_prot : nombre de proteines prises en compte (entier)
+#'
+#' @return plot de la clique avec sa legende
+#' @export Cree une clique et sa legende et l'enregistre en .png dans 'resultats/clique/'
+#'
+#' @examples clique <- create_clique("clique403_T", "proteines403.txt","robustesse403.txt", "T", 403)
 create_clique <- function(clique_name, fic_sommets, fic_arcs, critere, nb_prot){
   currentDir <- getwd()
   setwd("~/R/data/clique/")

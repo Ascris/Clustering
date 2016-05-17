@@ -1,5 +1,11 @@
-# Retourne les sous listes de taille n-1 de 'list'
-# liste : groupe d'amis (liste d'entiers)
+#' Retourne les sous listes de taille n-1 de 'list'
+#'
+#' @param liste : groupe d'amis (liste d'entiers)
+#'
+#' @return sous listes de taille n-1 de 'list'
+#' @export Retourne les sous listes de taille n-1 de 'list'
+#'
+#' @examples subLists <- get_sub_lists(liste)
 get_sub_lists <- function(liste){
   taille <- length(liste)
   res <- vector(mode= "list", length= taille-1)
@@ -19,7 +25,15 @@ get_sub_lists <- function(liste){
 }
 
 
-# Retourne TRUE si la liste est contenue dans la liste de listes
+#' Retourne TRUE si la liste est contenue dans la liste de listes
+#'
+#' @param list : liste a tester
+#' @param listOfLists : liste de listes
+#'
+#' @return Presence de la liste dans la liste de listes (boolean)
+#' @export Retourne TRUE si la liste est contenue dans la liste de listes
+#'
+#' @examples isList <- is_list_of(liste, listeOfLists)
 is_list_of <- function(list, listOfLists){
   list_to_compare <- sort(unlist(list))
   for(list_test in listOfLists){
@@ -29,8 +43,14 @@ is_list_of <- function(list, listOfLists){
   return (FALSE)
 }
 
-# Tri la liste d'amis par taille de groupe decroissante
-# amis : ensemble des groupes d'amis
+#' Trie la liste d'amis sur leurs valeurs decroissantes
+#'
+#' @param amis : liste de listes d'amis
+#'
+#' @return liste de listes d'amis triee
+#' @export Trie la liste d'amis sur leurs valeurs decroissantes
+#'
+#' @examples amis403 <- tri_amis_decroissant(amis403)
 tri_amis_decroissant <- function(amis){
   res <- list()
   taille <- length(amis)
@@ -41,8 +61,8 @@ tri_amis_decroissant <- function(amis){
   
   #tri des groupes d'amis selon leurs tailles
   indices_tri <- sort(tailles_groupes, decreasing= TRUE, index.return= 1)$ix #ix donne les indices
-
-  res <- amis[indices_tri]
+  
+  res <- amis[indices_tri] #tri des amis selon leur taille
   
   return (res)
 }
