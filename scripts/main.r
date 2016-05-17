@@ -90,7 +90,7 @@ library(seqinr)
 ########## Lecture FASTA, alphabet et occurrence ###########
 ############################################################
 
-# occCaractTest <- getSortAndWriteOccCaract("403_seq.vld.fasta", "occCaract403.txt")
+# occCaract <- getSortAndWriteOccCaract("403_seq.vld.fasta", "occCaract403.txt")
 
 
 ############################################################
@@ -99,12 +99,7 @@ library(seqinr)
 
 
 fullNamesAndSeq_403 <- getNamesAndSeq("403_seq.fasta")
-ecriture_all_fichiers_fasta(fullNamesAndSeq_403, amis_coupe10)
-
-
-
-
-
-
+ecriture_all_fichiers_fasta("~/R/resultats/coupe/coupe10/", fullNamesAndSeq_403, amis_coupe10)
+ecriture_all_fichiers_fasta("~/R/resultats/amis/", fullNamesAndSeq_403, amis403)
 
 

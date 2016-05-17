@@ -599,6 +599,27 @@ getNamesAndSeq <- function(file_name){
   return (res)
 }
 
+
+#' Retourne le vecteur des chaines creees en ayant decoupe 'chaine' en 'val' sous-chaines
+#'
+#' @param chaine : sequence a decouper (chaine de caracteres)
+#' @param val : nombre de sous-chaines souhaite (entier)
+#'
+#' @return vecteur des chaines creees en ayant decoupe 'chaine' en 'val' sous-chaines
+#' @export Retourne le vecteur des chaines creees en ayant decoupe 'chaine' en 'val' sous-chaines
+#'
+#' @examples ss-str <- wordCut("blablobla", 3) ; ss-str = ("bla", "blo", "bla")
+wordCut <- function(chaine, val){
+  taille <- (nchar(chaine)/val+1)
+  res <- vector(length= taille)
+  for(i in 0:taille-1){
+    sous_chaine <- substr(chaine, i*val+1, i*val+val)
+    res[i+1] <- sous_chaine
+  }
+  
+  return (res)
+}
+
 #' Cree un fichier fasta avec les proteines de la liste 'amis'
 #'
 #' @param folder_name : nom du dossier cible
@@ -612,24 +633,28 @@ getNamesAndSeq <- function(file_name){
 #' @examples create_fichier_fasta("Fic403.fasta", fullNamesAndSeq_403, amis403)
 create_fichier_fasta <- function(folder_name, fic_name, fullNamesAndSeq, amis){
   nb_prot <- length(amis)
-  
+  X <- 60 # valeur de decoupe des sequences pour l'affichage dans le fichier
   fic_path <- paste(folder_name, "/", fic_name, sep= "")
-  
-  write.fasta(unlist(fullNamesAndSeq[[2]]), unlist(fullNamesAndSeq[[1]]), fic_path)
-  
-#   sink(fic_path, append= FALSE)
-#   for(i in 1:nb_prot){
-#     nom_prot <- fullNamesAndSeq[[1]][[i]]
-#     seq_prot <- fullNamesAndSeq[[2]][[i]]
-#     cat(nom_prot, "\n")
-#     cat(seq_prot, "\n")
-#   }
-#   sink(NULL)
-  
+
+  sink(fic_path, append= FALSE)
+  for(i in 1:nb_prot)
+  {
+    nom_prot <- fullNamesAndSeq[[1]][[amis[[i]]]]
+    seq_prot <- fullNamesAndSeq[[2]][[amis[[i]]]]
+    cat(nom_prot, "\n", sep= "")
+    cut_seq <- wordCut(seq_prot, X) #decoupe la sequence en sous chaines de X caracteres
+    for(j in 1:length(cut_seq))
+    {
+      sous_chaine <- cut_seq[j]
+      if(sous_chaine != "") cat(sous_chaine, "\n", sep= "")
+    }
+  }
+  sink(NULL)
 }
 
 #' Cree les fichiers fasta correspondants aux groupes d'amis dans differents dossiers
 #'
+#' @param folder_name : nom du dossier où enregistrer les fichiers fasta
 #' @param fullNamesAndSeq : resultat de getNamesAndSeq (liste de 2 vecteurs de chaines de caracteres)
 #' @param amis : ensemble des groupes d'amis trouves (liste de listes d'entiers)
 #'
@@ -637,17 +662,18 @@ create_fichier_fasta <- function(folder_name, fic_name, fullNamesAndSeq, amis){
 #' @export Creation de fichiers .fasta lies aux groupes de proteines classees ensemble
 #'
 #'@examples ecriture_all_fichiers_fasta(nomsEtsequences, amis)
-ecriture_all_fichiers_fasta <- function(fullNamesAndSeq, amis){
+ecriture_all_fichiers_fasta <- function(folder_name, fullNamesAndSeq, amis){
   currentDir <- getwd()
   
-  dirName <- "~/R/resultats/coupe/coupe10"
+  dirName <- folder_name
   if(!dir.exists(dirName)) dir.create(dirName)
   setwd(dirName)
   
-  fic_name <- "FIC.fasta"
-  
-  create_fichier_fasta(dirName, fic_name, fullNamesAndSeq, amis[[1]])
-  
+  for(i in 1:length(amis))
+  {
+    fic_name <- paste("Groupe", i, ".fasta", sep= "")
+    create_fichier_fasta(dirName, fic_name, fullNamesAndSeq, unlist(amis[[i]]))
+  }
   
   setwd(currentDir)
 }
