@@ -61,16 +61,16 @@ Détails/difficultés des étapes :
 
 	Dans le but de tester la stabilité des groupes formés (que ce soit par PAM, hclust et cutree ou par la recherche de réseaux d'amis), plusieurs méthodes ont été testées.On s'intéresse ici uniquement à la méthode avec le cutree et on appellera 'coupe' l'ensemble des groupes trouvés qui découlent de cette méthode. Les coupes auxquelles on s'intéresse sont créées par la méthode "ward.D2" demandée en paramètre par hclust.
 
----
-	Le paramètre que l'on va faire varier est la matrice de données. On va alors comparer les groupes obtenus directement grâce à la matrice de distance (obtenue après calculs par la méthode VLD), ceux obtenus avec la matrice de robustesse (obtenue après k-itérations de PAM) et ceux obtenus avec une sous-matrice de robustesse à laquelle on lui a retiré un certain pourcentage d'individus (10% ici).
+    Le paramètre que l'on va faire varier est la matrice de données. On va alors comparer les groupes obtenus directement grâce à la matrice de distance (obtenue après calculs par la méthode VLD), ceux obtenus avec la matrice de robustesse (obtenue après k-itérations de PAM) et ceux obtenus avec une sous-matrice de robustesse à laquelle on lui a retiré un certain pourcentage d'individus (10% ici).
 
-Pour tester les groupes, on a alors :
-- une matrice de distances
--  une matrice de robustesse
-- une sous-matrice de robustesse 
+    Pour tester les groupes, on a alors :
+    - une matrice de distances
+    - une matrice de robustesse
+    - une sous-matrice de robustesse 
 
----
 Ces 3 types de coupes sont regroupées au sein d'un même diagramme de Venn pour pouvoir être comparées.
+
+---
 
 4. **Recherche des réseaux d'amis**
 
