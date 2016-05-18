@@ -6,8 +6,11 @@ source("functions/protein_name.r")
 source("functions/clique.r")
 source("functions/comparaison_groupes.r")
 
+# install.packages('VennDiagram')
+
 library(cluster)
 library(seqinr)
+library(VennDiagram)
 
 ########################################
 ####### CHARGEMENT FICHIER 403 #########
@@ -56,7 +59,9 @@ library(seqinr)
 # ##### METHODE WARD D #####
 # DATAcoupe10wardD <- cutAndWrite(data_403, "DATA", "ward.D", 10, "coupe", names403)
 # DATAcoupe16wardD <- cutAndWrite(data_403, "DATA", "ward.D", 16, "coupe", names403)
-# 
+# ############################################################
+########## Creation fichiers fasta groupes  ################
+############################################################
 # 
 # ##### METHODE WARD D2 #####
 # DATAcoupe10wardD2 <- cutAndWrite(data_403, "DATA", "ward.D2", 10, "coupe", names403)
@@ -71,19 +76,19 @@ library(seqinr)
 # RETcoupe16wardD <- cutAndWrite(retMat, "RET", "ward.D", 16, "coupe", names403)
 # 
 # ##### METHODE WARD D2 #####
-# RETcoupe10wardD <- cutAndWrite(retMat, "RET", "ward.D2", 10, "coupe", names403)
-# RETcoupe16wardD <- cutAndWrite(retMat, "RET", "ward.D2", 16, "coupe", names403)
+# RETcoupe10wardD2 <- cutAndWrite(retMat, "RET", "ward.D2", 10, "coupe", names403)
+# RETcoupe16wardD2 <- cutAndWrite(retMat, "RET", "ward.D2", 16, "coupe", names403)
 # 
 # ############# SOUS MATRICE DE ROBUSTESSE INVERSEE ############
 # subMat <- getSubAndRetMat(matRobustesse403, 403, 10) #sous matrice retournee
 # 
 # ##### METHODE WARD D #####
-# SUBcoupe10wardD <- cutAndWrite(retMat, "SUB", "ward.D", 10, "coupe", names403)
-# SUBcoupe16wardD <- cutAndWrite(retMat, "SUB", "ward.D", 16, "coupe", names403)
+# SUBcoupe10wardD <- cutAndWrite(subMat, "SUB", "ward.D", 10, "coupe", names403)
+# SUBcoupe16wardD <- cutAndWrite(subMat, "SUB", "ward.D", 16, "coupe", names403)
 # 
 # ##### METHODE WARD D2 #####
-# SUBcoupe10wardD <- cutAndWrite(retMat, "SUB", "ward.D2", 10, "coupe", names403)
-# SUBcoupe16wardD <- cutAndWrite(retMat, "SUB", "ward.D2", 16, "coupe", names403)
+# SUBcoupe10wardD2 <- cutAndWrite(subMat, "SUB", "ward.D2", 10, "coupe", names403)
+# SUBcoupe16wardD2 <- cutAndWrite(subMat, "SUB", "ward.D2", 16, "coupe", names403)
 
 
 ############################################################
@@ -105,6 +110,39 @@ library(seqinr)
 ############################################################
 ################ Diagramme de Venn  ########################
 ############################################################
+
+# On applique le diagramme de Venn sur les 3 versions de chaque groupe des coupes en 10 groupes
+# du hclust cree sur les 403 proteines. On a une version en utilisant la matrice de distance vld, 
+# une version sur la matrice de robustesse inversée (application de PAM X fois) et une dernière
+# version sur une sous-matrice de robustesse 10% plus petite. On utilisera la methode "ward.D2"
+# comme reference dans ces 3 versions de chaque groupe.
+
+### Donnees utilisees ###
+#matrice de robustesse
+# matRobustesse403 <- build_mat_rob(data_403, 403, 2, 20)
+
+# Version matrice de distance #
+# DATAcoupe10wardD2 <- cutAndWrite(data_403, "DATA", "ward.D2", 10, "coupe", names403)
+
+# Version matrice de robustesse #
+# retMat <- retournementMat(matRobustesse403, matRobustesse[1,1]) #retournement de la matrice
+# RETcoupe10wardD2 <- cutAndWrite(retMat, "RET", "ward.D2", 10, "coupe", names403)
+
+# Version sous matrice de robustesse #
+# subMat <- getSubAndRetMat(matRobustesse403, 403, 10) #sous matrice retournee
+# SUBcoupe10wardD2 <- cutAndWrite(subMat, "SUB", "ward.D2", 10, "coupe", names403)
+
+# DATAcoupe10wardD2 ; RETcoupe10wardD2 ; SUBcoupe10wardD2
+
+ecriture_fichiers_venn(DATAcoupe10wardD2, RETcoupe10wardD2, SUBcoupe10wardD2, 10)
+
+
+
+
+
+
+
+
 
 
 

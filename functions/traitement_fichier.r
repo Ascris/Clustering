@@ -758,6 +758,58 @@ ecriture_fichier_hist_occurrence <- function(file_name, occCaract){
   
   K <- 10
   print(paste("Inferieur a ", K, " = ", sum(K >= occurrence), sep= ""))
+}
+
+
+#' Enregistre les png des diagrammes de Venn crees avec les 3 versions de coupe passees en parametre
+#'
+#' @param version_1 : premiere version de repartition des groupes
+#' @param version_2 : deuxieme version de repartition des groupes
+#' @param version_3 : troisieme version de repartition des groupes
+#' @param nb_groupes : nombre de groupes crees pour la coupe
+#'
+#' @return png des diagrammes de Venn crees avec les 3 versions de coupe passees en parametre
+#' @export Enregistre les png des diagrammes de Venn crees avec les 3 versions de coupe passees en parametre
+#'
+#' @examples ecriture_fichiers_venn(DATAcoupe10wardD2, RETcoupe10wardD2, SUBcoupe10wardD2, 10)
+ecriture_fichiers_venn <- function(version_1, version_2, version_3, nb_groupes){
+  
+  noms_coupes <- c("DATA", "RET", "SUB")
+  couleurs_coupes <- c("skyblue", "pink1", "mediumorchid")
+  
+  for(i in 1:nb_groupes) #differents groupes de la coupe
+  {
+    saveDir <- "~/R/resultats/venn/"
+    if(!dir.exists(saveDir)) dir.create(saveDir)
+    
+    file_name <- paste("Venn_groupe_", i, ".png", sep= "")
+    file_path <- paste(saveDir, file_name, sep= "")
+    
+    D1 <- getGroupeCoupe(version_1, i)
+    R1 <- getGroupeCoupe(version_2, i)
+    S1 <- getGroupeCoupe(version_3, i)
+    
+    taille_D1 <- length(D1)
+    taille_R1 <- length(R1)
+    taille_S1 <- length(S1)
+    
+    intersectionDR <- length(intersect(D1, R1))
+    intersectionDS <- length(intersect(D1, S1))
+    intersectionSR <- length(intersect(S1, R1))
+    
+    intersectionDRS <- length(intersect(intersect(D1, R1), S1))
+    
+    #enregistrement du diagramme de Venn
+    png(file_path)
+    grid.newpage()
+    draw.triple.venn(area1= taille_D1, area2= taille_R1, area3= taille_S1,
+                     n12= intersectionDR, n13= intersectionDS, n23= intersectionSR,
+                     n123= intersectionDRS,
+                     category= noms_coupes,
+                     fill= couleurs_coupes)
+    
+    dev.off()
+  }
   
   
 }

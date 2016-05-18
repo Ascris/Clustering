@@ -90,12 +90,23 @@ get_solid_elements <- function(amis1, amis2){
       print("groupe equivalent trouve !")
     }
   }
-
-  
-    
 }
 
-
-
+#' Retourne les elements du groupe 'num' dans 'coupe'
+#'
+#' @param coupe : distribution des groupes (vecteur d'entiers)
+#' @param num : numero du groupe (entier)
+#'
+#' @return elements du groupe 'num' dans 'coupe' (vecteur d'entiers)
+#' @export Retourne les elements du groupe 'num' dans 'coupe'
+#'
+#' @examples d1 <- getGroupeCoupe(DATAcoupe10wardD2, 1)
+getGroupeCoupe <- function(coupe, num){
+  res <- c()
+  for(i in 1:length(coupe)){
+    if(num == coupe[i]) res <- append(res, i)
+  }
+  return (res)
+}
 
 
