@@ -133,18 +133,4 @@ library(VennDiagram)
 # subMat <- getSubAndRetMat(matRobustesse403, 403, 10) #sous matrice retournee
 # SUBcoupe10wardD2 <- cutAndWrite(subMat, "SUB", "ward.D2", 10, "coupe", names403)
 
-# DATAcoupe10wardD2 ; RETcoupe10wardD2 ; SUBcoupe10wardD2
-
-ecriture_fichiers_venn(DATAcoupe10wardD2, RETcoupe10wardD2, SUBcoupe10wardD2, 10)
-
-
-
-
-
-
-
-
-
-
-
-
+# ecriture_fichiers_venn(DATAcoupe10wardD2, RETcoupe10wardD2, SUBcoupe10wardD2, 10)
