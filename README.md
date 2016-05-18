@@ -15,7 +15,8 @@ Packages utilisées :
 +  stats (version 3.2.4)
 +  utils (version 3.2.4)
 +  igraph (version 1.0.1)
-+  VennDiagram (version 1.6.17
++  VennDiagram (version 1.6.17)
+
 ---
 
 Pour toute première utilisation du programme, décommentez les premières lignes de scripts/main.r pour charger le fichier souhaité (fichier 403 ou fichier 1751 par exemple) Cette opération prend quelques minutes.
