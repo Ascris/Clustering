@@ -2,6 +2,22 @@
 ### Stage de fin de M1 Informatique au sein de l'équipe bioinformatique de l'IRHS d'Angers
 ##### Durée du stage (10 semaines) : _du 04 avril 2016 au 17 juin 2016_
 
+---
+Packages utilisées :
++  cluster (version 2.0.3)
++  seqinr (version 3.1-3)
++  ade4 (version 1.7-4)
++  datasets (version 3.2.4)
++  graphics (version 3.2.4)
++  grDevices (version 3.2.4)
++  grid (version 3.2.4)
++  methods (version 3.2.4)
++  stats (version 3.2.4)
++  utils (version 3.2.4)
++  igraph (version 1.0.1)
++  VennDiagram (version 1.6.17
+---
+
 Pour toute première utilisation du programme, décommentez les premières lignes de scripts/main.r pour charger le fichier souhaité (fichier 403 ou fichier 1751 par exemple) Cette opération prend quelques minutes.
 Une fois les données stockées dans la session R, re-commentez ces lignes pour pouvoir utiliser les fonctions sans avoir re-charger les données à chaque exécution.
 

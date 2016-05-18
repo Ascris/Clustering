@@ -732,3 +732,32 @@ triAlphabetDecroissant <- function(occCaract){
   res <- list(alphabet, occurrence)
   return (res)
 }
+
+
+#' Enregistre l'histogramme des occurrences dans un fichier .png
+#'
+#' @param file_name : nom du fichier a creer
+#' @param occCaract : alphabet et occurrence (liste : vecteur de chaines de caracteres + vecteur d'entiers)
+#'
+#' @return RIEN - cree un fichier .png
+#' @export Enregistre l'histogramme des occurrences dans un fichier .png
+#'
+#' @examples ecriture_fichier_hist("hist_occurrence403.png", occCaract)
+ecriture_fichier_hist_occurrence <- function(file_name, occCaract){
+  alphabet <- unlist(occCaract[[1]])
+  occurrence <- unlist(occCaract[[2]])
+  
+  png(filename= paste("~/R/resultats/occurrence/", file_name, sep= ""))
+  hist(occurrence)
+  dev.off()
+  
+  X <- 2 ; Y <- 3 ; Z <- 4
+  print(paste("Occ de ", X, " = ", sum(X == occurrence), sep= ""))
+  print(paste("Occ de ", Y, " = ", sum(Y == occurrence), sep= ""))
+  print(paste("Occ de ", Z, " = ", sum(Z == occurrence), sep= ""))
+  
+  K <- 10
+  print(paste("Inferieur a ", K, " = ", sum(K >= occurrence), sep= ""))
+  
+  
+}
