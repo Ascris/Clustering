@@ -60,29 +60,30 @@ Détails/difficultés des étapes :
 	Pour pouvoir simplement observer les différents groupes révélés par les itérations de PAM, deux fichiers ont été créés : l'un contenant les sommets (les protéines présentes dans la matrice de robustesse) et l'autre contenant les arcs (lien de valeur 'robustesse' (variable) entre deux protéines A et B). On crée ensuite un graphe à partir de ces deux fichiers auquel on ajoute deux paramètres rendant les protéines affichées plus parlantes : la couleur pour son milieu (T, M, P ou H) ou son type (TOP ou RG) (selon le graphique) et la taille pour son règne (A, B ou E).
 
 	Dans le but de tester la stabilité des groupes formés (que ce soit par PAM, hclust et cutree ou par la recherche de réseaux d'amis), plusieurs méthodes ont été testées.On s'intéresse ici uniquement à la méthode avec le cutree et on appellera 'coupe' l'ensemble des groupes trouvés qui découlent de cette méthode. Les coupes auxquelles on s'intéresse sont créées par la méthode "ward.D2" demandée en paramètre par hclust.
+	
+	Le paramètre que l'on va faire varier est la matrice de données. On va alors comparer les groupes obtenus directement grâce à la matrice de distance (obtenue après calculs par la méthode VLD), ceux obtenus avec la matrice de robustesse (obtenue après k-itérations de PAM) et ceux obtenus avec une sous-matrice de robustesse à laquelle on lui a retiré un certain pourcentage d'individus (10% ici).
+	
+	Pour tester les groupes, on a alors :
+    		- une matrice de distances
+		- une matrice de robustesse
+		- une sous-matrice de robustesse 
 
-    Le paramètre que l'on va faire varier est la matrice de données. On va alors comparer les groupes obtenus directement grâce à la matrice de distance (obtenue après calculs par la méthode VLD), ceux obtenus avec la matrice de robustesse (obtenue après k-itérations de PAM) et ceux obtenus avec une sous-matrice de robustesse à laquelle on lui a retiré un certain pourcentage d'individus (10% ici).
+	Ces 3 types de coupes sont regroupées au sein d'un même diagramme de Venn pour pouvoir être comparées.
 
-    Pour tester les groupes, on a alors :
-    - une matrice de distances
-    - une matrice de robustesse
-    - une sous-matrice de robustesse 
-
-Ces 3 types de coupes sont regroupées au sein d'un même diagramme de Venn pour pouvoir être comparées.
-
----
+	---
 
 4. **Recherche des réseaux d'amis**
 
 	*"Les amis de mes amis sont mes amis"*
 
-	+ On utilisera le mot 'ami' pour désigner qu'il existe un lien de robustesse fort entre deux protéines A et B (i.e. matG[A,B] >= 'robustesse'). Deux protéines amies se retrouvent systématiquement dans le même groupe lorsque l'on applique PAM avec n'importe quel paramètre k.
-	+ On appelera réseau d'amies de X, avec X une protéine quelconque, l'ensemble des protéines qui sont amies avec X ou une amie de X.
+	On utilisera le mot 'ami' pour désigner qu'il existe un lien de robustesse fort entre deux protéines A et B (i.e. matG[A,B] >= 'robustesse'). Deux protéines amies se retrouvent systématiquement dans le même groupe lorsque l'on applique PAM avec n'importe quel paramètre k.
+	On appelera réseau d'amies de X, avec X une protéine quelconque, l'ensemble des protéines qui sont amies avec X ou une amie de X.
 	
-	- fonction récursive nécessaire ici, coût en mémoire relativement important - à surveiller
-	- on utilise une fonction qui récupère la liste des amies de X et qui l'ajoute à une liste totale d'amies de X
-	- pour chaque amie Y de cette liste, on ajoute à la liste totale d'amies de X la liste d'amies de Y
-	- on réitère jusqu'à ne plus avoir de nouvelle amie à ajouter aux amies de X
+	**Algorithme** (*fonction recursive*) :
+	
+	- récupération de la liste des amies de X et ajout à une liste totale d'amies de X
+	- pour chaque amie Y de cette liste, ajout de sa liste d'amies à la liste totale d'amies de X
+	- réitération jusqu'à ne plus avoir de nouvelle amie à ajouter aux amies de X
 	- on applique cet algorithme à toutes les protéines, on obtient alors une liste d'amies pour chacune d'elles
 	- on retire les doublons
 	
@@ -92,3 +93,4 @@ Ces 3 types de coupes sont regroupées au sein d'un même diagramme de Venn pour
 	
 	- gérer les noms de fichiers en fonction de ceux déjà présents dans le répertoire
 	- parser les identifiants des protéines pour en extraire les caractéristiques (nom, règne, type et milieu)
+
