@@ -6,6 +6,7 @@ source("functions/protein_name.r")
 source("functions/clique.r")
 source("functions/comparaison_groupes.r")
 
+# install.packages('seqinr')
 # install.packages('VennDiagram')
 
 library(cluster)
@@ -118,11 +119,11 @@ library(VennDiagram)
 # comme reference dans ces 3 versions de chaque groupe.
 
 ### Donnees utilisees ###
-#matrice de robustesse
-# matRobustesse403 <- build_mat_rob(data_403, 403, 2, 20)
-
 # Version matrice de distance #
 # DATAcoupe10wardD2 <- cutAndWrite(data_403, "DATA", "ward.D2", 10, "coupe", names403)
+
+#matrice de robustesse
+# matRobustesse403 <- build_mat_rob(data_403, 403, 2, 20)
 
 # Version matrice de robustesse #
 # retMat <- retournementMat(matRobustesse403, matRobustesse[1,1]) #retournement de la matrice

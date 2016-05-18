@@ -45,7 +45,7 @@ Détails/difficultés des étapes :
 1. **Lecture du fichier raw :**
 	Le fichier d'entrée étant une matrice diagonale inférieure (problème de lecture au début, la dernière protéine (taille n) a été placée en première position dans le .raw)
 	- extraction des noms des protéines en première colonne
-		- chaque ligne contient de 1 à n 'mots' mais chaque protéine partage une valeur avec les n-1 autres
+	- chaque ligne contient de 1 à n 'mots' mais chaque protéine partage une valeur avec les n-1 autres
 
 2. **Création de la matrice de robustesse :**
     
@@ -58,6 +58,17 @@ Détails/difficultés des étapes :
 3. **Visualisation graphique**
 
 	Pour pouvoir simplement observer les différents groupes révélés par les itérations de PAM, deux fichiers ont été créés : l'un contenant les sommets (les protéines présentes dans la matrice de robustesse) et l'autre contenant les arcs (lien de valeur 'robustesse' (variable) entre deux protéines A et B). On crée ensuite un graphe à partir de ces deux fichiers auquel on ajoute deux paramètres rendant les protéines affichées plus parlantes : la couleur pour son milieu (T, M, P ou H) ou son type (TOP ou RG) (selon le graphique) et la taille pour son règne (A, B ou E).
+
+Dans le but de tester la stabilité des groupes formés (que ce soit par PAM, hclust et cutree ou par la recherche de réseaux d'amis), plusieurs méthodes ont été testées.On s'intéresse ici uniquement à la méthode avec le cutree et on appellera 'coupe' l'ensemble des groupes trouvés qui découlent de cette méthode. Les coupes auxquelles on s'intéresse sont créées par la méthode "ward.D2" demandée en paramètre par hclust.
+	***
+	Le paramètre que l'on va faire varier est la matrice de données. On va alors comparer les groupes obtenus directement grâce à la matrice de distance (obtenue après calculs par la méthode VLD), ceux obtenus avec la matrice de robustesse (obtenue après k-itérations de PAM) et ceux obtenus avec une sous-matrice de robustesse à laquelle on lui a retiré un certain pourcentage d'individus (10% ici).
+
+Pour tester les groupes, on a alors :
+- [x] une matrice de distances
+- [x] une matrice de robustesse
+- [x] une sous-matrice de robustesse 
+	***
+	Ces 3 types de coupes sont regroupées au sein d'un même diagramme de Venn pour pouvoir être comparées.
 
 4. **Recherche des réseaux d'amis**
 
@@ -75,7 +86,7 @@ Détails/difficultés des étapes :
 	
 5. **Écriture/stockage des résultats dans les fichiers**
 
-	L'organisation de mon espace de travail s'est faite de cette manière : un dossier par type de fichier traité. Les répertoires 'scripts' et 'fonctions' contiennent les algorithmes utilisés ainsi que les fonctions appelées par ces derniers. Le répertoire 'data' contient les données : fichiers .raw contenant les matrices de distance ainsi que les fichiers sommets et arcs créés pour tracer les graphiques. Enfin, le répertoire 'resultats' contient tous les fichiers graphiques (heatmaps, cliques), les fichiers liés au temps de calcul et les matrices de robustesse locales qui ont été préservées.
+	L'organisation de mon espace de travail s'est faite de cette manière : un dossier par type de fichier traité. Les répertoires 'scripts' et 'fonctions' contiennent les algorithmes utilisés ainsi que les fonctions appelées par ces derniers. Le répertoire 'data' contient les données : fichiers .raw contenant les matrices de distance ainsi que les fichiers sommets et arcs créés pour tracer les graphiques. Enfin, le répertoire 'resultats' contient tous les fichiers graphiques (heatmaps, cliques, diagrammes de Venn), les fichiers liés au temps de calcul et les matrices de robustesse locales qui ont été préservées.
 	
 	- gérer les noms de fichiers en fonction de ceux déjà présents dans le répertoire
 	- parser les identifiants des protéines pour en extraire les caractéristiques (nom, règne, type et milieu)
