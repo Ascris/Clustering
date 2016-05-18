@@ -92,14 +92,23 @@ library(seqinr)
 
 # occCaract <- getSortAndWriteOccCaract("403_seq.vld.fasta", "occCaract403.txt")
 
+print("Avant tri decroissant")
+print(head(occCaract[[1]]))
+print(head(occCaract[[2]]))
+
+occCaract_bis <- triAlphabetDecroissant(occCaract)
+
+print("Apres tri decroissant")
+print(head(occCaract_bis[[1]]))
+print(head(occCaract_bis[[2]]))
+
+ecriture_fichier_occurrence("occurrence403test.txt", occCaract_bis)
 
 ############################################################
 ########## Creation fichiers fasta groupes  ################
 ############################################################
 
 
-fullNamesAndSeq_403 <- getNamesAndSeq("403_seq.fasta")
-ecriture_all_fichiers_fasta("~/R/resultats/coupe/coupe10/", fullNamesAndSeq_403, amis_coupe10)
-ecriture_all_fichiers_fasta("~/R/resultats/amis/", fullNamesAndSeq_403, amis403)
-
-
+# fullNamesAndSeq_403 <- getNamesAndSeq("403_seq.fasta")
+# ecriture_all_fichiers_fasta("~/R/resultats/coupe/coupe10/", fullNamesAndSeq_403, amis_coupe10)
+# ecriture_all_fichiers_fasta("~/R/resultats/amis/", fullNamesAndSeq_403, amis403)

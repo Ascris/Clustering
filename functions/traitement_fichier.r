@@ -499,7 +499,7 @@ getCaractLocation <- function(alphabet, caract){
 #'
 #' @param file_name : nom du fichier .fasta (doit se trouver dans '~/R/data/') (chaine de caracteres)
 #'
-#' @return caracteres presents dans 'file_name' + occurrences (liste : liste de chaines de caracteres + liste d'entiers)
+#' @return caracteres presents dans 'file_name' + occurrences (liste : vecteur de chaines de caracteres + vecteur d'entiers)
 #' @export Retourne le nombre d'occurrence de chaque caractere du fichier .fasta
 #'
 #' @examples alphaOcc <- getOccCaract("myfile.fasta") ; alphabet <- alphaOcc[[1]] ; occurrence <- alphaOcc[[2]]
@@ -531,7 +531,7 @@ getOccCaract <- function(file_name){
 #' Ecrit dans un fichier les differents caracteres d'un alphabet et leurs occurrences respectives
 #'
 #' @param fic_name : nom du fichier desire (sera cree dans '~/R/resultats/occurrence/') (chaine de caracteres)
-#' @param occCaract : resultat de la fonction 'getOccCaract' (liste : liste de chaines de caracteres + liste d'entiers)
+#' @param occCaract : resultat de la fonction 'getOccCaract' (liste : vecteur de chaines de caracteres + vecteur d'entiers)
 #'
 #' @return RIEN - cree un fichier .txt
 #' @export Ecrit dans un fichier les differents caracteres d'un alphabet et leurs occurrences respectives
@@ -562,7 +562,7 @@ ecriture_fichier_occurrence <- function(fic_name, occCaract){
 #' @examples occCaractTest <- getSortAndWriteOccCaract("403_seq.vld.fasta", "occCaract403")
 getSortAndWriteOccCaract <- function(fasta_file, new_file_name){
   occCaract <- getOccCaract(fasta_file) #recuperation de l'alphabet + occurrences
-  new_occCaract <- triAlphabet(occCaract) #tri alphabet et occurrences
+  new_occCaract <- triAlphabetDecroissant(occCaract) #tri alphabet et occurrences
   ecriture_fichier_occurrence(new_file_name, new_occCaract) #ecriture fichier occurrences
   
   return (occCaract)
@@ -678,3 +678,57 @@ ecriture_all_fichiers_fasta <- function(folder_name, fullNamesAndSeq, amis){
   setwd(currentDir)
 }
 
+
+#' Tri de l'alphabet sur la taille des caracteres
+#'
+#' @param occCaract : alphabet et occurrence
+#'
+#' @return alphabet et occurrence tries sur la taille des caracteres
+#' @export Tri de l'alphabet sur la taille des caracteres
+#'
+#' @examples occCaract <- triAlphabet(occCaract)
+triAlphabet <- function(occCaract){
+  alphabet <- occCaract[[1]]
+  occurrence <- occCaract[[2]]
+  
+  new_alphabet <- c()
+  new_occurrence <- c()
+  
+  for(i in 1:length(alphabet)){
+    if(1 == nchar(alphabet[i])) #tous les caracteres non transformes sont ajoutes au debut
+    {
+      new_alphabet <- append(new_alphabet, alphabet[i])
+      new_occurrence <- append(new_occurrence, occurrence[i])
+    }
+  }
+  
+  for(i in 1:length(alphabet)){
+    if(1 < nchar(alphabet[i])) #tous les caracteres transformes
+    {
+      new_alphabet <- append(new_alphabet, alphabet[i])
+      new_occurrence <- append(new_occurrence, occurrence[i])
+    }
+  }
+  
+  res <- list(new_alphabet, new_occurrence)
+  return (res)
+}
+
+
+#' Trie l'alphabet selon l'occurrence decroissante des caracteres
+#'
+#' @param occCaract : alphabet et occurrence (liste : vecteur de chaines de caracteres + vecteur d'entiers)
+#'
+#' @return alphabet trie par occurrence decroissante
+#' @export Trie l'alphabet selon l'occurrence decroissante des caracteres
+#'
+#' @examples occCaract <- triAlphabetDecroissant(occCaract)
+triAlphabetDecroissant <- function(occCaract){
+  occDecroissante <- sort(unlist(occCaract[[2]]), decreasing= TRUE, index.return= 1)$ix
+  
+  alphabet <- unlist(occCaract[[1]])[occDecroissante]
+  occurrence <- unlist(occCaract[[2]])[occDecroissante]
+  
+  res <- list(alphabet, occurrence)
+  return (res)
+}
