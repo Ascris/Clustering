@@ -17,6 +17,10 @@ library(igraph)
 library(VennDiagram)
 library(dendextend)
 
+options(echo= TRUE)
+args <- commandArgs(trailingOnly= TRUE)
+print(args)
+
 ########################################
 ####### CHARGEMENT FICHIER 403 #########
 ########################################

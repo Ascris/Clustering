@@ -372,9 +372,9 @@ get_next_filename <- function(fic_name){
 #' @export Cree un fichier classant les proteines en differents groupes
 #'
 #' @examples ecriture_fichier_groupes("coupe", "coupe10.txt", amis403, names403)
-ecriture_fichier_groupes <- function(folder_name, fic_name, amisX, namesX){
+ecriture_fichier_groupes <- function(base_dir, folder_name, fic_name, amisX, namesX){
   currentDir <- getwd()
-  baseDir <- "~/R/resultats/"
+  baseDir <- paste(base_dir, "/resultats/", sep= "")
   setwd(baseDir)
   
   #test de l'existence du dossier dans le repertoire 'baseDir'
@@ -436,7 +436,7 @@ ecriture_fichier_groupes <- function(folder_name, fic_name, amisX, namesX){
 #' @export Applique hclust a la matrice, puis cutree et enregistre les groupes trouves dans le dossier voulu
 #'
 #' @examples groupes <- cutAndWrite(matRob403, "robustesse", "ward.D", 10, "coupe", names403)
-cutAndWrite <- function(mat, typeMat, methode= "ward.D2", nb_groupes, folder_name, namesX){
+cutAndWrite <- function(mat, typeMat, methode= "ward.D2", nb_groupes, base_dir, folder_name, namesX){
   retMat <- mat
   clust_retMat <- hclust(as.dist(retMat), method = methode, members= NULL)
   plot(clust_retMat) #affichage du dendogramme associe
@@ -447,7 +447,7 @@ cutAndWrite <- function(mat, typeMat, methode= "ward.D2", nb_groupes, folder_nam
   #ecriture des fichiers de groupes formes par cutree
   nb_prot <- length(namesX)
   nom_fichier <- paste(typeMat, nb_prot, "_", methode, "_coupe", nb_groupes, ".txt", sep= "")
-  ecriture_fichier_groupes(folder_name, nom_fichier, amis_coupe, namesX)
+  ecriture_fichier_groupes(base_dir, folder_name, nom_fichier, amis_coupe, namesX)
   
   return (coupe)
 }
