@@ -538,3 +538,77 @@ tri_amis_decroissant <- function(amis){
   
   return (res)
 }
+
+#' A partir des hauteurs de tous les noeuds, retourne le vecteur des distances inter-noeuds
+#'
+#' @param hauteur_noeuds : hauteurs des noeuds du hclust vecteur de reels
+#'
+#' @return vecteur des distances inter-noeuds
+#' @export A partir des hauteurs de tous les noeuds, retourne le vecteur des distances inter-noeuds
+#'
+#' @examples distInterNoeuds <- getDistInterNoeuds(hauteur_noeuds)
+getDistInterNoeuds <- function(hauteur_noeuds){
+  ordre <- sort(hauteur_noeuds, decreasing= TRUE, index.return= 1)$ix
+  hauteur_noeuds <- sort(hauteur_noeuds, decreasing= TRUE) #tri necessaire !
+  res <- vector(length= length(hauteur_noeuds))
+  for(i in 1:(length(hauteur_noeuds)-1)) #pour tous les noeuds qui ont un noeud suivant
+  {
+    res[i] <- abs(hauteur_noeuds[i] - hauteur_noeuds[i+1])
+  }
+  res[length(hauteur_noeuds)] <- 0 #dernier noeud sans noeud suivant
+  return (res[ordre])
+}
+
+#' Retourne le vecteur des hauteurs (distances de la racine) de chaque inter-noeuds
+#'
+#' @param hauteur_noeuds : hauteurs des noeuds du hclust (vecteur de reels)
+#'
+#' @return vecteur des hauteurs (distances de la racine) de chaque inter-noeuds
+#' @export Retourne le vecteur des hauteurs (distances de la racine) de chaque inter-noeuds
+#'
+#' @examples distRacineInterNoeuds <- getDistRacineInterNoeuds(hauteur_noeuds)
+getDistRacineInterNoeuds <- function(hauteur_noeuds){
+  ordre_initial <- sort(hauteur_noeuds, decreasing= TRUE, index.return= 1)$ix
+  hauteur_noeuds <- sort(hauteur_noeuds, decreasing= TRUE) #tri necessaire !
+  res <- vector(length= length(hauteur_noeuds))
+  for(i in 1:(length(hauteur_noeuds)-1)) #pour tous les noeuds qui ont un noeud suivant
+  {
+    res[i] <- min(hauteur_noeuds[i], hauteur_noeuds[i+1]) + abs((hauteur_noeuds[i] - hauteur_noeuds[i+1])/2)
+  }
+  res[length(hauteur_noeuds)] <- 0 #dernier noeud sans noeud suivant
+  return (res[ordre_initial])
+}
+
+
+#' Retourne le classement des individus maximisant la distance inter-noeuds et la hauteur
+#'
+#' @param distIN : distance inter-noeuds (vecteur de reels)
+#' @param distRacineIN : hauteur des milieux d'inter-noeuds
+#'
+#' @return classement des individus maximisant la distance inter-noeuds et la hauteur
+#' @export Retourne le classement des individus maximisant la distance inter-noeuds et la hauteur
+#'
+#' @examples classementNoeuds <- getBestNodes(distInterNoeuds, distRacineInterNoeuds)
+getBestNodes <- function(distIN, distRacineIN){
+  res <- c(rep(0, length(distIN)))
+  
+  ordre_distIN <- sort(distIN, decreasing= TRUE, index.return= 1)$ix
+  ordre_distRacineIN <- sort(distRacineIN, decreasing= TRUE, index.return= 1)$ix
+  
+  #classement des distances inter-noeuds
+  for(i in 1:length(ordre_distIN)){
+    res[ordre_distIN[i]] <- res[ordre_distIN[i]] + i
+  }
+  
+  #classement des hauteurs
+  for(i in 1:length(ordre_distRacineIN)){
+    res[ordre_distRacineIN[i]] <- res[ordre_distRacineIN[i]] + i
+  }
+  
+  classement <- sort(res, index.return= 1)$ix
+  return (classement)
+}
+
+
+
+

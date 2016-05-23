@@ -6,12 +6,16 @@ source("functions/protein_name.r")
 source("functions/clique.r")
 source("functions/comparaison_groupes.r")
 
+# install.packages('igraph')
 # install.packages('seqinr')
 # install.packages('VennDiagram')
+# install.packages('dendextend')
 
 library(cluster)
 library(seqinr)
+library(igraph)
 library(VennDiagram)
+library(dendextend)
 
 ########################################
 ####### CHARGEMENT FICHIER 403 #########
@@ -134,3 +138,44 @@ library(VennDiagram)
 # SUBcoupe10wardD2 <- cutAndWrite(subMat, "SUB", "ward.D2", 10, "coupe", names403)
 
 # ecriture_fichiers_venn(DATAcoupe10wardD2, RETcoupe10wardD2, SUBcoupe10wardD2, 10)
+
+
+############################################################
+############ Recherche meilleure coupe  ####################
+############################################################
+
+# -> distance inter-noeuds
+# -> hauteur de noeud
+
+# Trouver la coupe qui maximise les distances inter-noeuds qu'elle traverse
+
+# test_hclust <- hclust(as.dist(data_403), method = "ward.D2", members= NULL)
+# test <- as.dendrogram(test_hclust)
+# plot(test)
+# 
+# hauteur_noeuds <- get_nodes_attr(test, "height")
+# ordre_feuilles <- get_nodes_attr(test, attribute= "label", na.rm= TRUE)
+# 
+# distInterNoeuds <- getDistInterNoeuds(hauteur_noeuds)
+# distRacineInterNoeuds <- getDistRacineInterNoeuds(hauteur_noeuds)
+
+# trouver la plus grande distance et tester une coupe à ce niveau là de profondeur
+# print(distInterNoeuds)
+
+# classementNoeuds <- getBestNodes(distInterNoeuds, distRacineInterNoeuds)
+# print(classementNoeuds)
+
+#Partie coupe de l'arbre a la hauteur trouvee
+# for(z in 1:10){
+#   name <- paste("403wardD2_Nb", z, sep= "")
+#   noeud <- classementNoeuds[z]
+#   hauteur <- hauteur_noeuds[noeud]
+#   test_coupe <- cutree(test_hclust, h= hauteur)
+#   print(paste("h-", hauteur, " ; IN-", distInterNoeuds[noeud], " ; RIN-", distRacineInterNoeuds[noeud], sep= ""))
+#   test_coupe <- build_friend_list(test_coupe, getNbGroups(test_coupe))
+#   ecriture_fichier_groupes("coupe/deltaH", name, test_coupe, names403)
+# }
+
+
+
+

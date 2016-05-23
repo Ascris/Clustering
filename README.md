@@ -19,8 +19,8 @@ Packages utilisées :
 
 ---
 
-Pour toute première utilisation du programme, décommentez les premières lignes de scripts/main.r pour charger le fichier souhaité (fichier 403 ou fichier 1751 par exemple) Cette opération prend quelques minutes.
-Une fois les données stockées dans la session R, re-commentez ces lignes pour pouvoir utiliser les fonctions sans avoir re-charger les données à chaque exécution.
+Pour utiliser le programme, executez simplement le script "clustering.sh" situé dans le dossier 'scripts' et suivez les instructions. Il vous sera demandé le nombre de groupes à former, les méthodes à utiliser ainsi que les fichiers désirés en sortie (fichiers fasta associés aux groupes).
+Certaines étapes sont assez longues, notamment le chargement des données.
 
 
 #### **Protocole expérimental :**
