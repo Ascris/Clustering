@@ -27,18 +27,22 @@ Certaines étapes sont assez longues, notamment le chargement des données.
 
 Pour parvenir à catégoriser les X protéines en N groupes, nous avons dù passer par différentes étapes :
 - Lecture de la matrice de distances (fichier .raw, matrice diagonale inférieure) et stockage des informations dans une matrice de taille X
-- Application de PAM avec un nombre de clusters variant de min à max (pour une meilleure précision, on a appliqué chaque n-PAM k-fois)
-- Création d'une matrice dite 'de robustesse' de taille X dans laquelle la case [i,j] correspond au nombre de fois où les protéines i et j ont été classées dans le même cluster par PAM
-- Visualisation graphique des groupes sous forme de cliques (dont chaque arc lie 2 protéines par une valeur 'robustesse' variable)
-- Formation des groupes faite par 'recherche de réseau d'amis' (ensemble des protéines s'étant retrouvées au moins 'robustesse' fois dans le même groupe)
-- Stockage des réseaux d'amis dans un fichier txt avec ajout du groupe des 'singletons', protéines non liées à quelconque groupe
+- Création d'une matrice dite 'de robustesse' (application de PAM sur les X protéines lues, avec un nombre de clusters demandé variant de min à max). Cette matrice carrée de taille X correspond au nombre de fois où les différentes protéines ont été classées dans le même groupe par PAM. Ainsi, la case [i, j] représente ce qu'on va appeler le ' lien de robustesse de i à j '.
+- Visualisation de cette matrice de robustesse sous la forme d'une carte thermique.
+- Formation des groupes via deux approches : classement hiérarchique et classement non hiérarchique. La première approche permet d'obtenir des groupes contenant forcément les X protéines même si la stabilité des liens qui les unis est relativement fiable (chaque protéine sera raccrochée à un groupe quoi qu'il arrive). La deuxième, quant à elle, ne forme des groupes qu'avec des protéines qui se sont toujours retrouvées ensemble. On a alors potentiellement des protéines exclues qui n'ont pas toujours été liées à d'autres (on les appellera singletons) mais également la certitude que les groupes retournés ont une stabilité forte.
+- Visualisation des groupes sous forme de cliques (dont chaque arc lie 2 protéines par une valeur 'robustesse' variable).
+- Écriture / stockage des résultats dans des fichiers texte et fasta pour pouvoir comparer les groupes formés.
 
 #### Étapes importantes :
-- [x] lecture fichier .raw
-- [x] création matrice de robustesse
-- [x] visualisation graphique sous forme de clique
-- [x] recherche des réseaux d'amis
-- [x] écriture/stockage des résultats dans les fichiers
+- [x] Lecture fichier .raw
+- [x] Création matrice de robustesse
+- [x] Formation des groupes : classement hiérarchique
+- [x] Formation des groupes : classement non hiérarchique
+- [x] Visualisation graphique des groupes sous forme de cliques
+- [x] Écriture/stockage des résultats dans des fichiers
+- [ ] Comparaison des approches (hiérarchique et non hiérarchique)
+- [ ] Amélioration des temps de calcul
+
 
 Détails/difficultés des étapes :
 =================================

@@ -1,3 +1,5 @@
+library(seqinr)
+
 ##############################################
 ##  LECTURE ET CHARGEMENT MATRICE DISTANCES ##
 ##############################################
@@ -148,6 +150,28 @@ ajouter_fic_heatmap <- function(heatmap, taille_hM){
   }
   
   setwd(currentDir)
+}
+
+#' Cree et stocke une heatmap (fichier .png) de 'matrice' dans le dossier 'resultats/heatmaps'
+#'
+#' @param dir_name : dossier racine du programme
+#' @param file_name : nom du fichier a creer
+#' @param matrice : cible de la heatmap
+#'
+#' @return heatmap (fichier .png) de 'matrice' dans le dossier 'resultats/heatmaps'
+#' @export Cree et stocke une heatmap (fichier .png) de 'matrice' dans le dossier 'resultats/heatmaps'
+#'
+#' @examples ecriture_fichier_heatmap("~/home/user/", "monfichierHeatmap.png", matRob)
+ecriture_fichier_heatmap <- function(dir_name, file_name, matrice){
+  dirName <- paste(dir_name, "/resultats/heatmaps/", sep= "")
+  if(!dir.exists(dirName)) dir.create(dirName)
+  
+  fileName <- paste(dirName, file_name, sep= "")
+  if(!file.exists(fileName)){
+    png(filename=fileName, width=500, height=500)
+    heatmap(matrice)
+    dev.off()
+  }
 }
 
 ##################################################
@@ -435,7 +459,7 @@ ecriture_fichier_groupes <- function(base_dir, folder_name, fic_name, amisX, nam
 #' @return resultat du cutree (vecteur d'entiers)
 #' @export Applique hclust a la matrice, puis cutree et enregistre les groupes trouves dans le dossier voulu
 #'
-#' @examples groupes <- cutAndWrite(matRob403, "robustesse", "ward.D", 10, "coupe", names403)
+#' @examples groupes <- cutAndWrite(matRob403, "robustesse", "ward.D", 10, "~/home/user/", "coupe", names403)
 cutAndWrite <- function(mat, typeMat, methode= "ward.D2", nb_groupes, base_dir, folder_name, namesX){
   retMat <- mat
   clust_retMat <- hclust(as.dist(retMat), method = methode, members= NULL)
@@ -577,14 +601,14 @@ getSubAndRetMat <- function(mat, nb_prot, percent){
 
 #' Recupere les noms et sequences des proteines presentes dans le fichier
 #'
+#' @param baseDir : repertoire racine du programme
 #' @param file_name : nom du fichier .fasta (doit se trouver dans ~/R/data/) (chaine de caracteres)
 #'
 #' @return noms et sequences des proteines (liste de deux vecteurs de chaines de caracteres)
 #' @export Recuperation des noms et sequences proteiques d'un fichier fasta
 #'
-#' @examples nomsEtsequences <- getNamesAndSeq("myfile.fasta")
-getNamesAndSeq <- function(file_name){
-  baseDir <- "~/R/data/"
+#' @examples nomsEtsequences <- getNamesAndSeq("~/home/user/", "myfile.fasta")
+getNamesAndSeq <- function(baseDir, file_name){
   file_path <- paste(baseDir, file_name, sep= "") #chemin complet du fichier a lire
   struct_fasta <- read.fasta(file_path, as.string = TRUE, forceDNAtolower= FALSE) #ensemble des sequences fasta
   
@@ -664,7 +688,6 @@ create_fichier_fasta <- function(folder_name, fic_name, fullNamesAndSeq, amis){
 #'@examples ecriture_all_fichiers_fasta(nomsEtsequences, amis)
 ecriture_all_fichiers_fasta <- function(folder_name, fullNamesAndSeq, amis){
   currentDir <- getwd()
-  
   dirName <- folder_name
   if(!dir.exists(dirName)) dir.create(dirName)
   setwd(dirName)

@@ -31,11 +31,12 @@ print(paste("Nombre d'arguments : ", nb_arguments))
 #variables communes aux deux methodes
 fic_path <- args[1] ; 
 root_dir <- dirname(dirname((fic_path)))
+print(root_dir)
 nb_individus <- as.numeric(args[2])
 min <- as.numeric(args[3])
 max <- as.numeric(args[4])
 hm_fic <- args[5]
-fasta_fic <- args[6]
+data_fasta <- args[6]
 
 #CHARGEMENT DONNEES
 dataX <- chargement_fichier(fic_path, nb_individus)
@@ -45,6 +46,11 @@ namesX <- getProteinNames(fic_path)
 #CHARGEMENT MATRICE DE ROBUSTESSE
 matRobustesse <- build_mat_rob(dataX, nb_individus, min, max)
 
+if("y" == hm_fic) #fichier heatmap demande
+{
+  file_name <- paste("heatmap_matRob", nb_individus, "_", min, "-", max, ".png", sep= "")
+  ecriture_fichier_heatmap(root_dir, file_name, matRobustesse)
+}
 
 if(8 == nb_arguments) #Clustering hierarchique
 {
@@ -54,13 +60,14 @@ if(8 == nb_arguments) #Clustering hierarchique
   val_coupe <- as.numeric(args[8])
   
   #HCLUST ET CUTREE
-  coupeX <- cutAndWrite(dataX, "COUPE", methode, val_coupe, root_dir, "coupe", namesX)
+  coupeX <- cutAndWrite(dataX, "Coupe", methode, val_coupe, root_dir, "coupe", namesX)
   
   # ECRITURE FICHIERS FASTA
-  if("y" == fasta_fic)
+  if("n" != data_fasta) #fichiers fasta demandes
   {
-    fullNamesAndSeq_X <- getNamesAndSeq("403_seq.fasta") ##############NOM VARIABLE A CHANGER###############
-    dir_name <- paste(root_dir, "resultats/coupe/coupe", val_coupe, "/", sep= "")
+    data_dir <- paste(root_dir, "/data/", sep= "")
+    fullNamesAndSeq_X <- getNamesAndSeq(data_dir, data_fasta)
+    dir_name <- paste(root_dir, "/resultats/coupe/coupe", val_coupe, "/", sep= "")
     ecriture_all_fichiers_fasta(dir_name, fullNamesAndSeq_X, coupeX)
   }
   
@@ -70,13 +77,19 @@ if(8 == nb_arguments) #Clustering hierarchique
   
   robustesse_max <- length(min:max)
   amisX <- get_all_friends(matRobustesse, robustesse_max)
+  print(amisX)
+  nb_prot <- length(namesX)
+  nom_fichier <- paste("amis", nb_prot, ".txt", sep= "")
+  ecriture_fichier_groupes(root_dir, "amis", nom_fichier, amisX, namesX)
   
   # ECRITURE FICHIERS FASTA
-  if("y" == fasta_fic)
+  if("n" != data_fasta) #fichiers fasta demandes
   {
-    fullNamesAndSeq_X <- getNamesAndSeq("403_seq.fasta") ##############NOM VARIABLE A CHANGER###############
-    dir_name <- paste(root_dir, "resultats/amis/amis", length(amisX), "/", sep= "")
-    ecriture_all_fichiers_fasta(dir_name, fullNamesAndSeq_X, coupeX)
+    data_dir <- paste(root_dir, "/data/", sep= "")
+    fullNamesAndSeq_X <- getNamesAndSeq(data_dir, data_fasta)
+    dir_name <- paste(root_dir, "/resultats/amis/amis", length(amisX), "/", sep= "")
+    liste_amisX <- build_friend_list(amisX, getNbGroups(amisX))
+    ecriture_all_fichiers_fasta(dir_name, fullNamesAndSeq_X, liste_amisX)
   }
 }
 

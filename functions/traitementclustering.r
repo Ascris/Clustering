@@ -1,3 +1,5 @@
+library(cluster)
+
 #' Teste le clustering par 2 à nb_clust (>2) et retourne le cas où la moyenne etait maximal
 #'
 #' @param mat : matrice de distance ou de robustesse a tester (matrice de reels ou d'entiers)
@@ -232,7 +234,7 @@ is_list_of <- function(list, listOfLists){
 get_friends <- function(matRobustesse, x, force){
   friends <- c()
   for(i in 1:length(matRobustesse[1,])){
-    if(force <= matRobustesse[x,i]) friends <- union(friends, i);
+    if(force <= matRobustesse[x,i]) friends <- union(friends, i)
   }
   return (friends)
 }
@@ -280,7 +282,6 @@ get_all_friends <- function(matRobustesse, force){
     friends_i <- get_friends(matRobustesse, i, force) #amies de proteine i
     local_list <- get_res(matRobustesse, local_list, friends_i, force) #reseau d'amies de la proteine i
     liste_liste_amis[[i]] <- local_list
-
   }
   
   # enleve les doublons de liste_liste_amis et les groupes de taille 1 (singletons)
@@ -504,8 +505,7 @@ retournementMat <- function(matRob, X){
 #' @examples amis_coupe10 <- build_friend_list(coupe_10, 10)
 build_friend_list <- function(coupe, taille){
   taille_coupe <- length(coupe)
-  friend_list <- vector(mode = "list", length = taille)
-
+  friend_list <- vector(mode= "list", length= taille)
   for(i in 1:taille_coupe){
     groupe <- coupe[i]
     friend_list[[groupe]] <- union(friend_list[[groupe]], i)
@@ -513,7 +513,6 @@ build_friend_list <- function(coupe, taille){
   
   return (friend_list)
 }
-
 
 #' Trie la liste d'amis sur leurs valeurs decroissantes
 #'
