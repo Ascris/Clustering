@@ -1,8 +1,9 @@
-Nombre de groupes :  11 
+Nombre de groupes :  9 
 Ligne : Groupe ID_proteine nom_proteine
 ##############################################
-# Singletons -  1  proteines
-0  28 ArathaTOPa_M_E 
+# Singletons -  0  proteines
+0  NA NA 
+0    
 ##############################################
 # Groupe  1  -  76  proteines
 1   1 AcamarTOPa_M_B 
@@ -82,15 +83,18 @@ Ligne : Groupe ID_proteine nom_proteine
 1   395 VuldisRGz_T_A 
 1   397 VulmouRGz_X_A 
 ##############################################
-# Groupe  2  -  108  proteines
+# Groupe  2  -  121  proteines
 2   2 AcamarTOPb_M_B 
 2   5 AcicapTOPz_M_B 
 2   6 AcicelTOPz_T_B 
 2   7 AciferTOPa_M_B 
 2   10 AciferTOPz_T_B 
+2   19 AersalTOPa_M_B 
+2   22 AlcborTOPz_M_B 
 2   23 AmicolTOPz_M_B 
 2   24 AnathmTOPz_X_B 
 2   27 AquaeoTOPz_T_B 
+2   28 ArathaTOPa_M_E 
 2   39 ArtplaTOPz_M_B 
 2   41 BacantTOPa_M_B 
 2   44 BaccerTOPa_M_B 
@@ -124,6 +128,7 @@ Ligne : Groupe ID_proteine nom_proteine
 2   105 DyaferTOPb_M_B 
 2   106 EluminTOPz_M_B 
 2   108 EryrhuTOPz_M_B 
+2   109 EsccolTOPa_M_B 
 2   115 FratulTOPz_M_B 
 2   116 FusnucTOPa_M_B 
 2   119 GemaurTOPz_M_B 
@@ -132,6 +137,7 @@ Ligne : Groupe ID_proteine nom_proteine
 2   124 GlovioTOPa_M_B 
 2   125 GlovioTOPb_M_B 
 2   126 GraforTOPz_M_B 
+2   127 HaeinfTOPa_M_B 
 2   135 HaloreTOPz_T_B 
 2   143 HelpylTOPb_M_B 
 2   144 HeraurTOPz_M_B 
@@ -160,13 +166,19 @@ Ligne : Groupe ID_proteine nom_proteine
 2   268 PolgilTOPz_X_B 
 2   269 PorginTOPa_M_B 
 2   272 PromarTOPz_M_B 
+2   273 PseaerTOPz_M_B 
+2   274 PsefluTOPa_M_B 
 2   276 PsyarcTOPz_P_B 
 2   303 RhobalTOPz_M_B 
 2   304 RicproTOPz_M_B 
 2   305 RicricTOPz_M_B 
 2   306 RosdenTOPz_M_B 
+2   310 SalchoTOPa_X_B 
 2   312 SalrubTOPz_M_B 
+2   313 SaltypTOPa_M_B 
 2   315 SelT1z_M_B_Cc 
+2   316 ShebalTOPa_H_B 
+2   318 ShiboyTOPa_M_B 
 2   320 SidlitTOPz_M_B 
 2   321 SphtheTOPz_X_B 
 2   322 StaaurTOPa_M_B 
@@ -189,7 +201,9 @@ Ligne : Groupe ID_proteine nom_proteine
 2   386 TrepalTOPz_M_B 
 2   387 TrieryTOPz_X_B 
 2   392 VeiparTOPb_M_B 
+2   393 VibchoTOPa_M_B 
 2   399 XanoryTOPz_M_B 
+2   402 YerpesTOPb_M_B 
 2   403 ZymmobTOPz_M_B 
 ##############################################
 # Groupe  3  -  28  proteines
@@ -222,7 +236,7 @@ Ligne : Groupe ID_proteine nom_proteine
 3   388 UncmetTOPa_X_A 
 3   389 UncmetTOPb_X_A 
 ##############################################
-# Groupe  4  -  123  proteines
+# Groupe  4  -  126  proteines
 4   8 AciferTOPb_M_B 
 4   9 AciferTOPc_M_B 
 4   13 AcihosTOPz_X_A 
@@ -285,6 +299,7 @@ Ligne : Groupe ID_proteine nom_proteine
 4   169 LismonTOPa_M_B 
 4   171 MacmulTOPz_M_E 
 4   173 Magsp.TOPa_X_B 
+4   175 MesfloTOPz_M_B 
 4   177 MetaceTOPb_M_A 
 4   180 MetbarTOPb_M_A 
 4   182 MetburTOPa_M_A 
@@ -305,6 +320,7 @@ Ligne : Groupe ID_proteine nom_proteine
 4   236 MetzhiTOPb_X_A 
 4   238 MusmusTOPa_M_E 
 4   239 MusmusTOPb_M_E 
+4   241 MycpneTOPz_M_B 
 4   251 NeqT1z_T_A_NN 
 4   252 NiteutTOPa_X_B 
 4   253 NiteutTOPb_X_B 
@@ -315,6 +331,7 @@ Ligne : Groupe ID_proteine nom_proteine
 4   267 PlafalTOPz_M_E 
 4   270 PorginTOPb_M_B 
 4   271 PorginTOPc_M_B 
+4   275 PsefluTOPb_M_B 
 4   278 Pybsp.TOPz_X_A 
 4   282 PyraerTOPz_T_A 
 4   284 PyrarsTOPz_T_A 
@@ -347,83 +364,64 @@ Ligne : Groupe ID_proteine nom_proteine
 4   398 VulmouTOPz_X_A 
 4   401 YerpesTOPa_M_B 
 ##############################################
-# Groupe  5  -  12  proteines
-5   19 AersalTOPa_M_B 
-5   22 AlcborTOPz_M_B 
-5   109 EsccolTOPa_M_B 
-5   127 HaeinfTOPa_M_B 
-5   273 PseaerTOPz_M_B 
-5   274 PsefluTOPa_M_B 
-5   310 SalchoTOPa_X_B 
-5   313 SaltypTOPa_M_B 
-5   316 ShebalTOPa_H_B 
-5   318 ShiboyTOPa_M_B 
-5   393 VibchoTOPa_M_B 
-5   402 YerpesTOPb_M_B 
+# Groupe  5  -  5  proteines
+5   65 ChlaetTOPz_M_E 
+5   77 CrigriTOPz_M_E 
+5   240 MusmusTOPc_M_E 
+5   302 RatnorTOPz_M_E 
+5   400 XenlaeTOPz_M_E 
 ##############################################
-# Groupe  6  -  5  proteines
-6   65 ChlaetTOPz_M_E 
-6   77 CrigriTOPz_M_E 
-6   240 MusmusTOPc_M_E 
-6   302 RatnorTOPz_M_E 
-6   400 XenlaeTOPz_M_E 
+# Groupe  6  -  14  proteines
+6   129 HalborTOPz_H_A 
+6   130 HalhisTOPz_H_A 
+6   131 HaljeoTOPz_H_A 
+6   132 HallacTOPz_M_A 
+6   133 HalmarTOPz_M_A 
+6   134 HalmukTOPz_M_A 
+6   136 HalsalTOPz_T_A 
+6   137 HalturTOPz_X_A 
+6   138 HalutaTOPz_M_A 
+6   139 HalvolTOPz_M_A 
+6   140 HalwalTOPz_H_A 
+6   141 HalxanTOPz_X_A 
+6   243 NatmagTOPz_M_A 
+6   244 NatphaTOPz_X_A 
 ##############################################
-# Groupe  7  -  14  proteines
-7   129 HalborTOPz_H_A 
-7   130 HalhisTOPz_H_A 
-7   131 HaljeoTOPz_H_A 
-7   132 HallacTOPz_M_A 
-7   133 HalmarTOPz_M_A 
-7   134 HalmukTOPz_M_A 
-7   136 HalsalTOPz_T_A 
-7   137 HalturTOPz_X_A 
-7   138 HalutaTOPz_M_A 
-7   139 HalvolTOPz_M_A 
-7   140 HalwalTOPz_H_A 
-7   141 HalxanTOPz_X_A 
-7   243 NatmagTOPz_M_A 
-7   244 NatphaTOPz_X_A 
+# Groupe  7  -  11  proteines
+7   178 MetaeoTOPz_M_A 
+7   194 MetferTOPz_T_A 
+7   198 MetignTOPz_X_A 
+7   200 MetinfTOPz_T_A 
+7   203 MetjanTOPz_T_A 
+7   208 MetmapTOPz_M_A 
+7   214 MetokiTOPz_T_A 
+7   226 Metsp.TOPz_T_A 
+7   231 MetvanTOPz_M_A 
+7   232 MetvolTOPz_M_A 
+7   234 MetvulTOPz_T_A 
 ##############################################
-# Groupe  8  -  3  proteines
-8   175 MesfloTOPz_M_B 
-8   241 MycpneTOPz_M_B 
-8   275 PsefluTOPb_M_B 
+# Groupe  8  -  11  proteines
+8   279 PyrabyRGz_T_A 
+8   290 PyrfurRGz_T_A 
+8   292 PyrhorRGz_T_A 
+8   296 PyrkodRGz_X_A 
+8   298 Pyrsp.RGz_X_A 
+8   300 PyryayRGz_X_A 
+8   354 ThebarRGz_X_A 
+8   357 ThegamRGz_T_A 
+8   363 TheonnRGz_T_A 
+8   368 ThesibRGz_T_A 
+8   370 Thesp.RGz_T_A 
 ##############################################
 # Groupe  9  -  11  proteines
-9   178 MetaeoTOPz_M_A 
-9   194 MetferTOPz_T_A 
-9   198 MetignTOPz_X_A 
-9   200 MetinfTOPz_T_A 
-9   203 MetjanTOPz_T_A 
-9   208 MetmapTOPz_M_A 
-9   214 MetokiTOPz_T_A 
-9   226 Metsp.TOPz_T_A 
-9   231 MetvanTOPz_M_A 
-9   232 MetvolTOPz_M_A 
-9   234 MetvulTOPz_T_A 
-##############################################
-# Groupe  10  -  11  proteines
-10   279 PyrabyRGz_T_A 
-10   290 PyrfurRGz_T_A 
-10   292 PyrhorRGz_T_A 
-10   296 PyrkodRGz_X_A 
-10   298 Pyrsp.RGz_X_A 
-10   300 PyryayRGz_X_A 
-10   354 ThebarRGz_X_A 
-10   357 ThegamRGz_T_A 
-10   363 TheonnRGz_T_A 
-10   368 ThesibRGz_T_A 
-10   370 Thesp.RGz_T_A 
-##############################################
-# Groupe  11  -  11  proteines
-11   280 PyrabyTOPz_T_A 
-11   291 PyrfurTOPz_T_A 
-11   293 PyrhorTOPz_T_A 
-11   297 PyrkodTOPz_X_A 
-11   299 Pyrsp.TOPz_X_A 
-11   301 PyryayTOPz_X_A 
-11   355 ThebarTOPz_X_A 
-11   358 ThegamTOPz_T_A 
-11   364 TheonnTOPz_T_A 
-11   369 ThesibTOPz_T_A 
-11   372 Thesp.TOPz_T_A 
+9   280 PyrabyTOPz_T_A 
+9   291 PyrfurTOPz_T_A 
+9   293 PyrhorTOPz_T_A 
+9   297 PyrkodTOPz_X_A 
+9   299 Pyrsp.TOPz_X_A 
+9   301 PyryayTOPz_X_A 
+9   355 ThebarTOPz_X_A 
+9   358 ThegamTOPz_T_A 
+9   364 TheonnTOPz_T_A 
+9   369 ThesibTOPz_T_A 
+9   372 Thesp.TOPz_T_A 

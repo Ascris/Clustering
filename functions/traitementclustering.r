@@ -275,9 +275,10 @@ get_res <- function(matRobustesse, res, liste_amis, force){
 #' @examples liste_de_reseaux <- get_all_friends(matRobustesse, 19)
 get_all_friends <- function(matRobustesse, force){
   liste_liste_amis <- list() #ensemble des reseaux d'amis
-  for(i in 1:length(matRobustesse[1,])) #i = proteine courante
+  taille <- length(matRobustesse[1,])
+  for(i in 1:taille) #i = proteine courante
   {
-    print(paste("get friends of protein ", i, sep=""))
+    print(paste("get friends of protein ", i, "/", taille, sep=""))
     local_list <- list()
     friends_i <- get_friends(matRobustesse, i, force) #amies de proteine i
     local_list <- get_res(matRobustesse, local_list, friends_i, force) #reseau d'amies de la proteine i

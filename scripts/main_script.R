@@ -1,10 +1,3 @@
-root_dir <- getwd()
-
-source(paste(root_dir, "/functions/traitement_fichier.r", sep= ""))
-source(paste(root_dir, "/functions/traitementclustering.r", sep= ""))
-
-library(cluster)
-
 #Recuperation des parametres demandes dans le script
 options(echo= FALSE)
 args <- commandArgs(trailingOnly= TRUE)
@@ -12,12 +5,19 @@ nb_arguments <- length(args)
 
 #variables communes aux deux methodes
 cat(sprintf("Prise en compte de vos parametres"), "\n")
+
 fic_path <- args[1]
+root_dir <- dirname(dirname(fic_path))
 nb_individus <- as.numeric(args[2])
 min <- as.numeric(args[3])
 max <- as.numeric(args[4])
 hm_fic <- args[5]
 data_fasta <- args[6]
+
+source(paste(root_dir, "/functions/traitement_fichier.r", sep= ""))
+source(paste(root_dir, "/functions/traitementclustering.r", sep= ""))
+
+library(cluster)
 
 #CHARGEMENT DONNEES
 cat(sprintf("Chargement des donnees"), "\n")
@@ -77,14 +77,8 @@ if(8 == nb_arguments) #Classement hierarchique
     cat(sprintf("Creation des fichiers fasta correspondants"), "\n")
     data_dir <- paste(root_dir, "/data/", sep= "")
     fullNamesAndSeq_X <- getNamesAndSeq(data_dir, data_fasta)
-    dir_name <- paste(root_dir, "/resultats/amis/amis", length(amisX), "/", sep= "")
+    dir_name <- paste(root_dir, "/resultats/amis/amis", nb_grp, "/", sep= "")
     ecriture_all_fichiers_fasta(dir_name, fullNamesAndSeq_X, amisX)
+    cat(nb_grp, sprintf(" groupes ont ete crees !"), "\n")
   }
 }
-
-cat(sprintf("Fin du programme"), "\n")
-
-
-
-
-

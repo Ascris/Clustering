@@ -1,5 +1,6 @@
-source("functions/traitement_fichier.r")
-source("functions/protein_name.r")
+root_dir <- getwd()
+source(paste(root_dir, "/functions/traitement_fichier.r", sep= ""))
+source(paste(root_dir, "/functions/protein_name.r", sep= ""))
 
 library(igraph)
 

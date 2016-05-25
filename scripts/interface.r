@@ -1,5 +1,3 @@
-setwd("~/R/")
-
 # install.packages("shiny")
 # install.packages("png")
 library(shiny)

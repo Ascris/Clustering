@@ -80,16 +80,31 @@ then
 else
   echo "Hierarchique selectionne" ; echo ""
   
-  echo "Vous avez le choix parmi ces methodes : "
-    echo "-\"ward.D\" "
-    echo "-\"ward.D2\""
-    echo "-\"complete\""
-    echo "-\"single\""
-    echo "-\"average (UPGMA)\""
-    echo "-\"mcquitty\""
-    echo "-\"median\""
-    echo "-\"centroid\""
-  read -p "Quelle methode utiliser ? " METHODE ; echo ""
+  NB_ESSAIS_MET=0
+  METHODE=""
+  while [ "ward.D" != "$METHODE" ] && [ "ward.D2" != "$METHODE" ] && [ "complete" != "$METHODE" ] &&
+        [ "single" != "$METHODE" ] && [ "average" != "$METHODE" ] && [ "mcquitty" != "$METHODE" ] &&
+        [ "median" != "$METHODE" ] && [ "centroid" != "$METHODE" ] && [ $NB_ESSAIS_MET -ne 5 ]
+  do
+    echo "Vous avez le choix parmi ces methodes : "
+      echo "-\"ward.D\" "
+      echo "-\"ward.D2\""
+      echo "-\"complete\""
+      echo "-\"single\""
+      echo "-\"average (UPGMA)\""
+      echo "-\"mcquitty\""
+      echo "-\"median\""
+      echo "-\"centroid\""
+    read -p "Quelle methode utiliser ? " METHODE ; echo ""
+    let NB_ESSAIS_MET=NB_ESSAIS_MET+1
+  done
+  
+  if [ $NB_ESSAIS_MET -eq 5 ]
+  then
+    echo "Methode non reconnue, \"ward.D2\" choisi par defaut"
+    METHODE="ward.D2"
+  fi
+  
   read -p "Combien de groupes voulez-vous ? " NB_GROUPES ; echo ""
   
   if [ "y" == $FASTA ]
@@ -108,14 +123,4 @@ else
   Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $METHODE $NB_GROUPES #transfert des choix de l'utilisateur au script R
 fi
 
-
-
-
-
-
-
-
-
-
-
-
+echo "Fin du programme."
