@@ -40,6 +40,7 @@ Pour parvenir à catégoriser les X protéines en N groupes, nous avons dù pass
 - [x] Formation des groupes : classement non hiérarchique
 - [x] Visualisation graphique des groupes sous forme de cliques
 - [x] Écriture/stockage des résultats dans des fichiers
+- [x] Script de lancement de l'application
 - [ ] Comparaison des approches (hiérarchique et non hiérarchique)
 - [ ] Amélioration des temps de calcul
 

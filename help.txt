@@ -1,0 +1,7 @@
+Pour appliquer VLD à un fichier fasta :
+	./decode *chemin fichier fasta standard* *chemin fichier fasta VLD*
+
+Pour créer le fichier .raw à partir du VLD.fasta :
+	./distauto -f r -s p *chemin fichier VLD fasta* *chemin fichier VLD raw*
+
+Ensuite il faut placer la dernière protéine en première position dans le fichier .raw
