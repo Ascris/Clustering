@@ -1,4 +1,3 @@
-setwd("~/R")
 source("functions/traitement_fichier.r")
 source("functions/protein_name.r")
 
@@ -9,6 +8,7 @@ library(igraph)
 #' la clique retournee est coloree en fonction du 'critere' (regne, type ou milieu) et correspond
 #' au regne (A, B ou E), a le type (TOP ou RG) ou au milieu (T, M, P, H)
 #'
+#' @param root_dir : dossier racine de l'application (chaine de caracteres) 
 #' @param clique_name : nom du fichier clique desire (chaine de caracteres)
 #' @param fic_sommets : fichier contenant les proteines (ex : "AcamarTOPa_M_B" "B" "TOP" "M") (chaine de caracteres)
 #' @param fic_arcs : fichier contenant la robustesse entre les proteines (ex : "AcibooRGz_T_A" "AcamarTOPa_M_B" 20) (chaine de caracteres)
@@ -19,9 +19,10 @@ library(igraph)
 #' @export Cree une clique et sa legende et l'enregistre en .png dans 'resultats/clique/'
 #'
 #' @examples clique <- create_clique("clique403_T", "proteines403.txt","robustesse403.txt", "T", 403)
-create_clique <- function(clique_name, fic_sommets, fic_arcs, critere, nb_prot){
+create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere, nb_prot){
   currentDir <- getwd()
-  setwd("~/R/data/clique/")
+  dirName <- paste(root_dir, "/data/clique/", sep= "")
+  setwd(dirName)
   
   prot <- read.table(fic_sommets, sep=" ", header= TRUE, row.names= NULL)
   robustesse <- read.table(fic_arcs, sep=" ", header= TRUE, stringsAsFactors= FALSE, row.names= NULL)
@@ -107,7 +108,8 @@ create_clique <- function(clique_name, fic_sommets, fic_arcs, critere, nb_prot){
   taille_arcs <- get.edge.attribute(clique, "force")
   
   #CREATION FICHIER DESSIN
-  setwd("~/R/resultats/clique/")
+  dirName <- paste(root_dir, "/resultats/clique/", sep= "")
+  setwd(dirName)
   fic_name <- clique_name
   new_image <- get_next_filename(fic_name) # nom de fichier non existant
   png(filename= new_image, width=500, height=500)

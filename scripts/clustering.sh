@@ -1,19 +1,5 @@
 #!/bin/bash
 
-# Etapes :
-#   Chargement fichier .raw
-#     *** Demande nom fichier ***
-#       --> chargement donnees
-#       --> creation matrice robustesse
-#
-#     *** Demande si heatmap sur matRob ***
-#       --> Heatmap sur matRob
-#
-#   Hclust et cutree
-#     *** demande parametres : groupes voulus, methode a utiliser, nom_fic
-#       --> creation fichiers groupes
-#       *** fichiers fasta à demander ***
-
 CURRENT_DIR=$(pwd)
 cd .. #repertoire racine du programme
 ROOT=$(pwd)
@@ -25,13 +11,12 @@ echo "Ce projet a ete realise dans le cadre dun stage en M1 Informatique"
 echo "ATTENTION : Assurez-vous d'avoir bien mis votre matrice de distances (fichier .raw) dans le dossier 'data'."
 echo ""
 
-##TMP### read -p "Veuillez indiquer le nom de votre matrice de distances (fichier .raw) : " FIC_NAME
-FIC_NAME="403_VLD_dist.raw"
+read -p "Veuillez indiquer le nom de votre matrice de distances (fichier .raw) : " FIC_NAME
 
 FIC_PATH=$DATA_DIR$FIC_NAME
 NB_ESSAIS=1
 
-while [ ! -f $FIC_PATH ] && [ $NB_ESSAIS -lt 10 ]
+while [ ! -f $FIC_PATH ] && [ $NB_ESSAIS -lt 5 ]
 do
   let NB_ESSAIS=NB_ESSAIS+1
   echo "Desole, fichier inexistant dans $DATA_DIR"
@@ -58,26 +43,20 @@ fi
 NB_INDIVIDUS=$(wc -l $FIC_PATH | cut -f1 -d' ')
 echo "$NB_INDIVIDUS individus ont ete reconnus dans le fichier !"
 
-###TMP### read -p "Combien de groupes PAM minimum ? " MIN
-###TMP### read -p "Combien de groupes PAM maximum ? " MAX
-MIN=5
-MAX=6
+read -p "Combien de groupes PAM minimum ? " MIN
+read -p "Combien de groupes PAM maximum ? " MAX
 
 MAIN_R=$CURRENT_DIR"/main_script.R"
 
-###TMP### read -p "Souhaitez-vous une heatmap de la matrice de robustesse ? (y/n) " HEATMAP
+read -p "Souhaitez-vous une heatmap de la matrice de robustesse ? (y/n) " HEATMAP
 
 #Soit on ne veut pas les fichiers et FASTA="n", soit FASTA prend le nom du fichier de donnees
-###TMP### read -p "Souhaitez-vous les fichiers fasta des groupes trouves en sortie ? (y/n) " FASTA
-HEATMAP="y"
-FASTA="y"
+read -p "Souhaitez-vous les fichiers fasta des groupes trouves en sortie ? (y/n) " FASTA
 
 echo "Les approches proposees dans ce programme sont :" ; echo ""
 echo "  - Hierarchique avec 'hclust' (0)" ; echo ""
 echo "  - Non hierarchique avec reseau d'amis (1)"
-###TMP### read -p "Quel module desirez-vous (0 ou 1) ? " MODULE ; echo ""
-
-MODULE=0
+read -p "Quel module desirez-vous (0 ou 1) ? " MODULE ; echo ""
 
 if [ $MODULE -eq 1 ]
 then
@@ -85,17 +64,17 @@ then
   
   if [ "y" == $FASTA ]
   then
-    # read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " DATA_FASTA
-    FASTA="403_seq.fasta"
+    read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
   
     while [ "n" != $FASTA ] && [ ! -f $FASTA_PATH ]
     do
       echo "Fichier non trouve dans $DATA_DIR (taper \"n\" pour ne pas avoir les fichiers fasta)"
-      # read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " DATA_FASTA
-      FASTA="403_seq.fasta"
+      read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
     done
   fi
-
+  
+  echo "Lancement du programme avec vos parametres."
+  echo "Veuillez patienter..."
   Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA #transfert des choix de l'utilisateur au script R
   
 else
@@ -110,25 +89,22 @@ else
     echo "-\"mcquitty\""
     echo "-\"median\""
     echo "-\"centroid\""
-  ###TMP### read -p "Quelle methode utiliser ? " METHODE ; echo ""
-  ###TMP### read -p "Combien de groupes voulez-vous ? " NB_GROUPES ; echo ""
-  
-  METHODE="ward.D"
-  NB_GROUPES=10
+  read -p "Quelle methode utiliser ? " METHODE ; echo ""
+  read -p "Combien de groupes voulez-vous ? " NB_GROUPES ; echo ""
   
   if [ "y" == $FASTA ]
   then
-    # read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " DATA_FASTA
-    FASTA="403_seq.fasta"
+    read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
   
     while [ "n" != $FASTA ] && [ ! -f $FASTA_PATH ]
     do
       echo "Fichier non trouve dans $DATA_DIR (taper 'n' pour ne pas avoir les fichiers fasta)"
-      # read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " DATA_FASTA
-      FASTA="403_seq.fasta"
+      read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
     done
   fi
   
+  echo "Lancement du programme avec vos parametres."
+  echo "Veuillez patienter..."
   Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $METHODE $NB_GROUPES #transfert des choix de l'utilisateur au script R
 fi
 
