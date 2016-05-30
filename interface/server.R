@@ -1,3 +1,7 @@
+list.of.packages <- c("shiny", "png")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages, repos="http://cran.rstudio.com/")
+
 library(shiny)
 library(png)
 

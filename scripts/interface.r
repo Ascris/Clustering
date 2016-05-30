@@ -1,5 +1,5 @@
-# install.packages("shiny")
-# install.packages("png")
+install.packages('shiny')
+install.packages('png')
 library(shiny)
 library(png)
 

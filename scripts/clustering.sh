@@ -1,14 +1,11 @@
 #!/bin/bash
 
-CURRENT_DIR=$(pwd)
-cd .. #repertoire racine du programme
 ROOT=$(pwd)
 DATA_DIR="$ROOT/data/"
+SCRIPT_DIR="$ROOT/scripts/"
 
 echo "Bonjour et bienvenue dans ce programme de clusterisation !"
-echo "Ce projet a ete realise dans le cadre dun stage en M1 Informatique"
-
-echo "ATTENTION : Assurez-vous d'avoir bien mis votre matrice de distances (fichier .raw) dans le dossier 'data'."
+echo "Assurez-vous d'avoir bien mis votre matrice de distances (fichier .raw) dans le dossier 'data'."
 echo ""
 
 read -p "Veuillez indiquer le nom de votre matrice de distances (fichier .raw) : " FIC_NAME
@@ -46,7 +43,7 @@ echo "$NB_INDIVIDUS individus ont ete reconnus dans le fichier !"
 read -p "Combien de groupes PAM minimum ? " MIN
 read -p "Combien de groupes PAM maximum ? " MAX
 
-MAIN_R=$CURRENT_DIR"/main_script.R"
+MAIN_R=$SCRIPT_DIR"/main_script.R"
 
 read -p "Souhaitez-vous une heatmap de la matrice de robustesse ? (y/n) " HEATMAP
 
@@ -66,13 +63,13 @@ then
   then
     read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
   
-    while [ "n" != $FASTA ] && [ ! -f $FASTA_PATH ]
+    while [ "n" != $FASTA ] && [ ! -e $DATA_DIR$FASTA ]
     do
-      echo "Fichier non trouve dans $DATA_DIR (taper \"n\" pour ne pas avoir les fichiers fasta)"
+      echo "Fichier non trouve dans $DATA_DIR (taper \"n\" pour ne plus avoir les fichiers fasta)"
       read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
     done
   fi
-  
+  FASTA=$DATA_DIR$FASTA
   echo "Lancement du programme avec vos parametres."
   echo "Veuillez patienter..."
   Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA #transfert des choix de l'utilisateur au script R
@@ -111,13 +108,13 @@ else
   then
     read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
   
-    while [ "n" != $FASTA ] && [ ! -f $FASTA_PATH ]
+    while [ "n" != $FASTA ] && [ ! -e $DATA_DIR$FASTA ]
     do
       echo "Fichier non trouve dans $DATA_DIR (taper 'n' pour ne pas avoir les fichiers fasta)"
       read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
     done
   fi
-  
+  FASTA=$DATA_DIR$FASTA
   echo "Lancement du programme avec vos parametres."
   echo "Veuillez patienter..."
   Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $METHODE $NB_GROUPES #transfert des choix de l'utilisateur au script R

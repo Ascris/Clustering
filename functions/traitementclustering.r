@@ -1,3 +1,7 @@
+list.of.packages <- c("cluster")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
 library(cluster)
 
 #' Teste le clustering par 2 à nb_clust (>2) et retourne le cas où la moyenne etait maximal
@@ -233,7 +237,9 @@ is_list_of <- function(list, listOfLists){
 #' @examples amis_de_x <- get_friends(matRobustesse, 2, 19)
 get_friends <- function(matRobustesse, x, force){
   friends <- c()
-  for(i in 1:length(matRobustesse[1,])){
+  taille <- length(matRobustesse[1,])
+  for(i in 1:taille)
+  {
     if(force <= matRobustesse[x,i]) friends <- union(friends, i)
   }
   return (friends)
@@ -331,10 +337,11 @@ find_singletons <- function(amisX, nb_prot){
 #'
 #' @examples matRob <- build_mat_rob(data403, 403, 5, 25)
 build_mat_rob <- function(dataX, taille, min_clusters, max_clusters){
-  matRob <- matrix(nrow= taille, ncol=taille, data = rep(0,taille))
+  matRob <- matrix(nrow= taille, ncol=taille, data = rep(0,taille*taille))
   for(c in min_clusters:max_clusters){
     current_pam <- pam(dataX, c)
     groupes <- current_pam$clustering #vecteur de 'taille' entiers
+    print(paste("construction pam : ", c, " sur ", max_clusters))
     for(i in 1:taille){
       for(j in 1:taille){
         if(groupes[i] == groupes[j]) matRob[i,j] <- matRob[i,j] + 1

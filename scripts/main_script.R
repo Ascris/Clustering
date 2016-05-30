@@ -14,15 +14,39 @@ max <- as.numeric(args[4])
 hm_fic <- args[5]
 data_fasta <- args[6]
 
+# nb_arguments <- 6
+# fic_path <- "~/R/data/proteomeAt150aaER_VLD.raw"
+# root_dir <- dirname(dirname(fic_path))
+# nb_individus <- 1173
+# min <- 5
+# max <- 25
+# hm_fic <- "n"
+# data_fasta <- "~/R/data/proteomeAt150aaER_VLD.fasta"
+
 source(paste(root_dir, "/functions/traitement_fichier.r", sep= ""))
 source(paste(root_dir, "/functions/traitementclustering.r", sep= ""))
 
+list.of.packages <- c("cluster")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages, repos="http://cran.rstudio.com/")
 library(cluster)
 
 #CHARGEMENT DONNEES
 cat(sprintf("Chargement des donnees"), "\n")
-dataX <- chargement_fichier(fic_path, nb_individus)
+dataX<- chargement_fichier(fic_path, nb_individus)
 namesX <- getProteinNames(fic_path)
+
+if("n" != data_fasta)
+{
+  #Calcul des occurrences des elements de l'alphabet VLD
+  cat(sprintf("Calcul des occurrences de l'alphabet VLD"), "\n")
+  occCaractX <- getOccCaract(data_fasta)
+  occCaractX <- triAlphabetDecroissant(occCaractX)
+  fic_occ_name <- paste("occurrence", nb_individus, sep= "")
+  ecriture_fichier_occurrence(root_dir, paste(fic_occ_name, ".txt", sep= ""), occCaractX)
+  fic_occ_path <- paste(root_dir, "/resultats/occurrence/", fic_occ_name, sep= "")
+  ecriture_fichier_hist_occurrence(root_dir, fic_occ_name, occCaractX)
+}
 
 #CHARGEMENT MATRICE DE ROBUSTESSE
 cat(sprintf("Creation de la matrice de robustesse"), "\n")
@@ -41,6 +65,9 @@ if(8 == nb_arguments) #Classement hierarchique
   
   methode <- args[7]
   val_coupe <- as.numeric(args[8])
+  
+  methode <- "ward.D2"
+  val_coupe <- 15
   
   cat(sprintf("Formation des groupes et enregistrement dans le fichier de groupes"), "\n")
   #HCLUST ET CUTREE
@@ -75,7 +102,7 @@ if(8 == nb_arguments) #Classement hierarchique
   if("n" != data_fasta) #fichiers fasta demandes
   {
     cat(sprintf("Creation des fichiers fasta correspondants"), "\n")
-    data_dir <- paste(root_dir, "/data/", sep= "")
+    data_dir <- dirname(fic_path)
     fullNamesAndSeq_X <- getNamesAndSeq(data_dir, data_fasta)
     dir_name <- paste(root_dir, "/resultats/amis/amis", nb_grp, "/", sep= "")
     ecriture_all_fichiers_fasta(dir_name, fullNamesAndSeq_X, amisX)

@@ -1,3 +1,7 @@
+list.of.packages <- c("seqinr")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages, repos="http://cran.rstudio.com/")
+
 library(seqinr)
 
 ##############################################
@@ -6,7 +10,7 @@ library(seqinr)
 
 #' Remplit la partie superieure de la matrice avec sa partie inferieure, la diagonale est mise a 0
 #'
-#' @param matriceData : matrice de distances 
+#' @param matriceData : matrice de distances
 #'
 #' @return matrice de distance complete
 #' @export Remplit la partie superieure de la matrice avec sa partie inferieure, la diagonale est mise a 0
@@ -476,7 +480,9 @@ cutAndWrite <- function(mat, typeMat, methode= "ward.D2", nb_groupes, base_dir, 
   return (coupe)
 }
 
-
+##################################################
+##########  FONCTIONS OCCURRENCE #################
+##################################################
 
 #' Extrait les differents caracteres du fichier .fasta lu par 'read.fasta'
 #'
@@ -500,8 +506,6 @@ getRealAlphabet <- function(struct_fasta){
   return (alphabet_vector)
 }
 
-
-
 #' Retourne la position du caractere dans l'alphabet
 #'
 #' @param alphabet : ensemble des caracteres (liste de chaines de caracteres)
@@ -518,7 +522,6 @@ getCaractLocation <- function(alphabet, caract){
   return (0)
 }
 
-
 #' Retourne les noms et le nombre d'occurrence de chaque caractere du fichier .fasta
 #'
 #' @param file_name : nom du fichier .fasta (doit se trouver dans '~/R/data/') (chaine de caracteres)
@@ -527,9 +530,9 @@ getCaractLocation <- function(alphabet, caract){
 #' @export Retourne le nombre d'occurrence de chaque caractere du fichier .fasta
 #'
 #' @examples alphaOcc <- getOccCaract("myfile.fasta") ; alphabet <- alphaOcc[[1]] ; occurrence <- alphaOcc[[2]]
-getOccCaract <- function(file_name){
-  baseDir <- "~/R/data/"
-  file_path <- paste(baseDir, file_name, sep= "") #chemin complet du fichier a lire
+getOccCaract <- function(file_path){
+#   baseDir <- "~/R/data/"
+  # file_path <- paste(baseDir, file_name, sep= "") #chemin complet du fichier a lire
   struct_fasta <- read.fasta(file_path, as.string = TRUE, seqonly = TRUE, forceDNAtolower= FALSE) #ensemble des sequences fasta
   taille_fasta <- length(struct_fasta) #nombre de sequences fasta
   
@@ -539,7 +542,7 @@ getOccCaract <- function(file_name){
   
   for(j in 1:taille_fasta) #pour toutes les sequences de struct_fasta
   {
-    print(paste("sequence", j, "/", taille_fasta))
+    print(paste("recuperation occurrence", j, "/", taille_fasta))
     identifiants <- unlist(strsplit(struct_fasta[[j]], split= " "))
     for(k in 1:length(identifiants)) #pour tous les elements de la sequence j
     {
@@ -561,9 +564,10 @@ getOccCaract <- function(file_name){
 #' @export Ecrit dans un fichier les differents caracteres d'un alphabet et leurs occurrences respectives
 #'
 #' @examples ecriture_fichier_occurrence("fichierOcc.txt", alphaOcc)
-ecriture_fichier_occurrence <- function(fic_name, occCaract){
+ecriture_fichier_occurrence <- function(root_dir, fic_name, occCaract){
   currentDir <- getwd()
-  setwd("~/R/resultats/occurrence/")
+  path <- paste(root_dir, "/resultats/occurrence/", sep= "")
+  setwd(path)
   
   sink(fic_name, append= FALSE)
   
@@ -598,109 +602,6 @@ getSubAndRetMat <- function(mat, nb_prot, percent){
   
   return (subMat)
 }
-
-#' Recupere les noms et sequences des proteines presentes dans le fichier
-#'
-#' @param baseDir : repertoire racine du programme
-#' @param file_name : nom du fichier .fasta (doit se trouver dans ~/R/data/) (chaine de caracteres)
-#'
-#' @return noms et sequences des proteines (liste de deux vecteurs de chaines de caracteres)
-#' @export Recuperation des noms et sequences proteiques d'un fichier fasta
-#'
-#' @examples nomsEtsequences <- getNamesAndSeq("~/home/user/", "myfile.fasta")
-getNamesAndSeq <- function(baseDir, file_name){
-  file_path <- paste(baseDir, file_name, sep= "") #chemin complet du fichier a lire
-  struct_fasta <- read.fasta(file_path, as.string = TRUE, forceDNAtolower= FALSE) #ensemble des sequences fasta
-  
-  taille <- length(struct_fasta)
-  fullNames <- getAnnot(struct_fasta) #noms complets des proteines
-  sequences <- vector(length= taille) #sequences completes
-  for(i in 1:taille){
-    fullNames[[i]] <- gsub("\t", " ", fullNames[[i]])
-    sequences[i] <- struct_fasta[[i]][[1]]
-  }
-  res <- list(fullNames, sequences)
-  return (res)
-}
-
-
-#' Retourne le vecteur des chaines creees en ayant decoupe 'chaine' en 'val' sous-chaines
-#'
-#' @param chaine : sequence a decouper (chaine de caracteres)
-#' @param val : nombre de sous-chaines souhaite (entier)
-#'
-#' @return vecteur des chaines creees en ayant decoupe 'chaine' en 'val' sous-chaines
-#' @export Retourne le vecteur des chaines creees en ayant decoupe 'chaine' en 'val' sous-chaines
-#'
-#' @examples ss-str <- wordCut("blablobla", 3) ; ss-str = ("bla", "blo", "bla")
-wordCut <- function(chaine, val){
-  taille <- (nchar(chaine)/val+1)
-  res <- vector(length= taille)
-  for(i in 0:taille-1){
-    sous_chaine <- substr(chaine, i*val+1, i*val+val)
-    res[i+1] <- sous_chaine
-  }
-  
-  return (res)
-}
-
-#' Cree un fichier fasta avec les proteines de la liste 'amis'
-#'
-#' @param folder_name : nom du dossier cible
-#' @param fic_name : nom du fichier fasta a creer
-#' @param fullNamesAndSeq : resultat de getNamesAndSeq (liste de 2 vecteurs de chaines de caracteres)
-#' @param amis : liste des proteines du groupe
-#'
-#' @return RIEN - cree un fichier fasta avec les proteines de la liste 'amis'
-#' @export Cree un fichier fasta avec les proteines de la liste 'amis'
-#'
-#' @examples create_fichier_fasta("Fic403.fasta", fullNamesAndSeq_403, amis403)
-create_fichier_fasta <- function(folder_name, fic_name, fullNamesAndSeq, amis){
-  nb_prot <- length(amis)
-  X <- 60 # valeur de decoupe des sequences pour l'affichage dans le fichier
-  fic_path <- paste(folder_name, "/", fic_name, sep= "")
-
-  sink(fic_path, append= FALSE)
-  for(i in 1:nb_prot)
-  {
-    nom_prot <- fullNamesAndSeq[[1]][[amis[[i]]]]
-    seq_prot <- fullNamesAndSeq[[2]][[amis[[i]]]]
-    cat(nom_prot, "\n", sep= "")
-    cut_seq <- wordCut(seq_prot, X) #decoupe la sequence en sous chaines de X caracteres
-    for(j in 1:length(cut_seq))
-    {
-      sous_chaine <- cut_seq[j]
-      if(sous_chaine != "") cat(sous_chaine, "\n", sep= "")
-    }
-  }
-  sink(NULL)
-}
-
-#' Cree les fichiers fasta correspondants aux groupes d'amis dans differents dossiers
-#'
-#' @param folder_name : nom du dossier où enregistrer les fichiers fasta
-#' @param fullNamesAndSeq : resultat de getNamesAndSeq (liste de 2 vecteurs de chaines de caracteres)
-#' @param amis : ensemble des groupes d'amis trouves (liste de listes d'entiers)
-#'
-#' @return RIEN - cree des fichiers .fasta
-#' @export Creation de fichiers .fasta lies aux groupes de proteines classees ensemble
-#'
-#'@examples ecriture_all_fichiers_fasta(nomsEtsequences, amis)
-ecriture_all_fichiers_fasta <- function(folder_name, fullNamesAndSeq, amis){
-  currentDir <- getwd()
-  dirName <- folder_name
-  if(!dir.exists(dirName)) dir.create(dirName)
-  setwd(dirName)
-  
-  for(i in 1:length(amis))
-  {
-    fic_name <- paste("Groupe", i, ".fasta", sep= "")
-    create_fichier_fasta(dirName, fic_name, fullNamesAndSeq, unlist(amis[[i]]))
-  }
-  
-  setwd(currentDir)
-}
-
 
 #' Tri de l'alphabet sur la taille des caracteres
 #'
@@ -759,30 +660,136 @@ triAlphabetDecroissant <- function(occCaract){
 
 #' Enregistre l'histogramme des occurrences dans un fichier .png
 #'
-#' @param file_name : nom du fichier a creer
+#' @param root_dir : repertoire racine du programme
+#' @param file_name : chemin du fichier a creer
 #' @param occCaract : alphabet et occurrence (liste : vecteur de chaines de caracteres + vecteur d'entiers)
 #'
 #' @return RIEN - cree un fichier .png
 #' @export Enregistre l'histogramme des occurrences dans un fichier .png
 #'
-#' @examples ecriture_fichier_hist("hist_occurrence403.png", occCaract)
-ecriture_fichier_hist_occurrence <- function(file_name, occCaract){
-  alphabet <- unlist(occCaract[[1]])
-  occurrence <- unlist(occCaract[[2]])
+#' @examples ecriture_fichier_hist("~/R/resultats/hist_occurrence403.png", occCaract)
+ecriture_fichier_hist_occurrence <- function(root_dir, file_name, occCaract){
+  currentDir <- getwd()
+  path <- paste(root_dir, "/resultats/occurrence/", sep= "")
+  setwd(path)
   
-  png(filename= paste("~/R/resultats/occurrence/", file_name, sep= ""))
-  hist(occurrence)
+  occ <- occCaract[[2]] #occurrence des caracteres de l'alphabet
+  filePath <- paste(path, "/", file_name, ".png", sep= "")
+  png(filename= filePath)
+  hist(table(data.frame(occ)), xlab= "Occurrence", main= paste("Histogramme de ", file_name, sep= ""))
   dev.off()
   
-  X <- 2 ; Y <- 3 ; Z <- 4
-  print(paste("Occ de ", X, " = ", sum(X == occurrence), sep= ""))
-  print(paste("Occ de ", Y, " = ", sum(Y == occurrence), sep= ""))
-  print(paste("Occ de ", Z, " = ", sum(Z == occurrence), sep= ""))
-  
-  K <- 10
-  print(paste("Inferieur a ", K, " = ", sum(K >= occurrence), sep= ""))
+  setwd(currentDir)
 }
 
+##################################################
+############  FONCTIONS FASTA ####################
+##################################################
+
+#' Recupere les noms et sequences des proteines presentes dans le fichier
+#'
+#' @param baseDir : repertoire racine du programme
+#' @param file_name : chemin du fichier .fasta (doit se trouver dans "data/") (chaine de caracteres)
+#'
+#' @return noms et sequences des proteines (liste de deux vecteurs de chaines de caracteres)
+#' @export Recuperation des noms et sequences proteiques d'un fichier fasta
+#'
+#' @examples nomsEtsequences <- getNamesAndSeq("~/home/user/", "myfile.fasta")
+getNamesAndSeq <- function(baseDir, file_path){
+  struct_fasta <- read.fasta(file_path, as.string = TRUE, forceDNAtolower= FALSE) #ensemble des sequences fasta
+  
+  taille <- length(struct_fasta)
+  fullNames <- getAnnot(struct_fasta) #noms complets des proteines
+  sequences <- vector(length= taille) #sequences completes
+  for(i in 1:taille){
+    fullNames[[i]] <- gsub("\t", " ", fullNames[[i]])
+    sequences[i] <- struct_fasta[[i]][[1]]
+  }
+  res <- list(fullNames, sequences)
+  return (res)
+}
+
+
+#' Retourne le vecteur des chaines creees en ayant decoupe 'chaine' en 'val' sous-chaines
+#'
+#' @param chaine : sequence a decouper (chaine de caracteres)
+#' @param val : nombre de sous-chaines souhaite (entier)
+#'
+#' @return vecteur des chaines creees en ayant decoupe 'chaine' en 'val' sous-chaines
+#' @export Retourne le vecteur des chaines creees en ayant decoupe 'chaine' en 'val' sous-chaines
+#'
+#' @examples ss-str <- wordCut("blablobla", 3) ; ss-str = ("bla", "blo", "bla")
+wordCut <- function(chaine, val){
+  taille <- (nchar(chaine)/val+1)
+  res <- vector(length= taille)
+  for(i in 0:taille-1){
+    sous_chaine <- substr(chaine, i*val+1, i*val+val)
+    res[i+1] <- sous_chaine
+  }
+  
+  return (res)
+}
+
+#' Cree un fichier fasta avec les proteines de la liste 'amis'
+#'
+#' @param folder_name : nom du dossier cible
+#' @param fic_name : nom du fichier fasta a creer
+#' @param fullNamesAndSeq : resultat de getNamesAndSeq (liste de 2 vecteurs de chaines de caracteres)
+#' @param amis : liste des proteines du groupe
+#'
+#' @return RIEN - cree un fichier fasta avec les proteines de la liste 'amis'
+#' @export Cree un fichier fasta avec les proteines de la liste 'amis'
+#'
+#' @examples create_fichier_fasta("Fic403.fasta", fullNamesAndSeq_403, amis403)
+create_fichier_fasta <- function(folder_name, fic_name, fullNamesAndSeq, amis){
+  nb_prot <- length(amis)
+  X <- 60 # valeur de decoupe des sequences pour l'affichage dans le fichier
+  fic_path <- paste(folder_name, "/", fic_name, sep= "")
+  
+  sink(fic_path, append= FALSE)
+  for(i in 1:nb_prot)
+  {
+    nom_prot <- fullNamesAndSeq[[1]][[amis[[i]]]]
+    seq_prot <- fullNamesAndSeq[[2]][[amis[[i]]]]
+    cat(nom_prot, "\n", sep= "")
+    cut_seq <- wordCut(seq_prot, X) #decoupe la sequence en sous chaines de X caracteres
+    for(j in 1:length(cut_seq))
+    {
+      sous_chaine <- cut_seq[j]
+      if(sous_chaine != "") cat(sous_chaine, "\n", sep= "")
+    }
+  }
+  sink(NULL)
+}
+
+#' Cree les fichiers fasta correspondants aux groupes d'amis dans differents dossiers
+#'
+#' @param folder_name : nom du dossier où enregistrer les fichiers fasta
+#' @param fullNamesAndSeq : resultat de getNamesAndSeq (liste de 2 vecteurs de chaines de caracteres)
+#' @param amis : ensemble des groupes d'amis trouves (liste de listes d'entiers)
+#'
+#' @return RIEN - cree des fichiers .fasta
+#' @export Creation de fichiers .fasta lies aux groupes de proteines classees ensemble
+#'
+#'@examples ecriture_all_fichiers_fasta(nomsEtsequences, amis)
+ecriture_all_fichiers_fasta <- function(folder_name, fullNamesAndSeq, amis){
+  currentDir <- getwd()
+  dirName <- folder_name
+  if(!dir.exists(dirName)) dir.create(dirName)
+  setwd(dirName)
+  
+  for(i in 1:length(amis))
+  {
+    fic_name <- paste("Groupe", i, ".fasta", sep= "")
+    create_fichier_fasta(dirName, fic_name, fullNamesAndSeq, unlist(amis[[i]]))
+  }
+  
+  setwd(currentDir)
+}
+
+##################################################
+############  FONCTIONS VENN #####################
+##################################################
 
 #' Enregistre les png des diagrammes de Venn crees avec les 3 versions de coupe passees en parametre
 #'
