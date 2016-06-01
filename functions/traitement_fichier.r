@@ -185,6 +185,7 @@ ecriture_fichier_heatmap <- function(dir_name, file_name, matrice){
 
 #' Creation du fichier de sommets utilise pour la clique
 #'
+#' @param root_dir: emplacement racine du programme
 #' @param fic_sommets : nom du fichier 'sommets' souhaite (chaine de caracteres)
 #' @param names : noms des proteines a stocker (vecteur de chaines de caracteres)
 #'
@@ -192,9 +193,10 @@ ecriture_fichier_heatmap <- function(dir_name, file_name, matrice){
 #' @export Creation du fichier de sommets utilise pour la clique
 #'
 #' @examples creer_fichier_sommets("sommets_file.txt", names403)
-creer_fichier_sommets <- function(fic_sommets, names){
+creer_fichier_sommets <- function(root_dir, fic_sommets, names){
   currentDir <- getwd()
-  setwd("~/R/data/clique/")
+  data_dir <- paste(root_dir, "/data/clique/", sep= "")
+  setwd(data_dir)
   
   sink(fic_sommets, append= FALSE)
   cat("nom_prot type part milieu\n")
@@ -211,6 +213,7 @@ creer_fichier_sommets <- function(fic_sommets, names){
 
 #' Creation du fichier d'arcs utilise pour la creation de clique
 #'
+#' @param root_dir: emplacement racine du programme
 #' @param fic_arcs : nom du fichier 'arcs' a creer (chaine de caracteres)
 #' @param matRobustesse : matrice de robustesse (matrice d'entiers)
 #' @param names : noms des proteines (vecteur de chaines de caracteres)
@@ -219,9 +222,10 @@ creer_fichier_sommets <- function(fic_sommets, names){
 #' @export Creation du fichier d'arcs utilise pour la creation de clique
 #'
 #' @examples creer_fichier_arcs("arc_file.txt", matRob, names403)
-creer_fichier_arcs <- function(fic_arcs, matRobustesse, names){
+creer_fichier_arcs <- function(root_dir, fic_arcs, matRobustesse, names){
   currentDir <- getwd()
-  setwd("~/R/data/clique/")
+  data_dir <- paste(root_dir, "/data/clique/", sep= "")
+  setwd(data_dir)
   
   sink(fic_arcs, append= FALSE)
   cat("prot_1 prot_2 force\n")
@@ -235,7 +239,6 @@ creer_fichier_arcs <- function(fic_arcs, matRobustesse, names){
       }
     }
   }
-  
   sink(NULL)
   setwd(currentDir)
 }

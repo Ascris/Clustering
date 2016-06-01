@@ -23,7 +23,7 @@ library(igraph)
 #' @return plot de la clique avec sa legende
 #' @export Cree une clique et sa legende et l'enregistre en .png dans 'resultats/clique/'
 #'
-#' @examples clique <- create_clique("clique403_T", "proteines403.txt","robustesse403.txt", "T", 403)
+#' @examples clique <- create_clique("~/R/data/", "clique403_T", "proteines403.txt","robustesse403.txt", "T", 403)
 create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere, nb_prot){
   currentDir <- getwd()
   dirName <- paste(root_dir, "/data/clique/", sep= "")
@@ -38,8 +38,6 @@ create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere,
               "A"="regne", "B"="regne", "E"="regne",
               "TOP"="type", "RG"="type",
               "T"="milieu","M"="milieu","P"="milieu","H"="milieu")
-  
-  #TODO : revoir les cas, dans proteines403, la premiere colonne est ignoree et nom_prot est la 2e col...etc
   
   if("milieu" == x) #milieu = T, M, P ou H
   {

@@ -68,11 +68,38 @@ then
       echo "Fichier non trouve dans $DATA_DIR (taper \"n\" pour ne plus avoir les fichiers fasta)"
       read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
     done
+    
+    if [ "n" != $FASTA ]
+    then
+      FASTA=$DATA_DIR$FASTA
+    fi
   fi
-  FASTA=$DATA_DIR$FASTA
+  
+  read -p "Voulez-vous les occurrences des caracteres de l'alphabet VLD ? (y/n)" OCC
+  if [ "n" != $OCC ]
+  then
+    if [ "n" == $FASTA ]
+    then
+      read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " OCC
+      
+      while [ "n" != $OCC ] && [ ! -e $DATA_DIR$OCC ]
+      do
+        echo "Fichier non trouve dans $DATA_DIR (taper \"n\" pour ne plus avoir les fichiers fasta)"
+        read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " OCC
+      done
+    
+      if [ "n" != $OCC ]
+      then
+       OCC=$DATA_DIR$OCC
+      fi
+    else
+      OCC=$FASTA
+    fi
+  fi
+  
   echo "Lancement du programme avec vos parametres."
   echo "Veuillez patienter..."
-  Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA #transfert des choix de l'utilisateur au script R
+  Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $OCC #transfert des choix de l'utilisateur au script R
   
 else
   echo "Hierarchique selectionne" ; echo ""
@@ -110,14 +137,41 @@ else
   
     while [ "n" != $FASTA ] && [ ! -e $DATA_DIR$FASTA ]
     do
-      echo "Fichier non trouve dans $DATA_DIR (taper 'n' pour ne pas avoir les fichiers fasta)"
+      echo "Fichier non trouve dans $DATA_DIR (taper \"n\" pour ne plus avoir les fichiers fasta)"
       read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
     done
+    
+    if [ "n" != $FASTA ]
+    then
+      FASTA=$DATA_DIR$FASTA
+    fi
   fi
-  FASTA=$DATA_DIR$FASTA
+  
+  read -p "Voulez-vous les occurrences des caracteres de l'alphabet VLD ? (y/n)" OCC
+  if [ "n" != $OCC ]
+  then
+    if [ "n" == $FASTA ]
+    then
+      read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " OCC
+      
+      while [ "n" != $OCC ] && [ ! -e $DATA_DIR$OCC ]
+      do
+        echo "Fichier non trouve dans $DATA_DIR (taper \"n\" pour ne plus avoir les fichiers fasta)"
+        read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " OCC
+      done
+    
+      if [ "n" != $OCC ]
+      then
+       OCC=$DATA_DIR$OCC
+      fi
+    else
+      OCC=$FASTA
+    fi
+  fi
+  
   echo "Lancement du programme avec vos parametres."
   echo "Veuillez patienter..."
-  Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $METHODE $NB_GROUPES #transfert des choix de l'utilisateur au script R
+  Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $OCC $METHODE $NB_GROUPES #transfert des choix de l'utilisateur au script R
 fi
 
 echo "Fin du programme."

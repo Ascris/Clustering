@@ -13,6 +13,9 @@ min <- as.numeric(args[3])
 max <- as.numeric(args[4])
 hm_fic <- args[5]
 data_fasta <- args[6]
+#on peut vouloir les occurrences sans les fichiers fasta des groupes trouves
+#il se peut donc que data_fasta == occ
+occ <- args[7]
 
 # nb_arguments <- 6
 # fic_path <- "~/R/data/proteomeAt150aaER_VLD.raw"
@@ -36,11 +39,15 @@ cat(sprintf("Chargement des donnees"), "\n")
 dataX<- chargement_fichier(fic_path, nb_individus)
 namesX <- getProteinNames(fic_path)
 
-if("n" != data_fasta)
+if("n" != occ)
 {
+  baseName <- basename(occ)
+  dirName <- dirname(occ)
+  data_vld <- paste(dirName, "/", substr(baseName, 1, nchar(baseName)-6), "_VLD.fasta", sep= "")
+  
   #Calcul des occurrences des elements de l'alphabet VLD
   cat(sprintf("Calcul des occurrences de l'alphabet VLD"), "\n")
-  occCaractX <- getOccCaract(data_fasta)
+  occCaractX <- getOccCaract(data_vld)
   occCaractX <- triAlphabetDecroissant(occCaractX)
   fic_occ_name <- paste("occurrence", nb_individus, sep= "")
   ecriture_fichier_occurrence(root_dir, paste(fic_occ_name, ".txt", sep= ""), occCaractX)
@@ -56,18 +63,18 @@ if("y" == hm_fic) #fichier heatmap demande
 {
   cat(sprintf("Creation fichier heatmap de la matrice de robustesse"), "\n")
   file_name <- paste("matRob", nb_individus, "_", min, "-", max, ".png", sep= "")
-  ecriture_fichier_heatmap(root_dir, file_name, matRobustesse)
+  ecriture_fichier_heatmap(root_dir, file_name, retournementMat(matRobustesse, matRobustesse[1,1]))
 }
 
-if(8 == nb_arguments) #Classement hierarchique
+if(9 == nb_arguments) #Classement hierarchique
 {
   cat(sprintf("Classement hierarchique"), "\n")
   
-  methode <- args[7]
-  val_coupe <- as.numeric(args[8])
+  methode <- args[8]
+  val_coupe <- as.numeric(args[9])
   
-  methode <- "ward.D2"
-  val_coupe <- 15
+#   methode <- "ward.D2"
+#   val_coupe <- 15
   
   cat(sprintf("Formation des groupes et enregistrement dans le fichier de groupes"), "\n")
   #HCLUST ET CUTREE

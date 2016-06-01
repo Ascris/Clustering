@@ -27,7 +27,7 @@ RAW_VLD_FIC_NAME="${VLD_FIC%.*}.raw"
 RAW_VLD_FIC_PATH="$DATA_DIR$RAW_VLD_FIC_NAME"
 ."$VLD"distauto -f r -s p $VLD_FASTA_FIC_PATH $RAW_VLD_FIC_PATH
 
-echo "Placez maintenant la derniere ligne du fichier .raw en premier"
+echo "Placez maintenant la derniere ligne du fichier $RAW_VLD_FIC_PATH en premier"
 read -p "Entree pour continuer" REP
 
 #Application de la classification ensuite
