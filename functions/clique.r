@@ -1,6 +1,6 @@
-root_dir <- getwd()
-source(paste(root_dir, "/functions/traitement_fichier.r", sep= ""))
-source(paste(root_dir, "/functions/protein_name.r", sep= ""))
+current_dir <- getwd()
+source(paste(current_dir, "/functions/traitement_fichier.r", sep= ""))
+source(paste(current_dir, "/functions/protein_name.r", sep= ""))
 
 list.of.packages <- c("igraph")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
@@ -26,8 +26,8 @@ library(igraph)
 #' @examples clique <- create_clique("~/R/data/", "clique403_T", "proteines403.txt","robustesse403.txt", "T", 403)
 create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere, nb_prot){
   currentDir <- getwd()
-  dirName <- paste(root_dir, "/data/clique/", sep= "")
-  setwd(dirName)
+  data <- paste(root_dir, "/data/clique/", sep= "")
+  setwd(data)
   
   prot <- read.table(fic_sommets, sep=" ", header= TRUE, row.names= NULL)
   robustesse <- read.table(fic_arcs, sep=" ", header= TRUE, stringsAsFactors= FALSE, row.names= NULL)
@@ -38,6 +38,8 @@ create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere,
               "A"="regne", "B"="regne", "E"="regne",
               "TOP"="type", "RG"="type",
               "T"="milieu","M"="milieu","P"="milieu","H"="milieu")
+
+  two_elements <- TRUE
   
   if("milieu" == x) #milieu = T, M, P ou H
   {
@@ -88,12 +90,13 @@ create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere,
           else if("E" == taille_points[i]) taille_points[i] <- tailles[3]
           else taille_points[i] <- tailles[4]
         }
-        titre_legende_1 <- "Regne"
+        titre_legende_1 <- "Type"
         titre_legende_2 <- "Regne"
         
       } else # "regne" == x par defaut (A, B ou E)
         {
           print("dans cas : regne ou autre")
+          two_elements <- FALSE
           legende_couleur <- c("A", "B", "E", "?")
           couleur_prot <- get.vertex.attribute(clique, "nom_prot")
           couleurs <- c("Red", "Green", "Blue", "Yellow")
@@ -119,19 +122,30 @@ create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere,
   
   layout(matrix(c(1,2,3), 3, byrow = TRUE), height= c(7,1,2)) # positionnement des elements de l'image
   
-  plot_clique <- plot(clique,
-                      vertex.color= couleur_prot,
-                      edge.width= taille_arcs,
-                      edge.color= "black",
-                      vertex.label= NA,
-                      vertex.size= as.matrix(as.numeric(taille_points)))
+  if(two_elements)
+  {
+    plot_clique <- plot(clique,
+                        vertex.color= couleur_prot,
+                        edge.width= taille_arcs,
+                        edge.color= "black",
+                        vertex.label= NA,
+                        vertex.size= as.matrix(as.numeric(taille_points)))
+    
+  } else {
+    plot_clique <- plot(clique,
+                        vertex.color= couleur_prot,
+                        edge.width= taille_arcs,
+                        edge.color= "black",
+                        vertex.label= NA)
+  }
   par(mar=c(0,0,0,0))
   plot.new()
   legend("center", "groups", legend= legende_couleur, pch= 16, col= couleurs, ncol=5, title= titre_legende_1)
   
-  plot.new()
-  #TODO : pt.cex a revoir - taille legende incorrecte !
-  legend("center", "groups", legend= legende_taille, pch= 16, cex = 2, pt.cex= tailles/3, ncol= 4, title= titre_legende_2)
+  if(two_elements){
+    plot.new()
+    legend("center", "groups", legend= legende_taille, pch= 16, cex = 2, pt.cex= tailles/3, ncol= 4, title= titre_legende_2)
+  }
     
   dev.off()
   #FIN CREATION FICHIER DESSIN

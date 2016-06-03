@@ -1,3 +1,6 @@
+root_dir <- getwd()
+source(paste(root_dir, "/functions/protein_name.r", sep= ""))
+
 list.of.packages <- c("seqinr")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages, repos="http://cran.rstudio.com/")
@@ -8,7 +11,7 @@ library(seqinr)
 ##  LECTURE ET CHARGEMENT MATRICE DISTANCES ##
 ##############################################
 
-#' Remplit la partie superieure de la matrice avec sa partie inferieure, la diagonale est mise a 0
+#' Remplie la partie superieure de la matrice avec sa partie inferieure, la diagonale est mise a 0
 #'
 #' @param matriceData : matrice de distances
 #'
@@ -195,16 +198,16 @@ ecriture_fichier_heatmap <- function(dir_name, file_name, matrice){
 #' @examples creer_fichier_sommets("sommets_file.txt", names403)
 creer_fichier_sommets <- function(root_dir, fic_sommets, names){
   currentDir <- getwd()
-  data_dir <- paste(root_dir, "/data/clique/", sep= "")
-  setwd(data_dir)
+  record_dir <- paste(root_dir, "/data/clique/", sep= "")
+  setwd(record_dir)
   
   sink(fic_sommets, append= FALSE)
-  cat("nom_prot type part milieu\n")
+  cat("nom_prot regne type milieu\n")
   for(name in names){
+    regne <- get_regne(name)
     type <- get_type(name)
-    part <- get_particularite(name)
     milieu <- get_milieu(name)
-    cat(sprintf(paste(name, type, part, milieu), sep=" "), "\n")
+    cat(sprintf(paste(name, regne, type, milieu), sep=" "), "\n")
   }
   sink(NULL)
   
@@ -217,12 +220,13 @@ creer_fichier_sommets <- function(root_dir, fic_sommets, names){
 #' @param fic_arcs : nom du fichier 'arcs' a creer (chaine de caracteres)
 #' @param matRobustesse : matrice de robustesse (matrice d'entiers)
 #' @param names : noms des proteines (vecteur de chaines de caracteres)
+#' @param force : lien qui doit lier les individus entre eux
 #'
 #' @return RIEN - cree un fichier .txt
 #' @export Creation du fichier d'arcs utilise pour la creation de clique
 #'
 #' @examples creer_fichier_arcs("arc_file.txt", matRob, names403)
-creer_fichier_arcs <- function(root_dir, fic_arcs, matRobustesse, names){
+creer_fichier_arcs <- function(root_dir, fic_arcs, matRobustesse, names, force){
   currentDir <- getwd()
   data_dir <- paste(root_dir, "/data/clique/", sep= "")
   setwd(data_dir)
@@ -231,7 +235,7 @@ creer_fichier_arcs <- function(root_dir, fic_arcs, matRobustesse, names){
   cat("prot_1 prot_2 force\n")
   for(i in 1:length(matRobustesse[1,])){
     for(j in 1:i){
-      if(i != j){
+      if((i != j) && (force <= matRobustesse[i,j])){
         prot_i <- names[i]
         prot_j <- names[j]
         robustesse <- matRobustesse[i,j]

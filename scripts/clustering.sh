@@ -3,6 +3,7 @@
 ROOT=$(pwd)
 DATA_DIR="$ROOT/data/"
 SCRIPT_DIR="$ROOT/scripts/"
+RES_DIR="$ROOT/resultats/"
 
 echo "Bonjour et bienvenue dans ce programme de clusterisation !"
 echo "Assurez-vous d'avoir bien mis votre matrice de distances (fichier .raw) dans le dossier 'data'."
@@ -97,9 +98,27 @@ then
     fi
   fi
   
+  read -p "Voulez-vous la clique associee aux groupes trouves ? (y/n) " CLIQUE
+  if [ "n" != $CLIQUE ]
+  then
+    echo "Votre fichier se trouvera dans $RES_DIR"
+    echo "Vous pouvez colorer les individus selon ces criteres :"
+    echo "      - milieu"
+    echo "      - type"
+    read -p "Sur quel critere voulez-vous colorer les individus ? " CLIQUE
+  else
+    echo "Tres bien, comme vous voulez"
+  fi
+  
+  if [ "milieu" != $CLIQUE ] && [ "type" != $CLIQUE ] && [ "n" != $CLIQUE ]
+  then
+    echo "Critere non reconnu, critere \"milieu\" selectionne par defaut"
+    CLIQUE="milieu"
+  fi
+  
   echo "Lancement du programme avec vos parametres."
   echo "Veuillez patienter..."
-  Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $OCC #transfert des choix de l'utilisateur au script R
+  Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $OCC $CLIQUE #transfert des choix de l'utilisateur au script R
   
 else
   echo "Hierarchique selectionne" ; echo ""
@@ -147,7 +166,7 @@ else
     fi
   fi
   
-  read -p "Voulez-vous les occurrences des caracteres de l'alphabet VLD ? (y/n)" OCC
+  read -p "Voulez-vous les occurrences des caracteres de l'alphabet VLD ? (y/n) " OCC
   if [ "n" != $OCC ]
   then
     if [ "n" == $FASTA ]
@@ -169,9 +188,27 @@ else
     fi
   fi
   
+  read -p "Voulez-vous la clique associee aux groupes trouves ? (y/n) " CLIQUE
+  if [ "n" != $CLIQUE ]
+  then
+    echo "Votre fichier se trouvera dans $RES_DIR"
+    echo "Vous pouvez colorer les individus selon ces criteres :"
+    echo "      - milieu"
+    echo "      - type"
+    read -p "Sur quel critere voulez-vous colorer les individus ? " CLIQUE
+  else
+    echo "Tres bien, comme vous voulez"
+  fi
+  
+  if [ "milieu" != $CLIQUE ] && [ "type" != $CLIQUE ] && [ "n" != $CLIQUE ]
+  then
+    echo "Critere non reconnu, critere \"milieu\" selectionne par defaut"
+    CLIQUE="milieu"
+  fi
+  
   echo "Lancement du programme avec vos parametres."
   echo "Veuillez patienter..."
-  Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $OCC $METHODE $NB_GROUPES #transfert des choix de l'utilisateur au script R
+  Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $OCC $CLIQUE $METHODE $NB_GROUPES #transfert des choix de l'utilisateur au script R
 fi
 
 echo "Fin du programme."

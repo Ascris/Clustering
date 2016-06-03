@@ -1,483 +1,483 @@
 Nombre de groupes :  38 
 Ligne : Groupe ID_proteine nom_proteine
 ##############################################
-# Singletons -  47  proteines
-0  1 AcamarTOPb_M_B_B0CFN9_gi|158335200|ref|YP_001516372.1|_DNA_topoisomerase_I_[Acaryochloris_marina_MBIC11017] 
-0  28 ArathaTOPb_M_E_Q680E4_gi|79323918|ref|NP_001031463.1|_DNA_topoisomerase,_type_IA,_core_[Arabidopsis_thaliana] 
-0  40 BacantTOPa_M_B_Q81WK2_gi|30263837|ref|NP_846214.1|_DNA_topoisomerase_I_[Bacillus_anthracis_str._Ames] 
-0  50 BacsubTOPb_M_B_G4P2Q0_gi|384175353|ref|YP_005556738.1|:3-693_DNA_topoisomerase_I_[Bacillus_subtilis_subsp._subtilis_str._RO-NN-1] 
-0  54 BruaboTOPz_M_B_Q578A3_gi|62317539|ref|YP_223392.1|_DNA_topoisomerase_I_[Brucella_abortus_bv._1_str._9-941] 
-0  65 ChlaurTOPz_T_B_A9WDH5_gi|163849439|ref|YP_001637483.1|_DNA_topoisomerase_I_[Chloroflexus_aurantiacus_J-10-fl] 
-0  81 DaucarTOPz_M_E_P93119_gi|14285799|sp|P93119.1|TOP1_DAUCA_RecName:_Full=DNA_topoisomerase_1;_AltName:_Full=DNA_topoisomerase_I 
-0  91 DesmucRGa_T_A_E8R758_gi|320101413|ref|YP_004177005.1|_reverse_gyrase_[Desulfurococcus_mucosus_DSM_2162] 
-0  107 EryrhuTOPz_M_B_F5WS41_gi|336065756|ref|YP_004560614.1|_DNA_topoisomerase_I_[Erysipelothrix_rhusiopathiae_str._Fujisawa] 
-0  109 EsccolTOPb_M_B_P14294_gi|16129717|ref|NP_416277.1|_DNA_topoisomerase_III_[Escherichia_coli_str._K-12_substr._MG1655] 
-0  116 FusnucTOPb_M_B_A5TXI0_gi|148324355|gb|EDK89605.1|_DNA_topoisomerase_TopA_[Fusobacterium_nucleatum_subsp._polymorphum_ATCC_10953] 
-0  142 HelpylTOPb_M_B_P55991_gi|15644746|ref|NP_206916.1|_DNA_topoisomerase_I_[Helicobacter_pylori_26695] 
-0  146 HypbutRGa_T_A_A2BJC9_gi|124027115|ref|YP_001012435.1|_reverse_gyrase_[Hyperthermus_butylicus_DSM_5456] 
-0  151 IgnaggTOPz_T_A_E0SP63_gi|305663582|ref|YP_003859870.1|_DNA_topoisomerase_I_[Ignisphaera_aggregans_DSM_17230] 
-0  160 LeibraTOPc_M_E_A4HGN1_gi|389601917|ref|XP_001566225.2|_putative_DNA_topoisomerase_III_[Leishmania_braziliensis_MHOM/BR/75/M2904] 
-0  167 LepborTOPz_M_B_Q052G9_gi|116327989|ref|YP_797709.1|_DNA_topoisomerase_[Leptospira_borgpetersenii_serovar_Hardjo-bovis_str._L550] 
-0  168 LismonTOPa_M_B_Q8Y3S5_gi|16804793|ref|NP_466278.1|_DNA_topoisomerase_III_[Listeria_monocytogenes_EGD-e] 
-0  175 MetaceTOPa_M_A_Q8TMY4_gi|20091341|ref|NP_617416.1|_DNA_topoisomerase_I_[Methanosarcina_acetivorans_C2A] 
-0  177 MetaeoTOPz_M_A_A6USZ7_gi|150400465|ref|YP_001324231.1|_DNA_topoisomerase_I_[Methanococcus_aeolicus_Nankai-3] 
-0  183 MetcapTOPz_T_B_Q603G7_gi|53803091|ref|YP_115233.1|_DNA_topoisomerase_I_[Methylococcus_capsulatus_str._Bath] 
-0  190 MetfeiRGz_T_A_E3GX16_gi|312136330|ref|YP_004003667.1|_reverse_gyrase_[Methanothermus_fervidus_DSM_2088] 
-0  198 MetinfRGz_T_A_D5VRZ5_gi|296109363|ref|YP_003616312.1|_reverse_gyrase_[methanocaldococcus_infernus_ME] 
-0  200 MetinfTOPz_T_B_B3DUF7_gi|189218917|ref|YP_001939558.1|_Topoisomerase_IA_[Methylacidiphilum_infernorum_V4] 
-0  212 MetokiRGz_T_A_F8ALS9_gi|336121641|ref|YP_004576416.1|_Reverse_gyrase_[Methanothermococcus_okinawensis_IH1] 
-0  226 Metsp.TOPz_X_B_E4QQ87_gi|313200024|ref|YP_004038682.1|_DNA_topoisomerase_i_[Methylovorus_sp._MP688] 
-0  233 MetvulTOPz_T_A_C9RG81_gi|261402841|ref|YP_003247065.1|_DNA_topoisomerase_I_[Methanocaldococcus_vulcanius_M7] 
-0  240 MycpneTOPz_M_B_P78032_gi|13508000|ref|NP_109949.1|_DNA_topoisomerase_I_[Mycoplasma_pneumoniae_M129] 
-0  246 NauproTOPz_M_B_B9L7D9_gi|224372175|ref|YP_002606547.1|_DNA_topoisomerase_I_[Nautilia_profundicola_AmH] 
-0  249 NeqRGz_T_A_NN_Q74M79_gi|499466667|ref|WP_011153307.1|||gi|499466778|ref|WP_011153418.1|_hypothetical_protein_[Nanoarchaeum_equitans] 
-0  253 Nitsp.RGz_T_B_A6Q5V5_gi|152991499|ref|YP_001357221.1|_reverse_gyrase_[Nitratiruptor_sp._SB155-2] 
-0  254 Nitsp.TOPz_T_B_A6Q5J8_gi|152991392|ref|YP_001357114.1|_DNA_topoisomerase_I_[Nitratiruptor_sp._SB155-2] 
-0  261 PedhepTOPa_M_B_C6XWV5_gi|255531939|ref|YP_003092311.1|_DNA_topoisomerase_type_IA_central_domain-containing_protein_[Pedobacter_heparinus_DSM_2366] 
-0  264 PictorTOPz_T_A_Q6L120_gi|48477819|ref|YP_023525.1|_DNA_topoisomerase_I_[Picrophilus_torridus_DSM_9790] 
-0  266 PlafalTOPz_M_E_Q8IDM7_gi|124513658|ref|XP_001350185.1|_DNA_topoisomerase_III,_putative_[Plasmodium_falciparum_3D7] 
-0  269 PorginTOPb_M_B_Q7MUL3_gi|34541162|ref|NP_905641.1|_DNA_topoisomerase_III_[Porphyromonas_gingivalis_W83] 
-0  276 Pybsp.RGz_X_A_G7VD13_gi|374327944|ref|YP_005086144.1|_reverse_gyrase_[Pyrobaculum_sp._1860] 
-0  288 PyrfumTOPz_T_A_G0EDJ5_gi|347524481|ref|YP_004782051.1|_DNA_topoisomerase_I_[Pyrolobus_fumarii_1A] 
-0  311 SalrubTOPz_M_B_Q2S3I6_gi|83814718|ref|YP_445245.1|_DNA_topoisomerase_I_[Salinibacter_ruber_DSM_13855] 
-0  317 ShiboyTOPa_M_B_B2U0G3_gi|187733938|ref|YP_001880103.1|_DNA_topoisomerase_I_[Shigella_boydii_CDC_3083-94] 
-0  318 ShiboyTOPb_M_B_Q321Q7_gi|82543832|ref|YP_407779.1|_DNA_topoisomerase_III_[Shigella_boydii_Sb227] 
-0  321 StaaurTOPb_M_B_Q99S17_gi|15925244|ref|NP_372778.1|_DNA_topoisomerase_III_[Staphylococcus_aureus_subsp._aureus_Mu50] 
-0  323 StahelRGa_T_A_D7D9J2_gi|297527313|ref|YP_003669337.1|_reverse_gyrase_[Staphylothermus_hellenicus_DSM_12710] 
-0  324 StahelRGb_T_A_D7D9Z0_gi|297527461|ref|YP_003669485.1|_DNA_topoisomerase_[Staphylothermus_hellenicus_DSM_12710] 
-0  347 SymtheTOPb_T_B_Q67NT6_gi|51892810|ref|YP_075501.1|_DNA_topoisomerase_III_[Symbiobacterium_thermophilum_IAM_14863] 
-0  361 TheneuTOPz_T_A_B1YAK4_gi|171186180|ref|YP_001795099.1|_DNA_topoisomerase_type_IA_central_domain-containing_protein_[Pyrobaculum_neutrophilum_V24Sta] 
-0  368 ThesibTOPz_T_A_C6A350_gi|242398970|ref|YP_002994394.1|_DNA_topoisomerase_I_[Thermococcus_sibiricus_MM_739] 
-0  403 ZymmobTOPz_M_B_C8WFK4_gi|260752381|ref|YP_003225274.1|_DNA_topoisomerase_I_[Zymomonas_mobilis_subsp._mobilis_NCIMB_11163] 
+# Singletons -  14  proteines
+0  28 ArathaTOPa_M_E 
+0  40 AtoparTOPz_M_B 
+0  53 BaucicTOPz_X_B 
+0  54 BorburTOPz_M_B 
+0  70 CloperTOPa_M_B 
+0  125 GlovioTOPb_M_B 
+0  162 LeiinfTOPa_M_E 
+0  168 LepborTOPz_M_B 
+0  175 MesfloTOPz_M_B 
+0  241 MycpneTOPz_M_B 
+0  251 NeqT1z_T_A_NN 
+0  265 PictorTOPz_T_A 
+0  275 PsefluTOPb_M_B 
+0  366 ThepenTOPz_T_A 
 ##############################################
-# Groupe  1  -  29  proteines
-1   2 AcibooRGz_T_A_B5ID91_gi|289596626|ref|YP_003483322.1|_reverse_gyrase_[Aciduliprofundum_boonei_T469] 
-1   5 AcicelTOPz_T_B_A0LWD4_gi|117929179|ref|YP_873730.1|_DNA_topoisomerase_I_[Acidothermus_cellulolyticus_11B] 
-1   6 AciferTOPa_M_B_B5EJ79_gi|198282164|ref|YP_002218485.1|_DNA_topoisomerase_I_[Acidithiobacillus_ferrooxidans_ATCC_53993] 
-1   7 AciferTOPb_M_B_B5EKS5_gi|198282423|ref|YP_002218744.1|_DNA_topoisomerase_III_[Acidithiobacillus_ferrooxidans_ATCC_53993] 
-1   10 AcihosRGa_X_A_F4B4R6_gi|332797094|ref|YP_004458594.1|_reverse_gyrase_[Acidianus_hospitalis_W1] 
-1   19 AersalTOPb_M_B_A4SHT6_gi|145297365|ref|YP_001140206.1|_DNA_topoisomerase_III_[Aeromonas_salmonicida_subsp._salmonicida_A449] 
-1   22 AmicolTOPz_M_B_D5EGF6_gi|294102504|ref|YP_003554362.1|_DNA_topoisomerase_I_[Aminobacterium_colombiense_DSM_12261] 
-1   23 AnathmTOPz_X_B_E8N5B1_gi|320161001|ref|YP_004174225.1|_DNA_topoisomerase_I_[Anaerolinea_thermophila_UNI-1] 
-1   24 AquaeoRGa_T_B_O67037_gi|15606221|ref|NP_213599.1|_reverse_gyrase_[Aquifex_aeolicus_VF5] 
-1   27 ArathaTOPa_M_E_O49571_gi|2827516|emb|CAA16524.1|_DNA_topoisomerase_like-protein_[Arabidopsis_thaliana] 
-1   37 AroaroTOPa_M_B_Q5P5A5_gi|56476819|ref|YP_158408.1|_DNA_topoisomerase_III_[Aromatoleum_aromaticum_EbN1] 
-1   41 BacantTOPb_M_B_Q81Z97_gi|30260542|ref|NP_842919.1|_DNA_topoisomerase_III_[Bacillus_anthracis_str._Ames] 
-1   44 BaccerTOPb_M_B_Q63GK5_gi|52144873|ref|YP_081956.1|_DNA_topoisomerase_III_[Bacillus_cereus_E33L] 
-1   47 BacfraTOPb_M_B_Q64WK2_gi|53712666|ref|YP_098658.1|_DNA_topoisomerase_I_[Bacteroides_fragilis_YCH46] 
-1   51 BarbacTOPz_M_B_A1UT28_gi|121601698|ref|YP_989131.1|_DNA_topoisomerase_I_[Bartonella_bacilliformis_KC583] 
-1   52 BaucicTOPz_X_B_Q1LTG3_gi|94676515|ref|YP_588751.1|_DNA_topoisomerase_I_[Baumannia_cicadellinicola_str._Hc_(Homalodisca_coagulata)] 
-1   53 BorburTOPz_M_B_O51768_gi|15595173|ref|NP_212962.1|_DNA_topoisomerase_I_subunit_A_[Borrelia_burgdorferi_B31] 
-1   55 CaeeleTOPz_M_E_O61660_gi|17555378|ref|NP_499558.1|_Protein_TOP-3_[Caenorhabditis_elegans] 
-1   60 CamjejTOPz_M_B_Q9PLZ2_gi|218563272|ref|YP_002345052.1|_DNA_topoisomerase_I_[Campylobacter_jejuni_subsp._jejuni_NCTC_11168_=_ATCC_700819] 
-1   61 CammedRGz_T_B_A6DAD2_gi|494737664|ref|WP_007473084.1|_reverse_gyrase_[Caminibacter_mediatlanticus] 
-1   66 ChllimTOPz_M_B_B3EIE2_gi|189347904|ref|YP_001944433.1|_DNA_topoisomerase_I_[Chlorobium_limicola_DSM_245] 
-1   67 ChlpneTOPz_X_B_Q9Z7D7_gi|15618678|ref|NP_224964.1|_DNA_topoisomerase_I/SWI_domain_fusion_protein_[Chlamydophila_pneumoniae_CWL029] 
-1   68 ChrvioTOPz_M_B_Q7NQ71_gi|34499724|ref|NP_903939.1|_DNA_topoisomerase_I_[Chromobacterium_violaceum_ATCC_12472] 
-1   74 CordipTOPz_M_B_Q6NJR6_gi|38232948|ref|NP_938715.1|_DNA_topoisomerase_I_[Corynebacterium_diphtheriae_NCTC_13129] 
-1   75 CoxburTOPz_M_B_A9KH18_gi|154707151|ref|YP_001425405.1|_DNA_topoisomerase_I_[Coxiella_burnetii_Dugway_5J108-111] 
-1   83 Dehsp.TOPz_M_B_Q3ZX75_gi|73748516|ref|YP_307755.1|_DNA_topoisomerase_I_[Dehalococcoides_sp._CBDB1] 
-1   84 DeigeoTOPz_M_B_Q1IWT9_gi|94986100|ref|YP_605464.1|_DNA_topoisomerase_I_[Deinococcus_geothermalis_DSM_11300] 
-1   86 DenaceTOPz_M_B_D4H5K9_gi|291286769|ref|YP_003503585.1|_DNA_topoisomerase_I_[Denitrovibrio_acetiphilus_DSM_12809] 
-1   87 DesindTOPz_X_B_E6W3Q7_gi|317052378|ref|YP_004113494.1|_DNA_topoisomerase_I_[Desulfurispirillum_indicum_S5] 
+# Groupe  1  -  2  proteines
+1   1 AcamarTOPa_M_B 
+1   258 Nossp.TOPb_M_B 
 ##############################################
-# Groupe  2  -  23  proteines
-2   3 AcibooTOPz_T_A_B5IDR9_gi|289596012|ref|YP_003482708.1|_DNA_topoisomerase_I_[Aciduliprofundum_boonei_T469] 
-2   11 AcihosRGb_X_A_F4B7I9_gi|332796392|ref|YP_004457892.1|_reverse_gyrase_[Acidianus_hospitalis_W1] 
-2   12 AcihosTOPz_X_A_F4B4B1_gi|332797017|ref|YP_004458517.1|_DNA_topoisomerase_I_[Acidianus_hospitalis_W1] 
-2   14 AcisacTOPz_T_A_D9Q0J7_gi|302348228|ref|YP_003815866.1|_DNA_topoisomerase_III_[Acidilobus_saccharovorans_345-15] 
-2   16 AerperRGb_T_A_Q9YCB6_gi|118431415|ref|NP_147880.2|_reverse_gyrase_[Aeropyrum_pernix_K1] 
-2   17 AerperTOPz_T_A_Q9YB01_gi|14601630|ref|NP_148170.1|_DNA_topoisomerase_I_[Aeropyrum_pernix_K1] 
-2   25 AquaeoRGb_T_B_O67226_gi|15606410|ref|NP_213790.1|_reverse_gyrase_[Aquifex_aeolicus_VF5] 
-2   26 AquaeoTOPz_T_B_O66893_gi|15606076|ref|NP_213453.1|_topoisomerase_I_[Aquifex_aeolicus_VF5] 
-2   31 ArcfulTOPz_T_A_O28469_gi|11499394|ref|NP_070633.1|_DNA_topoisomerase_I_[Archaeoglobus_fulgidus_DSM_4304] 
-2   33 ArcproTOPz_T_A_D2RGC8_gi|284161403|ref|YP_003400026.1|_DNA_topoisomerase_[Archaeoglobus_profundus_DSM_5631] 
-2   35 ArcvenTOPz_T_A_F2KPZ5_gi|327400378|ref|YP_004341217.1|_DNA_topoisomerase_I_[Archaeoglobus_veneficus_SNP6] 
-2   57 CalmaqTOPz_T_A_A8MA31_gi|159040701|ref|YP_001539953.1|_DNA_topoisomerase_type_IA_central_domain-containing_protein_[Caldivirga_maquilingensis_IC-167] 
-2   59 CalsacTOPz_T_B_A4XIW7_gi|146296272|ref|YP_001180043.1|_DNA_topoisomerase_I_[Caldicellulosiruptor_saccharolyticus_DSM_8903] 
-2   62 CammedTOPz_T_B_A6DDI1_gi|494739459|ref|WP_007474867.1|_DNA_topoisomerase_I_[Caminibacter_mediatlanticus] 
-2   89 DeskamRGb_T_A_B8D628_gi|218884544|ref|YP_002428926.1|_Reverse_gyrase_[Desulfurococcus_kamchatkensis_1221n] 
-2   92 DesmucRGb_T_A_E8R9K5_gi|320101071|ref|YP_004176663.1|_reverse_gyrase_[Desulfurococcus_mucosus_DSM_2162] 
-2   100 DictheTOPz_T_B_B5YFC7_gi|206901797|ref|YP_002251235.1|_DNA_topoisomerase_I_[Dictyoglomus_thermophilum_H-6-12] 
-2   111 FerplaTOPz_M_A_D3RZ54_gi|288931982|ref|YP_003436042.1|_DNA_topoisomerase_I_[Ferroglobus_placidus_DSM_10642] 
-2   147 HypbutRGb_T_A_A2BLB8_gi|124027804|ref|YP_001013124.1|_reverse_gyrase_[Hyperthermus_butylicus_DSM_5456] 
-2   150 IgnaggRGb_T_A_E0SQB4_gi|305662656|ref|YP_003858944.1|_DNA_topoisomerase_[Ignisphaera_aggregans_DSM_17230] 
-2   153 IgnhosRGb_T_A_A8A9U6_gi|156937309|ref|YP_001435105.1|_reverse_gyrase_[Ignicoccus_hospitalis_KIN4/I] 
-2   186 MetcupRGb_X_A_F4G089_gi|330834344|ref|YP_004409072.1|_reverse_gyrase_[Metallosphaera_cuprina_Ar-4] 
-2   220 MetsedRGb_T_A_A4YIX2_gi|146304982|ref|YP_001192298.1|_reverse_gyrase_[Metallosphaera_sedula_DSM_5348] 
+# Groupe  2  -  10  proteines
+2   2 AcamarTOPb_M_B 
+2   39 ArtplaTOPz_M_B 
+2   80 Cyasp.TOPa_M_B 
+2   237 MicaerTOPz_M_B 
+2   257 Nossp.TOPa_M_B 
+2   272 PromarTOPz_M_B 
+2   315 SelT1z_M_B_Cc 
+2   346 Sycsp.TOPz_M_B 
+2   349 Synsp.TOPz_M_B 
+2   387 TrieryTOPz_X_B 
 ##############################################
-# Groupe  3  -  31  proteines
-3   4 AcicapTOPz_M_B_C1F6V0_gi|225874955|ref|YP_002756414.1|_DNA_topoisomerase_[Acidobacterium_capsulatum_ATCC_51196] 
-3   32 ArcproRGz_T_A_D2RI62_gi|284162037|ref|YP_003400660.1|_reverse_gyrase_[Archaeoglobus_profundus_DSM_5631] 
-3   34 ArcvenRGz_T_A_F2KSF0_gi|327400795|ref|YP_004341634.1|_reverse_gyrase_[Archaeoglobus_veneficus_SNP6] 
-3   36 ArtplaTOPz_M_B_D4ZX80_gi|479130733|ref|YP_005070693.1|_DNA_topoisomerase_I_[Arthrospira_platensis_NIES-39] 
-3   112 FibsucTOPa_M_B_C9RIV4_gi|261416374|ref|YP_003250057.1|_DNA_topoisomerase_III_[Fibrobacter_succinogenes_subsp._succinogenes_S85] 
-3   141 HelpylTOPa_M_B_O25188_gi|15645068|ref|NP_207238.1|_DNA_topoisomerase_I_TopA_[Helicobacter_pylori_26695] 
-3   176 MetaceTOPb_M_A_Q8TPW5_gi|20090640|ref|NP_616715.1|_DNA_topoisomerase_[Methanosarcina_acetivorans_C2A] 
-3   179 MetbarTOPb_M_A_Q46AN3_gi|73669624|ref|YP_305639.1|_DNA_topoisomerase,_type_I_[Methanosarcina_barkeri_str._Fusaro] 
-3   181 MetburTOPa_M_A_Q12Y06_gi|91772728|ref|YP_565420.1|_DNA_topoisomerase_[Methanococcoides_burtonii_DSM_6242] 
-3   182 MetburTOPb_M_A_Q12ZL2_gi|91772172|ref|YP_564864.1|_DNA_topoisomerase_I_[Methanococcoides_burtonii_DSM_6242] 
-3   185 MetcupRGa_X_A_F4FXY4_gi|330833938|ref|YP_004408666.1|_reverse_gyrase_[Metallosphaera_cuprina_Ar-4] 
-3   188 MeteveTOPa_T_A_D7E6X7_gi|298674647|ref|YP_003726397.1|_DNA_topoisomerase_I_[Methanohalobium_evestigatum_Z-7303] 
-3   189 MeteveTOPb_T_A_D7E725_gi|298674695|ref|YP_003726445.1|_DNA_topoisomerase_[Methanohalobium_evestigatum_Z-7303] 
-3   195 MethunTOPz_M_A_Q2FQM2_gi|88602302|ref|YP_502480.1|_DNA_topoisomerase_[Methanospirillum_hungatei_JF-1] 
-3   204 MetlabTOPz_M_A_A2SSK2_gi|124485959|ref|YP_001030575.1|_hypothetical_protein_Mlab_1139_[Methanocorpusculum_labreanum_Z] 
-3   205 MetmahTOPa_M_A_D5EB05_gi|294495508|ref|YP_003542001.1|_DNA_topoisomerase_[Methanohalophilus_mahii_DSM_5219] 
-3   206 MetmahTOPb_M_A_D5EBZ7_gi|294495850|ref|YP_003542343.1|_DNA_topoisomerase_I_[Methanohalophilus_mahii_DSM_5219] 
-3   209 MetmarTOPz_T_A_D9PUC1_gi|304313985|ref|YP_003849132.1|_DNA_topoisomerase_I_[Methanothermobacter_marburgensis_str._Marburg] 
-3   210 MetmazTOPa_M_A_Q8PSK3_gi|21229178|ref|NP_635100.1|_DNA_topoisomerase_I_[Methanosarcina_mazei_Go1] 
-3   215 MetpalTOPb_X_A_D1Z1E2_gi|282165112|ref|YP_003357497.1|_DNA_topoisomerase_I_[Methanocella_paludicola_SANAE] 
-3   216 MetpalTOPz_M_A_B8GHM8_gi|219851924|ref|YP_002466356.1|_DNA_topoisomerase_type_IA_central_domain-containing_protein_[Methanosphaerula_palustris_E1-9c] 
-3   217 MetpetTOPz_M_A_E1RJ15_gi|307354072|ref|YP_003895123.1|_DNA_topoisomerase_I_[Methanoplanus_petrolearius_DSM_11571] 
-3   218 MetrumTOPz_M_A_D3E0J6_gi|288559648|ref|YP_003423134.1|_DNA_topoisomerase_I_TopA_[Methanobrevibacter_ruminantium_M1] 
-3   228 MettheTOPz_T_A_A0B6R2_gi|116753908|ref|YP_843026.1|_DNA_topoisomerase_I_[Methanosaeta_thermophila_PT] 
-3   229 MettheTOPz_X_A_O27661_gi|15679619|ref|NP_276736.1|_DNA_topoisomerase_I_[Methanothermobacter_thermautotrophicus_str._Delta_H] 
-3   234 MetzhiTOPa_X_A_F7XKA0_gi|336476645|ref|YP_004615786.1|_DNA_topoisomerase_I_[Methanosalsum_zhilinae_DSM_4017] 
-3   306 RubxylTOPa_T_B_Q1AUL7_gi|108804786|ref|YP_644723.1|_DNA_topoisomerase_I_[Rubrobacter_xylanophilus_DSM_9941] 
-3   349 TheaciTOPz_T_A_Q9HM08_gi|16081238|ref|NP_393542.1|_DNA_topoisomerase_I_[Thermoplasma_acidophilum_DSM_1728] 
-3   382 ThevolTOPz_T_A_Q97CT2_gi|13540850|ref|NP_110538.1|_DNA_topoisomerase_I_[Thermoplasma_volcanium_GSS1] 
-3   387 UncmetTOPa_X_A_Q0W275_gi|147919417|ref|YP_686844.1|_DNA_topoisomerase_I_[Methanocella_arvoryzae_MRE50] 
-3   388 UncmetTOPb_X_A_Q0W2I3_gi|147919524|ref|YP_686736.1|_DNA_topoisomerase_I_[Methanocella_arvoryzae_MRE50] 
+# Groupe  3  -  59  proteines
+3   3 AcibooRGz_T_A 
+3   11 AcihosRGa_X_A 
+3   12 AcihosRGb_X_A 
+3   14 AcisacRGz_T_A 
+3   16 AerperRGa_T_A 
+3   17 AerperRGb_T_A 
+3   25 AquaeoRGa_T_B 
+3   26 AquaeoRGb_T_B 
+3   31 ArcfulRGz_T_A 
+3   33 ArcproRGz_T_A 
+3   35 ArcvenRGz_T_A 
+3   57 CalmaqRGz_T_A 
+3   59 CalsacRGz_T_B 
+3   62 CammedRGz_T_B 
+3   81 Cyasp.TOPb_M_B 
+3   89 DeskamRGa_T_A 
+3   90 DeskamRGb_T_A 
+3   92 DesmucRGa_T_A 
+3   93 DesmucRGb_T_A 
+3   100 DictheRGz_T_B 
+3   111 FerplaRGz_M_A 
+3   142 HelpylTOPa_M_B 
+3   147 HypbutRGa_T_A 
+3   148 HypbutRGb_T_A 
+3   150 IgnaggRGa_T_A 
+3   151 IgnaggRGb_T_A 
+3   153 IgnhosRGa_T_A 
+3   154 IgnhosRGb_T_A 
+3   186 MetcupRGa_X_A 
+3   187 MetcupRGb_X_A 
+3   191 MetfeiRGz_T_A 
+3   220 MetsedRGa_T_A 
+3   221 MetsedRGb_T_A 
+3   246 NauproRGz_M_B 
+3   250 NeqRGz_T_A_NN 
+3   254 Nitsp.RGz_T_B 
+3   287 PyrfumRGa_T_A 
+3   288 PyrfumRGb_T_A 
+3   324 StahelRGa_T_A 
+3   325 StahelRGb_T_A 
+3   327 StamarRGa_T_A 
+3   328 StamarRGb_T_A 
+3   334 SulaciRGa_T_A 
+3   335 SulaciRGb_T_A 
+3   337 SulislRGa_T_A 
+3   338 SulislRGb_T_A 
+3   340 SulsolRGa_T_A 
+3   341 SulsolRGb_T_A 
+3   343 SultokRGa_T_A 
+3   344 SultokRGb_T_A 
+3   351 TheaggRGa_T_A 
+3   352 TheaggRGb_T_A 
+3   359 ThemarRGz_T_B 
+3   365 ThepenRGz_T_A 
+3   371 Thesp.RGz_X_B 
+3   374 ThetenRGz_T_B 
+3   379 ThethmRGz_T_B 
+3   395 VuldisRGz_T_A 
+3   397 VulmouRGz_X_A 
 ##############################################
-# Groupe  4  -  30  proteines
-4   8 AciferTOPc_M_B_B5ERY6_gi|198283543|ref|YP_002219864.1|_DNA_topoisomerase_III_[Acidithiobacillus_ferrooxidans_ATCC_53993] 
-4   9 AciferTOPz_T_B_C7M1S8_gi|256372674|ref|YP_003110498.1|_DNA_topoisomerase_I_[Acidimicrobium_ferrooxidans_DSM_10331] 
-4   13 AcisacRGz_T_A_D9Q2V9_gi|302349040|ref|YP_003816678.1|_Reverse_gyrase_2_[Acidilobus_saccharovorans_345-15] 
-4   15 AerperRGa_T_A_Q9YC75_gi|118431431|ref|NP_147906.2|_reverse_gyrase_[Aeropyrum_pernix_K1] 
-4   18 AersalTOPa_M_B_A4SQD3_gi|145300012|ref|YP_001142853.1|_DNA_topoisomerase_I_[Aeromonas_salmonicida_subsp._salmonicida_A449] 
-4   20 AkkmucTOPz_M_B_B2UQJ6_gi|187735400|ref|YP_001877512.1|_DNA_topoisomerase_III_[Akkermansia_muciniphila_ATCC_BAA-835] 
-4   21 AlcborTOPz_M_B_Q0VQT8_gi|110833873|ref|YP_692732.1|_DNA_topoisomerase_I_[Alcanivorax_borkumensis_SK2] 
-4   38 AroaroTOPb_M_B_Q5P4H1_gi|56477104|ref|YP_158693.1|_DNA_topoisomerase_III_[Aromatoleum_aromaticum_EbN1] 
-4   39 AtoparTOPz_M_B_C8W7T0_gi|257784895|ref|YP_003180112.1|_DNA_topoisomerase_type_IA_central_domain-containing_protein_[Atopobium_parvulum_DSM_20469] 
-4   42 BacantTOPc_M_B_Q81RY0_gi|30261939|ref|NP_844316.1|_DNA_topoisomerase_III_[Bacillus_anthracis_str._Ames] 
-4   43 BaccerTOPa_M_B_Q636J3_gi|52141655|ref|YP_085174.1|_DNA_topoisomerase_I_[Bacillus_cereus_E33L] 
-4   45 BaccerTOPc_M_B_Q63CP7_gi|52143516|ref|YP_083320.1|_DNA_topoisomerase_III_[Bacillus_cereus_E33L] 
-4   46 BacfraTOPa_M_B_Q64MY0_gi|53715699|ref|YP_101691.1|_DNA_topoisomerase_I_[Bacteroides_fragilis_YCH46] 
-4   48 BacfraTOPc_M_B_Q64PP1_gi|53715082|ref|YP_101074.1|_DNA_topoisomerase_III_[Bacteroides_fragilis_YCH46] 
-4   49 BacsubTOPa_M_B_P96583_gi|16077493|ref|NP_388307.1|_DNA_topoisomerase_3_[Bacillus_subtilis_subsp._subtilis_str._168] 
-4   72 CloperTOPd_M_B_Q93MA0_gi|15081527|ref|NP_150040.1|_type_I_topoisomease_[Clostridium_perfringens_str._13] 
-4   94 DespsyTOPz_P_B_Q6AJY0_gi|51246469|ref|YP_066353.1|_DNA_topoisomerase_III_[Desulfotalea_psychrophila_LSv54] 
-4   110 FerplaRGz_M_A_D3RWU3_gi|288931171|ref|YP_003435231.1|_reverse_gyrase_[Ferroglobus_placidus_DSM_10642] 
-4   113 FibsucTOPb_M_B_C9RKZ2_gi|261416739|ref|YP_003250422.1|_DNA_topoisomerase_type_IA_central_domain-containing_protein_[Fibrobacter_succinogenes_subsp._succinogenes_S85] 
-4   122 GeotheTOPc_T_B_A4INJ7_gi|138895193|ref|YP_001125646.1|_DNA_topoisomerase_III_[Geobacillus_thermodenitrificans_NG80-2] 
-4   128 HalborTOPz_H_A_E4NSJ8_gi|313127266|ref|YP_004037536.1|_DNA_topoisomerase_i_[Halogeometricum_borinquense_DSM_11551] 
-4   222 MetsmiTOPz_M_A_A5UL44_gi|148642777|ref|YP_001273290.1|_DNA_topoisomerase_I,_TopA_[Methanobrevibacter_smithii_ATCC_35061] 
-4   252 NiteutTOPb_X_B_Q0AIZ7_gi|114330417|ref|YP_746639.1|_DNA_topoisomerase_III_[Nitrosomonas_eutropha_C91] 
-4   258 OpiterTOPa_M_B_B1ZYV6_gi|182414813|ref|YP_001819879.1|_DNA_topoisomerase_III_[Opitutus_terrae_PB90-1] 
-4   259 OpiterTOPb_M_B_B1ZV49_gi|182415250|ref|YP_001820316.1|_DNA_topoisomerase_[Opitutus_terrae_PB90-1] 
-4   270 PorginTOPc_M_B_Q7MXR3_gi|34539972|ref|NP_904451.1|_DNA_topoisomerase_III_[Porphyromonas_gingivalis_W83] 
-4   307 RubxylTOPb_T_B_Q1AY08_gi|108803595|ref|YP_643532.1|_DNA_topoisomerase_III_[Rubrobacter_xylanophilus_DSM_9941] 
-4   390 VeiparTOPa_M_B_D1BLQ5_gi|269797692|ref|YP_003311592.1|_DNA_topoisomerase_III_[Veillonella_parvula_DSM_2008] 
-4   393 VibchoTOPb_M_B_Q9KQF5_gi|15642045|ref|NP_231677.1|_DNA_topoisomerase_III_[Vibrio_cholerae_O1_biovar_El_Tor_str._N16961] 
-4   400 YerpesTOPa_M_B_Q1C7T3_gi|108807518|ref|YP_651434.1|_DNA_topoisomerase_III_[Yersinia_pestis_Antiqua] 
+# Groupe  4  -  21  proteines
+4   4 AcibooTOPz_T_A 
+4   32 ArcfulTOPz_T_A 
+4   34 ArcproTOPz_T_A 
+4   36 ArcvenTOPz_T_A 
+4   112 FerplaTOPz_M_A 
+4   181 MetbooTOPz_M_A 
+4   185 MetconTOPz_X_A 
+4   195 MetharTOPz_X_A 
+4   196 MethunTOPz_M_A 
+4   205 MetlabTOPz_M_A 
+4   209 MetmarTOPz_M_A 
+4   215 MetpalTOPa_X_A 
+4   216 MetpalTOPb_X_A 
+4   217 MetpalTOPz_M_A 
+4   218 MetpetTOPz_M_A 
+4   229 MettheTOPz_T_A 
+4   307 RubxylTOPa_T_B 
+4   350 TheaciTOPz_T_A 
+4   383 ThevolTOPz_T_A 
+4   388 UncmetTOPa_X_A 
+4   389 UncmetTOPb_X_A 
 ##############################################
-# Groupe  5  -  20  proteines
-5   29 ArathaTOPc_M_E_Q9LVP1_gi|15237561|ref|NP_201197.1|_topoisomerase_3alpha_[Arabidopsis_thaliana] 
-5   30 ArcfulRGz_T_A_O29238_gi|11498629|ref|NP_069857.1|_reverse_gyrase_[Archaeoglobus_fulgidus_DSM_4304] 
-5   56 CalmaqRGz_T_A_A8MCZ0_gi|159041384|ref|YP_001540636.1|_reverse_gyrase_[Caldivirga_maquilingensis_IC-167] 
-5   58 CalsacRGz_T_B_A4XJT7_gi|146296592|ref|YP_001180363.1|_reverse_gyrase_[Caldicellulosiruptor_saccharolyticus_DSM_8903] 
-5   64 ChlaetTOPz_M_E_Q7YR26_gi|38503303|sp|Q7YR26.1|TOP1_CHLAE_RecName:_Full=DNA_topoisomerase_1;_AltName:_Full=DNA_topoisomerase_I 
-5   78 CupnecTOPz_X_B_Q0K5G1_gi|113869639|ref|YP_728128.1|_DNA_topoisomerase_III_[Ralstonia_eutropha_H16] 
-5   97 DicdisTOPb_M_E_Q54RC3_gi|66811030|ref|XP_639222.1|_DNA_topoisomerase_I_[Dictyostelium_discoideum_AX4] 
-5   102 DromelTOPb_M_E_O96651_gi|24640096|ref|NP_511059.2|_topoisomerase_3beta_[Drosophila_melanogaster] 
-5   103 DyaferTOPa_M_B_C6VX69_gi|255034086|ref|YP_003084707.1|_DNA_topoisomerase_III_[Dyadobacter_fermentans_DSM_18053] 
-5   117 GalgalTOPz_M_E_Q4W5X0_gi|71894753|ref|NP_001025807.1|_DNA_topoisomerase_3-alpha_isoform_1_[Gallus_gallus] 
-5   145 HomsapTOPb_M_E_O95985_gi|4507635|ref|NP_003926.1|_DNA_topoisomerase_3-beta-1_[Homo_sapiens] 
-5   235 MetzhiTOPb_X_A_F7XQ31_gi|336476470|ref|YP_004615611.1|_DNA_topoisomerase_[Methanosalsum_zhilinae_DSM_4017] 
-5   238 MusmusTOPb_M_E_Q9Z321_gi|6755851|ref|NP_035754.1|_DNA_topoisomerase_3-beta-1_[Mus_musculus] 
-5   308 SaccerTOPz_M_E_P13099_gi|6323263|ref|NP_013335.1|_DNA_topoisomerase_3_[Saccharomyces_cerevisiae_S288c] 
-5   365 ThepenTOPz_T_A_A1RYK6_gi|119719794|ref|YP_920289.1|_DNA_topoisomerase_[Thermofilum_pendens_Hrk_5] 
-5   376 ThetenTOPz_X_A_G4RKI1_gi|352682630|ref|YP_004893154.1|_topoisomerase_(DNA)_III_alpha_[Thermoproteus_tenax_Kra_1] 
-5   381 TheuzoTOPz_X_A_F2L146_gi|327310010|ref|YP_004336907.1|_DNA_topoisomerase_[Thermoproteus_uzoniensis_768-20] 
-5   389 UstmayTOPz_M_E_P41511_gi|71022035|ref|XP_761248.1|_DNA_topoisomerase_I_[Ustilago_maydis_521] 
-5   395 VuldisTOPz_T_A_E1QRL6_gi|307596564|ref|YP_003902881.1|_DNA_topoisomerase_[Vulcanisaeta_distributa_DSM_14429] 
-5   397 VulmouTOPz_X_A_F0QWG4_gi|325968322|ref|YP_004244514.1|_DNA_topoisomerase_[Vulcanisaeta_moutnovskia_768-28] 
+# Groupe  5  -  19  proteines
+5   5 AcicapTOPz_M_B 
+5   23 AmicolTOPz_M_B 
+5   61 CamjejTOPz_M_B 
+5   63 CammedTOPz_T_B 
+5   67 ChllimTOPz_M_B 
+5   87 DenaceTOPz_M_B 
+5   96 DesvulTOPz_M_B 
+5   106 EluminTOPz_M_B 
+5   108 EryrhuTOPz_M_B 
+5   116 FusnucTOPa_M_B 
+5   119 GemaurTOPz_M_B 
+5   124 GlovioTOPa_M_B 
+5   143 HelpylTOPb_M_B 
+5   247 NauproTOPz_M_B 
+5   255 Nitsp.TOPz_T_B 
+5   276 PsyarcTOPz_P_B 
+5   380 ThethmTOPz_T_B 
+5   384 TheyelTOPz_T_B 
+5   386 TrepalTOPz_M_B 
 ##############################################
-# Groupe  6  -  18  proteines
-6   63 CanalbTOPz_M_E_Q00313_gi|2501243|sp|Q00313.1|TOP1_CANAX_RecName:_Full=DNA_topoisomerase_1;_AltName:_Full=DNA_topoisomerase_I 
-6   69 CloperTOPa_M_B_Q8XIY0_gi|18310965|ref|NP_562899.1|_DNA_topoisomerase_[Clostridium_perfringens_str._13] 
-6   71 CloperTOPc_M_B_Q8XK95_gi|18310490|ref|NP_562424.1|_DNA_topoisomerase_III_[Clostridium_perfringens_str._13] 
-6   76 CrigriTOPz_M_E_Q07050_gi|345842372|ref|NP_001230963.1|_DNA_topoisomerase_1_[Cricetulus_griseus] 
-6   80 Cyasp.TOPb_M_B_B1X1Z5_gi|172054895|ref|YP_001806222.1|_DNA_topoisomerase_I_[Cyanothece_sp._ATCC_51142] 
-6   85 DeiradTOPz_M_B_Q9RUL0_gi|15806391|ref|NP_295097.1|_DNA_topoisomerase_I_[Deinococcus_radiodurans_R1] 
-6   88 DeskamRGa_T_A_B8D4X1_gi|218884137|ref|YP_002428519.1|_reverse_gyrase_[Desulfurococcus_kamchatkensis_1221n] 
-6   105 EluminTOPz_M_B_B2KBN6_gi|187250578|ref|YP_001875060.1|_DNA_topoisomerase_I_[Elusimicrobium_minutum_Pei191] 
-6   108 EsccolTOPa_M_B_P06612_gi|16129235|ref|NP_415790.1|_DNA_topoisomerase_I,_omega_subunit_[Escherichia_coli_str._K-12_substr._MG1655] 
-6   115 FusnucTOPa_M_B_A5TUF6_gi|492588491|ref|WP_005896639.1|_DNA_topoisomerase_I_[Fusobacterium_nucleatum] 
-6   119 GeosulTOPz_M_B_Q74A42_gi|39997644|ref|NP_953595.1|_DNA_topoisomerase_I_[Geobacter_sulfurreducens_PCA] 
-6   120 GeotheTOPa_T_B_A4IM86_gi|138894732|ref|YP_001125185.1|_DNA_topoisomerase_I_[Geobacillus_thermodenitrificans_NG80-2] 
-6   124 GlovioTOPb_M_B_Q7NLU9_gi|37520589|ref|NP_923966.1|_DNA_topoisomerase_I_[Gloeobacter_violaceus_PCC_7421] 
-6   125 GraforTOPz_M_B_A0M5R7_gi|120437343|ref|YP_863029.1|_DNA_topoisomerase_I_[Gramella_forsetii_KT0803] 
-6   126 HaeinfTOPa_M_B_P43012_gi|1174735|sp|P43012.1|TOP1_HAEIN_RecName:_Full=DNA_topoisomerase_1;_AltName:_Full=DNA_topoisomerase_I;_AltName:_Full=Omega-protein;_AltName:_Full=Relaxing_enzyme;_AltName:_Full=Swivelase;_AltName:_Full=Untwisting_enzyme 
-6   143 HeraurTOPz_M_B_A9AYY1_gi|159900902|ref|YP_001547149.1|_DNA_topoisomerase_I_[Herpetosiphon_aurantiacus_DSM_785] 
-6   156 LacaciTOPz_M_B_Q5FKE2_gi|58337278|ref|YP_193863.1|_DNA_topoisomerase_I_[Lactobacillus_acidophilus_NCFM] 
-6   157 LegpneTOPz_M_B_Q5X1U1_gi|54298588|ref|YP_124957.1|_DNA_topoisomerase_I_[Legionella_pneumophila_str._Paris] 
+# Groupe  6  -  9  proteines
+6   6 AcicelTOPz_T_B 
+6   10 AciferTOPz_T_B 
+6   75 CordipTOPz_M_B 
+6   85 DeigeoTOPz_M_B 
+6   86 DeiradTOPz_M_B 
+6   156 KinradTOPz_M_B 
+6   242 MyctubTOPz_M_B 
+6   266 PirstaTOPz_M_B 
+6   356 ThefusTOPz_T_B 
 ##############################################
-# Groupe  7  -  8  proteines
-7   70 CloperTOPb_M_B_Q8XJQ4_gi|18310684|ref|NP_562618.1|_DNA_topoisomerase_I_[Clostridium_perfringens_str._13] 
-7   73 ClotheTOPz_T_B_A3DCL9_gi|125972981|ref|YP_001036891.1|_DNA_topoisomerase_I_[Clostridium_thermocellum_ATCC_27405] 
-7   79 Cyasp.TOPa_M_B_B1WVJ8_gi|172036150|ref|YP_001802651.1|_DNA_topoisomerase_I_[Cyanothece_sp._ATCC_51142] 
-7   82 DehlykTOPz_M_B_D8K069_gi|300087796|ref|YP_003758318.1|_DNA_topoisomerase_I_[Dehalogenimonas_lykanthroporepellens_BL-DC-9] 
-7   95 DesvulTOPz_M_B_Q725N5_gi|46581790|ref|YP_012598.1|_DNA_topoisomerase_I_[Desulfovibrio_vulgaris_str._Hildenborough] 
-7   98 DicnodTOPz_M_B_A5EWL4_gi|146329654|ref|YP_001209082.1|_DNA_topoisomerase_I_[Dichelobacter_nodosus_VCS1703A] 
-7   104 DyaferTOPb_M_B_C6W599_gi|255035003|ref|YP_003085624.1|_DNA_topoisomerase_I_[Dyadobacter_fermentans_DSM_18053] 
-7   114 FratulTOPz_M_B_Q2A504_gi|89255836|ref|YP_513198.1|_DNA_topoisomerase_I_[Francisella_tularensis_subsp._holarctica_LVS] 
+# Groupe  7  -  26  proteines
+7   7 AciferTOPa_M_B 
+7   52 BarbacTOPz_M_B 
+7   55 BruaboTOPz_M_B 
+7   69 ChrvioTOPz_M_B 
+7   76 CoxburTOPz_M_B 
+7   99 DicnodTOPz_M_B 
+7   115 FratulTOPz_M_B 
+7   120 GeosulTOPz_M_B 
+7   158 LegpneTOPz_M_B 
+7   172 MagmagTOPz_M_B 
+7   174 Magsp.TOPb_X_B 
+7   184 MetcapTOPz_T_B 
+7   227 Metsp.TOPz_X_B 
+7   248 NeigonTOPz_M_B 
+7   249 NeimenTOPz_M_B 
+7   256 NitwatTOPz_X_B 
+7   261 ParberTOPz_M_B 
+7   264 PhezucTOPz_M_B 
+7   268 PolgilTOPz_X_B 
+7   304 RicproTOPz_M_B 
+7   305 RicricTOPz_M_B 
+7   306 RosdenTOPz_M_B 
+7   320 SidlitTOPz_M_B 
+7   385 ThidenTOPz_M_B 
+7   399 XanoryTOPz_M_B 
+7   403 ZymmobTOPz_M_B 
 ##############################################
-# Groupe  8  -  4  proteines
-8   77 CryneoTOPz_M_E_Q5KAU9_gi|58259767|ref|XP_567296.1|_DNA_topoisomerase_type_I_[Cryptococcus_neoformans_var._neoformans_JEC21] 
-8   239 MusmusTOPc_M_E_Q04750_gi|112734855|ref|NP_033434.2|_DNA_topoisomerase_1_[Mus_musculus] 
-8   301 RatnorTOPz_M_E_Q9WUL0_gi|12018294|ref|NP_072137.1|_DNA_topoisomerase_1_[Rattus_norvegicus] 
-8   399 XenlaeTOPz_M_E_P41512_gi|147900774|ref|NP_001084031.1|_DNA_topoisomerase_1_[Xenopus_laevis] 
+# Groupe  8  -  34  proteines
+8   8 AciferTOPb_M_B 
+8   9 AciferTOPc_M_B 
+8   20 AersalTOPb_M_B 
+8   21 AkkmucTOPz_M_B 
+8   37 AroaroTOPa_M_B 
+8   38 AroaroTOPb_M_B 
+8   48 BacfraTOPb_M_B 
+8   49 BacfraTOPc_M_B 
+8   72 CloperTOPc_M_B 
+8   79 CupnecTOPz_X_B 
+8   95 DespsyTOPz_P_B 
+8   104 DyaferTOPa_M_B 
+8   113 FibsucTOPa_M_B 
+8   114 FibsucTOPb_M_B 
+8   117 FusnucTOPb_M_B 
+8   123 GeotheTOPc_T_B 
+8   173 Magsp.TOPa_X_B 
+8   188 MetcupTOPz_X_A 
+8   201 MetinfTOPz_T_B 
+8   204 MetkanTOPz_T_A 
+8   222 MetsedTOPz_T_A 
+8   252 NiteutTOPa_X_B 
+8   253 NiteutTOPb_X_B 
+8   259 OpiterTOPa_M_B 
+8   260 OpiterTOPb_M_B 
+8   262 PedhepTOPa_M_B 
+8   270 PorginTOPb_M_B 
+8   271 PorginTOPc_M_B 
+8   308 RubxylTOPb_T_B 
+8   317 ShebalTOPb_H_B 
+8   323 StaaurTOPb_M_B 
+8   348 SymtheTOPb_T_B 
+8   391 VeiparTOPa_M_B 
+8   394 VibchoTOPb_M_B 
 ##############################################
-# Groupe  9  -  8  proteines
-9   90 DeskamTOPz_T_A_B8D5I1_gi|218884347|ref|YP_002428729.1|_DNA_topoisomerase_I_[Desulfurococcus_kamchatkensis_1221n] 
-9   93 DesmucTOPz_T_A_E8RA12_gi|320101228|ref|YP_004176820.1|_DNA_topoisomerase_I_[Desulfurococcus_mucosus_DSM_2162] 
-9   148 HypbutTOPz_T_A_A2BLA3_gi|124027789|ref|YP_001013109.1|_DNA_topoisomerase_I_[Hyperthermus_butylicus_DSM_5456] 
-9   154 IgnhosTOPz_T_A_A8A8D9_gi|156936802|ref|YP_001434598.1|_DNA_topoisomerase_I_[Ignicoccus_hospitalis_KIN4/I] 
-9   187 MetcupTOPz_X_A_F4FY43_gi|330835172|ref|YP_004409900.1|_DNA_topoisomerase_type_IA_central_domain-containing_protein_[Metallosphaera_cuprina_Ar-4] 
-9   191 MetfeiTOPz_T_A_E3GXE9_gi|312136406|ref|YP_004003743.1|_DNA_topoisomerase_i_[Methanothermus_fervidus_DSM_2088] 
-9   221 MetsedTOPz_T_A_A4YF11_gi|146303621|ref|YP_001190937.1|_DNA_topoisomerase_type_IA_central_domain-containing_protein_[Metallosphaera_sedula_DSM_5348] 
-9   251 NiteutTOPa_X_B_Q0AJR7_gi|114330147|ref|YP_746369.1|_DNA_topoisomerase_III_[Nitrosomonas_eutropha_C91] 
+# Groupe  9  -  16  proteines
+9   13 AcihosTOPz_X_A 
+9   15 AcisacTOPz_T_A 
+9   18 AerperTOPz_T_A 
+9   91 DeskamTOPz_T_A 
+9   94 DesmucTOPz_T_A 
+9   149 HypbutTOPz_T_A 
+9   152 IgnaggTOPz_T_A 
+9   155 IgnhosTOPz_T_A 
+9   289 PyrfumTOPz_T_A 
+9   326 StahelTOPz_T_A 
+9   329 StamarTOPz_T_A 
+9   336 SulaciTOPz_T_A 
+9   339 SulislTOPz_T_A 
+9   342 SulsolTOPz_T_A 
+9   345 SultokTOPz_T_A 
+9   353 TheaggTOPz_T_A 
 ##############################################
-# Groupe  10  -  3  proteines
-10   96 DicdisTOPa_M_E_Q8T2T7_gi|166240582|ref|XP_643754.2|_DNA_topoisomerase_III_[Dictyostelium_discoideum_AX4] 
-10   99 DictheRGz_T_B_B5YAR0_gi|206900538|ref|YP_002251530.1|_reverse_gyrase_[Dictyoglomus_thermophilum_H-6-12] 
-10   101 DromelTOPa_M_E_Q9NG98_gi|24585251|ref|NP_523602.2|_topoisomerase_3alpha_[Drosophila_melanogaster] 
+# Groupe  10  -  12  proteines
+10   19 AersalTOPa_M_B 
+10   22 AlcborTOPz_M_B 
+10   109 EsccolTOPa_M_B 
+10   127 HaeinfTOPa_M_B 
+10   273 PseaerTOPz_M_B 
+10   274 PsefluTOPa_M_B 
+10   310 SalchoTOPa_X_B 
+10   313 SaltypTOPa_M_B 
+10   316 ShebalTOPa_H_B 
+10   318 ShiboyTOPa_M_B 
+10   393 VibchoTOPa_M_B 
+10   402 YerpesTOPb_M_B 
 ##############################################
-# Groupe  11  -  12  proteines
-11   106 EnccunTOPz_M_E_Q8SS31_gi|19074185|ref|NP_584791.1|_DNA_TOPOISOMERASE_III_[Encephalitozoon_cuniculi_GB-M1] 
-11   121 GeotheTOPb_T_B_A4IP12_gi|138895358|ref|YP_001125811.1|_DNA_topoisomerase_III_[Geobacillus_thermodenitrificans_NG80-2] 
-11   127 HaeinfTOPb_M_B_P43704_gi|16272392|ref|NP_438605.1|_DNA_topoisomerase_III_[Haemophilus_influenzae_Rd_KW20] 
-11   135 HalsalTOPz_T_A_Q9HS90_gi|16554466|ref|NP_444190.1|_DNA_topoisomerase_I_[Halobacterium_sp._NRC-1] 
-11   144 HomsapTOPa_M_E_Q13472_gi|10835218|ref|NP_004609.1|_DNA_topoisomerase_3-alpha_[Homo_sapiens] 
-11   158 LeibraTOPa_M_E_A4HBL0_gi|389601126|ref|XP_001564728.2|_DNA_topoisomerase_1A_[Leishmania_braziliensis_MHOM/BR/75/M2904] 
-11   170 MacmulTOPz_M_E_F7GH88_gi|388454142|ref|NP_001253336.1|_DNA_topoisomerase_3-beta-1_[Macaca_mulatta] 
-11   172 Magsp.TOPa_X_B_A0LAP8_gi|117925830|ref|YP_866447.1|_DNA_topoisomerase_III_[Magnetococcus_marinus_MC-1] 
-11   174 MesfloTOPz_M_B_Q6F0G3_gi|50365469|ref|YP_053894.1|_DNA_topoisomerase_I_[Mesoplasma_florum_L1] 
-11   184 MetconTOPz_X_A_F4BXY5_gi|330506959|ref|YP_004383387.1|_DNA_topoisomerase_I_[Methanosaeta_concilii_GP6] 
-11   227 MetstaTOPz_M_A_Q2NHD4_gi|84489180|ref|YP_447412.1|_hypothetical_protein_Msp_0366_[Methanosphaera_stadtmanae_DSM_3091] 
-11   237 MusmusTOPa_M_E_O70157_gi|6678403|ref|NP_033436.1|_DNA_topoisomerase_3-alpha_[Mus_musculus] 
+# Groupe  11  -  6  proteines
+11   24 AnathmTOPz_X_B 
+11   66 ChlaurTOPz_T_B 
+11   83 DehlykTOPz_M_B 
+11   84 Dehsp.TOPz_M_B 
+11   101 DictheTOPz_T_B 
+11   144 HeraurTOPz_M_B 
 ##############################################
-# Groupe  12  -  2  proteines
-12   118 GemaurTOPz_M_B_C1ABE5_gi|226227915|ref|YP_002762021.1|_DNA_topoisomerase_I_[Gemmatimonas_aurantiaca_T-27] 
-12   155 KinradTOPz_M_B_A6W588_gi|152964457|ref|YP_001360241.1|_DNA_topoisomerase_I_[Kineococcus_radiotolerans_SRS30216_=_ATCC_BAA-149] 
+# Groupe  12  -  9  proteines
+12   27 AquaeoTOPz_T_B 
+12   47 BacfraTOPa_M_B 
+12   68 ChlpneTOPz_X_B 
+12   105 DyaferTOPb_M_B 
+12   126 GraforTOPz_M_B 
+12   263 PedhepTOPb_M_B 
+12   269 PorginTOPa_M_B 
+12   360 ThemarTOPz_T_B 
+12   373 Thesp.TOPz_X_B 
 ##############################################
-# Groupe  13  -  2  proteines
-13   123 GlovioTOPa_M_B_Q7NGH1_gi|37522767|ref|NP_926144.1|_DNA_topoisomerase_I_[Gloeobacter_violaceus_PCC_7421] 
-13   169 LismonTOPb_M_B_Q8Y7K2_gi|16803315|ref|NP_464800.1|_DNA_topoisomerase_I_[Listeria_monocytogenes_EGD-e] 
+# Groupe  13  -  13  proteines
+13   29 ArathaTOPb_M_E 
+13   30 ArathaTOPc_M_E 
+13   56 CaeeleTOPz_M_E 
+13   78 CryneoTOPz_M_E 
+13   97 DicdisTOPa_M_E 
+13   102 DromelTOPa_M_E 
+13   103 DromelTOPb_M_E 
+13   107 EnccunTOPz_M_E 
+13   118 GalgalTOPz_M_E 
+13   145 HomsapTOPa_M_E 
+13   238 MusmusTOPa_M_E 
+13   267 PlafalTOPz_M_E 
+13   309 SaccerTOPz_M_E 
 ##############################################
-# Groupe  14  -  13  proteines
-14   129 HalhisTOPz_H_A_G0HWG2_gi|344212444|ref|YP_004796764.1|_DNA_topoisomerase_I_[Haloarcula_hispanica_ATCC_33960] 
-14   130 HaljeoTOPz_H_A_D8J735_gi|300711966|ref|YP_003737780.1|_DNA_topoisomerase_[Halalkalicoccus_jeotgali_B3] 
-14   131 HallacTOPz_M_A_B9LRP1_gi|222478697|ref|YP_002564934.1|_DNA_topoisomerase_type_IA_central_domain_protein_[Halorubrum_lacusprofundi_ATCC_49239] 
-14   132 HalmarTOPz_M_A_Q5V1P3_gi|55378414|ref|YP_136265.1|_DNA_topoisomerase_I_[Haloarcula_marismortui_ATCC_43049] 
-14   133 HalmukTOPz_M_A_C7P1M5_gi|257389049|ref|YP_003178822.1|_DNA_topoisomerase_I_[Halomicrobium_mukohataei_DSM_12286] 
-14   134 HaloreTOPz_T_B_B8CW42_gi|220931598|ref|YP_002508506.1|_DNA_topoisomerase_I_[Halothermothrix_orenii_H_168] 
-14   136 HalturTOPz_X_A_D2RQL3_gi|284164738|ref|YP_003403017.1|_DNA_topoisomerase_I_[Haloterrigena_turkmenica_DSM_5511] 
-14   137 HalutaTOPz_M_A_C7NPP6_gi|257053792|ref|YP_003131625.1|_DNA_topoisomerase_I_[Halorhabdus_utahensis_DSM_12940] 
-14   138 HalvolTOPz_M_A_D4GT20_gi|292654846|ref|YP_003534743.1|_DNA_topoisomerase_I_[Haloferax_volcanii_DS2] 
-14   139 HalwalTOPz_H_A_Q18KP8_gi|110667236|ref|YP_657047.1|_DNA_topoisomerase_I_[Haloquadratum_walsbyi_DSM_16790] 
-14   140 HalxanTOPz_X_A_F8DBM4_gi|336255063|ref|YP_004598170.1|_DNA_topoisomerase_[Halopiger_xanaduensis_SH-6] 
-14   242 NatmagTOPz_M_A_D3SY50_gi|289582117|ref|YP_003480583.1|_DNA_topoisomerase_[Natrialba_magadii_ATCC_43099] 
-14   243 NatphaTOPz_X_A_Q3IT32_gi|76801263|ref|YP_326271.1|_DNA_topoisomerase_I_[Natronomonas_pharaonis_DSM_2160] 
+# Groupe  14  -  11  proteines
+14   41 BacantTOPa_M_B 
+14   44 BaccerTOPa_M_B 
+14   51 BacsubTOPb_M_B 
+14   121 GeotheTOPa_T_B 
+14   157 LacaciTOPz_M_B 
+14   170 LismonTOPb_M_B 
+14   322 StaaurTOPa_M_B 
+14   330 StragaTOPz_M_B 
+14   331 StrpneTOPz_M_B 
+14   332 StrpyoTOPz_M_B 
+14   333 StrtheTOPz_M_B 
 ##############################################
 # Groupe  15  -  4  proteines
-15   149 IgnaggRGa_T_A_E0STF6_gi|305664334|ref|YP_003860622.1|_reverse_gyrase_[Ignisphaera_aggregans_DSM_17230] 
-15   152 IgnhosRGa_T_A_A8A9J9_gi|156937212|ref|YP_001435008.1|_reverse_gyrase_[Ignicoccus_hospitalis_KIN4/I] 
-15   196 MetignRGz_X_A_F6BC58_gi|333910471|ref|YP_004484204.1|_reverse_gyrase_[Methanotorris_igneus_Kol_5] 
-15   201 MetjanRGz_T_A_Q58907_gi|15669706|ref|NP_248519.1|_reverse_gyrase_[Methanocaldococcus_jannaschii_DSM_2661] 
+15   42 BacantTOPb_M_B 
+15   45 BaccerTOPb_M_B 
+15   50 BacsubTOPa_M_B 
+15   169 LismonTOPa_M_B 
 ##############################################
 # Groupe  16  -  3  proteines
-16   159 LeibraTOPb_M_E_A4HPI6_gi|389603297|ref|XP_001568961.2|_putative_DNA_topoisomerase_III_[Leishmania_braziliensis_MHOM/BR/75/M2904] 
-16   162 LeiinfTOPb_M_E_A4IDA8_gi|146104103|ref|XP_001469727.1|_putative_DNA_topoisomerase_III_[Leishmania_infantum_JPCM5] 
-16   166 LeimajTOPc_M_E_Q4QCK3_gi|157868786|ref|XP_001682945.1|_DNA_topoisomerase_1A_[Leishmania_major_strain_Friedlin] 
+16   43 BacantTOPc_M_B 
+16   46 BaccerTOPc_M_B 
+16   122 GeotheTOPb_T_B 
 ##############################################
-# Groupe  17  -  4  proteines
-17   161 LeiinfTOPa_M_E_A4HZ99_gi|146085692|ref|XP_001465323.1|_DNA_topoisomerase_1A_[Leishmania_infantum_JPCM5] 
-17   163 LeiinfTOPc_M_E_A4I3Q5_gi|146092141|ref|XP_001470217.1|_putative_DNA_topoisomerase_III_[Leishmania_infantum_JPCM5] 
-17   164 LeimajTOPa_M_E_Q4Q199_gi|157877136|ref|XP_001686899.1|_putative_DNA_topoisomerase_III_[Leishmania_major_strain_Friedlin] 
-17   165 LeimajTOPb_M_E_Q4Q888_gi|157871822|ref|XP_001684460.1|_putative_DNA_topoisomerase_III_[Leishmania_major_strain_Friedlin] 
+# Groupe  17  -  11  proteines
+17   58 CalmaqTOPz_T_A 
+17   278 Pybsp.TOPz_X_A 
+17   282 PyraerTOPz_T_A 
+17   284 PyrarsTOPz_T_A 
+17   286 PyrcalTOPz_T_A 
+17   295 PyrislTOPz_T_A 
+17   362 TheneuTOPz_T_A 
+17   377 ThetenTOPz_X_A 
+17   382 TheuzoTOPz_X_A 
+17   396 VuldisTOPz_T_A 
+17   398 VulmouTOPz_X_A 
 ##############################################
-# Groupe  18  -  2  proteines
-18   171 MagmagTOPz_M_B_Q2W9I9_gi|83309781|ref|YP_420045.1|_DNA_topoisomerase_I_[Magnetospirillum_magneticum_AMB-1] 
-18   236 MicaerTOPz_M_B_B0JHS3_gi|166368404|ref|YP_001660677.1|_DNA_topoisomerase_I_[Microcystis_aeruginosa_NIES-843] 
+# Groupe  18  -  6  proteines
+18   60 CalsacTOPz_T_B 
+18   88 DesindTOPz_X_B 
+18   135 HaloreTOPz_T_B 
+18   321 SphtheTOPz_X_B 
+18   367 TherosTOPz_T_B 
+18   378 TheterTOPz_T_B 
 ##############################################
-# Groupe  19  -  4  proteines
-19   173 Magsp.TOPb_X_B_A0LDV2_gi|117926934|ref|YP_867551.1|_DNA_topoisomerase_I_[Magnetococcus_marinus_MC-1] 
-19   241 MyctubTOPz_M_B_I6YCN6_gi|15610782|ref|NP_218163.1|_DNA_topoisomerase_I_TopA_(omega-protein)_(relaxing_enzyme)_(untwisting_enzyme)_(swivelase)_(type_I_DNA_topoisomerase)_(nicking-closing_enzyme)_(TOPO_I)_[Mycobacterium_tuberculosis_H37Rv] 
-19   244 NattheTOPz_T_B_B2A333_gi|188586007|ref|YP_001917552.1|_DNA_topoisomerase_I_[Natranaerobius_thermophilus_JW/NM-WN-LF] 
-19   260 ParberTOPz_M_B_E0TFY8_gi|304321606|ref|YP_003855249.1|_DNA_topoisomerase_I_[Parvularcula_bermudensis_HTCC2503] 
+# Groupe  19  -  5  proteines
+19   64 CanalbTOPz_M_E 
+19   73 CloperTOPd_M_B 
+19   82 DaucarTOPz_M_E 
+19   98 DicdisTOPb_M_E 
+19   390 UstmayTOPz_M_E 
 ##############################################
-# Groupe  20  -  7  proteines
-20   178 MetbarTOPa_M_A_Q469W2_gi|73669895|ref|YP_305910.1|_DNA_topoisomerase_I_[Methanosarcina_barkeri_str._Fusaro] 
-20   194 MetharTOPz_X_A_G7WN20_gi|386001200|ref|YP_005919499.1|_DNA_topoisomerase_I_[Methanosaeta_harundinacea_6Ac] 
-20   207 MetmapTOPz_M_A_A6VFP7_gi|150402130|ref|YP_001329424.1|_DNA_topoisomerase_I_[Methanococcus_maripaludis_C7] 
-20   208 MetmarTOPz_M_A_A3CTK3_gi|126178720|ref|YP_001046685.1|_DNA_topoisomerase_[Methanoculleus_marisnigri_JR1] 
-20   214 MetpalTOPa_X_A_D1Z130_gi|282165000|ref|YP_003357385.1|_DNA_topoisomerase_I_[Methanocella_paludicola_SANAE] 
-20   225 Metsp.TOPz_T_A_D3S8D0_gi|289192085|ref|YP_003458026.1|_DNA_topoisomerase_I_[Methanocaldococcus_sp._FS406-22] 
-20   230 MetvanTOPz_M_A_A6UNJ7_gi|150398914|ref|YP_001322681.1|_DNA_topoisomerase_I_[Methanococcus_vannielii_SB] 
+# Groupe  20  -  5  proteines
+20   65 ChlaetTOPz_M_E 
+20   77 CrigriTOPz_M_E 
+20   240 MusmusTOPc_M_E 
+20   302 RatnorTOPz_M_E 
+20   400 XenlaeTOPz_M_E 
 ##############################################
-# Groupe  21  -  2  proteines
-21   180 MetbooTOPz_M_A_A7I6L6_gi|154150402|ref|YP_001404020.1|_DNA_topoisomerase_[Methanoregula_boonei_6A8] 
-21   211 MetmazTOPb_M_A_Q8Q0F3_gi|21226285|ref|NP_632207.1|_DNA_topoisomerase_III_[Methanosarcina_mazei_Go1] 
+# Groupe  21  -  6  proteines
+21   71 CloperTOPb_M_B 
+21   74 ClotheTOPz_T_B 
+21   245 NattheTOPz_T_B 
+21   347 SymtheTOPa_T_B 
+21   376 ThetenTOPz_T_B 
+21   392 VeiparTOPb_M_B 
 ##############################################
-# Groupe  22  -  2  proteines
-22   192 MetferRGz_T_A_C7P5Q9_gi|256810022|ref|YP_003127391.1|_reverse_gyrase_[Methanocaldococcus_fervens_AG86] 
-22   219 MetsedRGa_T_A_A4YHK1_gi|146304511|ref|YP_001191827.1|_reverse_gyrase_[Metallosphaera_sedula_DSM_5348] 
+# Groupe  22  -  6  proteines
+22   110 EsccolTOPb_M_B 
+22   128 HaeinfTOPb_M_B 
+22   311 SalchoTOPb_X_B 
+22   314 SaltypTOPb_M_B 
+22   319 ShiboyTOPb_M_B 
+22   401 YerpesTOPa_M_B 
 ##############################################
-# Groupe  23  -  6  proteines
-23   193 MetferTOPz_T_A_C7P7L4_gi|256810677|ref|YP_003128046.1|_DNA_topoisomerase_I_[Methanocaldococcus_fervens_AG86] 
-23   197 MetignTOPz_X_A_F6BCW5_gi|333910658|ref|YP_004484391.1|_DNA_topoisomerase_I_[Methanotorris_igneus_Kol_5] 
-23   199 MetinfTOPz_T_A_D5VT99_gi|296109817|ref|YP_003616766.1|_DNA_topoisomerase_I_[methanocaldococcus_infernus_ME] 
-23   202 MetjanTOPz_T_A_Q59046_gi|15669848|ref|NP_248662.1|_DNA_topoisomerase_I_[Methanocaldococcus_jannaschii_DSM_2661] 
-23   213 MetokiTOPz_T_A_F8AK68_gi|336122440|ref|YP_004577215.1|_DNA_topoisomerase_I_[Methanothermococcus_okinawensis_IH1] 
-23   224 Metsp.TOPz_M_A_F0T9W2_gi|325958291|ref|YP_004289757.1|_DNA_topoisomerase_i_[Methanobacterium_sp._AL-21] 
+# Groupe  23  -  14  proteines
+23   129 HalborTOPz_H_A 
+23   130 HalhisTOPz_H_A 
+23   131 HaljeoTOPz_H_A 
+23   132 HallacTOPz_M_A 
+23   133 HalmarTOPz_M_A 
+23   134 HalmukTOPz_M_A 
+23   136 HalsalTOPz_T_A 
+23   137 HalturTOPz_X_A 
+23   138 HalutaTOPz_M_A 
+23   139 HalvolTOPz_M_A 
+23   140 HalwalTOPz_H_A 
+23   141 HalxanTOPz_X_A 
+23   243 NatmagTOPz_M_A 
+23   244 NatphaTOPz_X_A 
 ##############################################
-# Groupe  24  -  2  proteines
-24   203 MetkanTOPz_T_A_Q8TUZ7_gi|20095040|ref|NP_614887.1|_topoisomerase_IA_[Methanopyrus_kandleri_AV19] 
-24   231 MetvolTOPz_M_A_D7DTG4_gi|297619292|ref|YP_003707397.1|_DNA_topoisomerase_I_[Methanococcus_voltae_A3] 
+# Groupe  24  -  3  proteines
+24   146 HomsapTOPb_M_E 
+24   171 MacmulTOPz_M_E 
+24   239 MusmusTOPb_M_E 
 ##############################################
-# Groupe  25  -  30  proteines
-25   223 Metsp.RGz_T_A_D3S853_gi|289192008|ref|YP_003457949.1|_reverse_gyrase_[Methanocaldococcus_sp._FS406-22] 
-25   232 MetvulRGz_T_A_C9RHR6_gi|261403376|ref|YP_003247600.1|_reverse_gyrase_[Methanocaldococcus_vulcanius_M7] 
-25   278 PyrabyRGz_T_A_Q9UZ86_gi|14521467|ref|NP_126943.1|_reverse_gyrase_[Pyrococcus_abyssi_GE5] 
-25   282 PyrarsRGz_T_A_A4WHK5_gi|145590522|ref|YP_001152524.1|_reverse_gyrase_[Pyrobaculum_arsenaticum_DSM_13514] 
-25   284 PyrcalRGz_T_A_A3MU01_gi|126459306|ref|YP_001055584.1|_Reverse_gyrase_[Pyrobaculum_calidifontis_JCM_11548] 
-25   286 PyrfumRGa_T_A_G0EEL0_gi|347523514|ref|YP_004781084.1|_reverse_gyrase_[Pyrolobus_fumarii_1A] 
-25   289 PyrfurRGz_T_A_P95479_gi|18976867|ref|NP_578224.1|_reverse_gyrase_[Pyrococcus_furiosus_DSM_3638] 
-25   295 PyrkodRGz_X_A_Q6F598_gi|57640405|ref|YP_182883.1|_reverse_gyrase_[Thermococcus_kodakarensis_KOD1] 
-25   326 StamarRGa_T_A_A3DNK7_gi|126466016|ref|YP_001041125.1|_reverse_gyrase_[Staphylothermus_marinus_F1] 
-25   327 StamarRGb_T_A_A3DN56_gi|126465865|ref|YP_001040974.1|_DNA_topoisomerase_type_IA_central_domain-containing_protein_[Staphylothermus_marinus_F1] 
-25   333 SulaciRGa_T_A_Q08582_gi|152943|gb|AAA72346.1|_reverse_gyrase_[Sulfolobus_acidocaldarius] 
-25   334 SulaciRGb_T_A_M1I560_gi|505198498|ref|WP_015385600.1|_reverse_gyrase_[Sulfolobus_acidocaldarius] 
-25   336 SulislRGa_T_A_C3NGH1_gi|229581754|ref|YP_002840153.1|_reverse_gyrase_[Sulfolobus_islandicus_Y.N.15.51] 
-25   337 SulislRGb_T_A_C3NHT0_gi|229582213|ref|YP_002840612.1|_reverse_gyrase_[Sulfolobus_islandicus_Y.N.15.51] 
-25   339 SulsolRGa_T_A_Q97ZZ8_gi|15897352|ref|NP_341957.1|_reverse_gyrase_[Sulfolobus_solfataricus_P2] 
-25   340 SulsolRGb_T_A_Q97ZF5_gi|15897842|ref|NP_342447.1|_reverse_gyrase_[Sulfolobus_solfataricus_P2] 
-25   342 SultokRGa_T_A_Q971T7_gi|15921555|ref|NP_377224.1|_reverse_gyrase_[Sulfolobus_tokodaii_str._7] 
-25   343 SultokRGb_T_A_Q975P6_gi|42559518|sp|Q975P6.2|RGYR2_SULTO_RecName:_Full=Reverse_gyrase_2;_Includes:_RecName:_Full=Helicase;_Includes:_RecName:_Full=Topoisomerase 
-25   350 TheaggRGa_T_A_D5U2V5_gi|296242920|ref|YP_003650407.1|_reverse_gyrase_[Thermosphaera_aggregans_DSM_11486] 
-25   351 TheaggRGb_T_A_D5U2Z1_gi|296242956|ref|YP_003650443.1|_reverse_gyrase_[Thermosphaera_aggregans_DSM_11486] 
-25   358 ThemarRGz_T_B_O51934_gi|15642947|ref|NP_227988.1|_reverse_gyrase_[Thermotoga_maritima_MSB8] 
-25   360 TheneuRGz_T_A_B1YAT0_gi|171184686|ref|YP_001793605.1|_reverse_gyrase_[Pyrobaculum_neutrophilum_V24Sta] 
-25   364 ThepenRGz_T_A_A1RXQ0_gi|119719488|ref|YP_919983.1|_reverse_gyrase_[Thermofilum_pendens_Hrk_5] 
-25   370 Thesp.RGz_X_B_F8C2X1_gi|337287807|ref|YP_004627279.1|_reverse_gyrase_[Thermodesulfobacterium_geofontis_OPF15] 
-25   373 ThetenRGz_T_B_Q8R979_gi|20808164|ref|NP_623335.1|_reverse_gyrase_[Thermoanaerobacter_tengcongensis_MB4] 
-25   374 ThetenRGz_X_A_G4RM03_gi|352683152|ref|YP_004893676.1|_reverse_gyrase_[Thermoproteus_tenax_Kra_1] 
-25   378 ThethmRGz_T_B_Q53VZ7_gi|55978355|ref|YP_145411.1|_reverse_gyrase_[Thermus_thermophilus_HB8] 
-25   380 TheuzoRGz_X_A_F2L236_gi|327311378|ref|YP_004338275.1|_reverse_gyrase_[Thermoproteus_uzoniensis_768-20] 
-25   394 VuldisRGz_T_A_E1QQM5_gi|307596371|ref|YP_003902688.1|_reverse_gyrase_[Vulcanisaeta_distributa_DSM_14429] 
-25   396 VulmouRGz_X_A_F0QVK1_gi|325968164|ref|YP_004244356.1|_reverse_gyrase_[Vulcanisaeta_moutnovskia_768-28] 
+# Groupe  25  -  2  proteines
+25   159 LeibraTOPa_M_E 
+25   167 LeimajTOPc_M_E 
 ##############################################
-# Groupe  26  -  2  proteines
-26   245 NauproRGz_M_B_B9LA13_gi|224373099|ref|YP_002607471.1|_reverse_gyrase_[Nautilia_profundicola_AmH] 
-26   257 Nossp.TOPb_M_B_Q8YTT2_gi|17230123|ref|NP_486671.1|_DNA_topoisomerase_I_[Nostoc_sp._PCC_7120] 
+# Groupe  26  -  3  proteines
+26   160 LeibraTOPb_M_E 
+26   163 LeiinfTOPb_M_E 
+26   165 LeimajTOPa_M_E 
 ##############################################
-# Groupe  27  -  27  proteines
-27   247 NeigonTOPz_M_B_Q5F5Q4_gi|59802183|ref|YP_208895.1|_DNA_topoisomerase_I_[Neisseria_gonorrhoeae_FA_1090] 
-27   248 NeimenTOPz_M_B_Q9K1K0_gi|15676046|ref|NP_273176.1|_DNA_topoisomerase_I_[Neisseria_meningitidis_MC58] 
-27   255 NitwatTOPz_X_B_D8KCB5_gi|300115532|ref|YP_003762107.1|_DNA_topoisomerase_I_[Nitrosococcus_watsonii_C-113] 
-27   256 Nossp.TOPa_M_B_Q8YTE2_gi|17230272|ref|NP_486820.1|_DNA_topoisomerase_I_[Nostoc_sp._PCC_7120] 
-27   263 PhezucTOPz_M_B_B4R961_gi|197104783|ref|YP_002130160.1|_DNA_topoisomerase_I_[Phenylobacterium_zucineum_HLK1] 
-27   268 PorginTOPa_M_B_Q7MW85_gi|34540543|ref|NP_905022.1|_DNA_topoisomerase_I_[Porphyromonas_gingivalis_W83] 
-27   272 PseaerTOPz_M_B_A6V385_gi|152987110|ref|YP_001347520.1|_DNA_topoisomerase_I_[Pseudomonas_aeruginosa_PA7] 
-27   303 RicproTOPz_M_B_Q9ZDK2_gi|15604194|ref|NP_220709.1|_DNA_topoisomerase_I_[Rickettsia_prowazekii_str._Madrid_E] 
-27   304 RicricTOPz_M_B_A8GRN0_gi|157828321|ref|YP_001494563.1|_DNA_topoisomerase_I_[Rickettsia_rickettsii_str._Sheila_Smith] 
-27   305 RosdenTOPz_M_B_Q167W6_gi|110679406|ref|YP_682413.1|_DNA_topoisomerase_I_[Roseobacter_denitrificans_OCh_114] 
-27   314 SelT1z_M_B_Cc_Q8DHR4_gi|22299424|ref|NP_682671.1|_DNA_topoisomerase_I_[Thermosynechococcus_elongatus_BP-1] 
-27   319 SidlitTOPz_M_B_D5CTE0_gi|291612476|ref|YP_003522633.1|_DNA_topoisomerase_I_[Sideroxydans_lithotrophicus_ES-1] 
-27   320 SphtheTOPz_X_B_D1C7I9_gi|269836416|ref|YP_003318644.1|_DNA_topoisomerase_I_[Sphaerobacter_thermophilus_DSM_20745] 
-27   322 StaaurTOPa_M_B_Q99UM1_gi|15924240|ref|NP_371774.1|_DNA_topoisomerase_I_[Staphylococcus_aureus_subsp._aureus_Mu50] 
-27   329 StragaTOPz_M_B_Q8DZU2_gi|22537165|ref|NP_688016.1|_DNA_topoisomerase_I_[Streptococcus_agalactiae_2603V/R] 
-27   345 Sycsp.TOPz_M_B_P73810_gi|16330456|ref|NP_441184.1|_DNA_topoisomerase_I_[Synechocystis_sp._PCC_6803] 
-27   348 Synsp.TOPz_M_B_Q0I8A6_gi|113954641|ref|YP_731316.1|_DNA_topoisomerase_I_[Synechococcus_sp._CC9311] 
-27   355 ThefusTOPz_T_B_Q47L55_gi|72163183|ref|YP_290840.1|_DNA_topoisomerase_I_[Thermobifida_fusca_YX] 
-27   359 ThemarTOPz_T_B_P46799_gi|15643028|ref|NP_228071.1|_DNA_topoisomerase_[Thermotoga_maritima_MSB8] 
-27   372 Thesp.TOPz_X_B_F8C610_gi|337288609|ref|YP_004628081.1|_DNA_topoisomerase_I_[Thermodesulfobacterium_geofontis_OPF15] 
-27   379 ThethmTOPz_T_B_Q5SM69_gi|55980043|ref|YP_143340.1|_DNA_topoisomerase_IA_[Thermus_thermophilus_HB8] 
-27   383 TheyelTOPz_T_B_B5YKX8_gi|206889566|ref|YP_002248893.1|_DNA_topoisomerase_I_[Thermodesulfovibrio_yellowstonii_DSM_11347] 
-27   384 ThidenTOPz_M_B_Q3SMS7_gi|74316028|ref|YP_313768.1|_DNA_topoisomerase_I_[Thiobacillus_denitrificans_ATCC_25259] 
-27   385 TrepalTOPz_M_B_O83409_gi|15639385|ref|NP_218834.1|_DNA_topoisomerase_I_(topA)_[Treponema_pallidum_subsp._pallidum_str._Nichols] 
-27   386 TrieryTOPz_X_B_Q11AC4_gi|113473962|ref|YP_720023.1|_DNA_topoisomerase_I_[Trichodesmium_erythraeum_IMS101] 
-27   398 XanoryTOPz_M_B_Q5H5D7_gi|58580202|ref|YP_199218.1|_DNA_topoisomerase_I_[Xanthomonas_oryzae_pv._oryzae_KACC_10331] 
-27   402 NA 
+# Groupe  27  -  3  proteines
+27   161 LeibraTOPc_M_E 
+27   164 LeiinfTOPc_M_E 
+27   166 LeimajTOPb_M_E 
 ##############################################
-# Groupe  28  -  2  proteines
-28   250 NeqRGz_T_A_NN_Q74MA4_gi|499466667|ref|WP_011153307.1|||gi|499466778|ref|WP_011153418.1|_hypothetical_protein_[Nanoarchaeum_equitans] 
-28   287 PyrfumRGb_T_A_G0EHE8_gi|347523205|ref|YP_004780775.1|_reverse_gyrase_[Pyrolobus_fumarii_1A] 
+# Groupe  28  -  5  proteines
+28   176 MetaceTOPa_M_A 
+28   179 MetbarTOPa_M_A 
+28   207 MetmahTOPb_M_A 
+28   211 MetmazTOPa_M_A 
+28   235 MetzhiTOPa_X_A 
 ##############################################
-# Groupe  29  -  5  proteines
-29   262 PedhepTOPb_M_B_C6XXX5_gi|255532083|ref|YP_003092455.1|_DNA_topoisomerase_I_[Pedobacter_heparinus_DSM_2366] 
-29   265 PirstaTOPz_M_B_D2QYN7_gi|283781301|ref|YP_003372056.1|_DNA_topoisomerase_I_[Pirellula_staleyi_DSM_6068] 
-29   267 PolgilTOPz_X_B_F2IVZ0_gi|328543465|ref|YP_004303574.1|_DNA_topoisomerase_I_[Polymorphum_gilvum_SL003B-26A1] 
-29   271 PromarTOPz_M_B_A2BPR8_gi|123968028|ref|YP_001008886.1|_DNA_topoisomerase_I_[Prochlorococcus_marinus_str._AS9601] 
-29   302 RhobalTOPz_M_B_Q7UMV5_gi|32475123|ref|NP_868117.1|_DNA_topoisomerase_I_[Rhodopirellula_baltica_SH_1] 
+# Groupe  29  -  7  proteines
+29   177 MetaceTOPb_M_A 
+29   180 MetbarTOPb_M_A 
+29   182 MetburTOPa_M_A 
+29   190 MeteveTOPb_T_A 
+29   206 MetmahTOPa_M_A 
+29   212 MetmazTOPb_M_A 
+29   236 MetzhiTOPb_X_A 
 ##############################################
 # Groupe  30  -  6  proteines
-30   273 PsefluTOPa_M_B_Q4KFC2_gi|70729324|ref|YP_259061.1|_DNA_topoisomerase_I_subunit_omega_[Pseudomonas_protegens_Pf-5] 
-30   274 PsefluTOPb_M_B_Q4K7M8_gi|70732010|ref|YP_261755.1|_DNA_topoisomerase_I_[Pseudomonas_protegens_Pf-5] 
-30   275 PsyarcTOPz_P_B_Q4FR50_gi|71066215|ref|YP_264942.1|_DNA_topoisomerase_I_[Psychrobacter_arcticus_273-4] 
-30   309 SalchoTOPa_X_B_Q57NU4_gi|62180281|ref|YP_216698.1|_DNA_topoisomerase_I_[Salmonella_enterica_subsp._enterica_serovar_Choleraesuis_str._SC-B67] 
-30   312 SaltypTOPa_M_B_P0A2I2_gi|16760166|ref|NP_455783.1|_DNA_topoisomerase_I_[Salmonella_enterica_subsp._enterica_serovar_Typhi_str._CT18] 
-30   315 ShebalTOPa_H_B_A6WP87_gi|153001008|ref|YP_001366689.1|_DNA_topoisomerase_I_[Shewanella_baltica_OS185] 
+30   178 MetaeoTOPz_M_A 
+30   200 MetinfTOPz_T_A 
+30   208 MetmapTOPz_M_A 
+30   214 MetokiTOPz_T_A 
+30   231 MetvanTOPz_M_A 
+30   232 MetvolTOPz_M_A 
 ##############################################
-# Groupe  31  -  5  proteines
-31   277 Pybsp.TOPz_X_A_G7VFF3_gi|374327011|ref|YP_005085211.1|_DNA_topoisomerase_[Pyrobaculum_sp._1860] 
-31   281 PyraerTOPz_T_A_Q8ZU12_gi|18313747|ref|NP_560414.1|_DNA_topoisomerase_(topA)_[Pyrobaculum_aerophilum_str._IM2] 
-31   283 PyrarsTOPz_T_A_A4WKK5_gi|145591572|ref|YP_001153574.1|_DNA_topoisomerase_[Pyrobaculum_arsenaticum_DSM_13514] 
-31   285 PyrcalTOPz_T_A_A3MV73_gi|126459728|ref|YP_001056006.1|_DNA_topoisomerase_[Pyrobaculum_calidifontis_JCM_11548] 
-31   294 PyrislTOPz_T_A_A1RRI8_gi|119871906|ref|YP_929913.1|_DNA_topoisomerase_[Pyrobaculum_islandicum_DSM_4184] 
+# Groupe  31  -  2  proteines
+31   183 MetburTOPb_M_A 
+31   189 MeteveTOPa_T_A 
 ##############################################
 # Groupe  32  -  7  proteines
-32   279 PyrabyTOPz_T_A_Q9UYS8_gi|14521628|ref|NP_127104.1|_DNA_topoisomerase_I_[Pyrococcus_abyssi_GE5] 
-32   290 PyrfurTOPz_T_A_O73954_gi|18976866|ref|NP_578223.1|_DNA_topoisomerase_I_[Pyrococcus_furiosus_DSM_3638] 
-32   292 PyrhorTOPz_T_A_O58356_gi|14590513|ref|NP_142581.1|_DNA_topoisomerase_I_[Pyrococcus_horikoshii_OT3] 
-32   296 PyrkodTOPz_X_A_Q5JE24_gi|57641026|ref|YP_183504.1|_DNA_topoisomerase_I_[Thermococcus_kodakarensis_KOD1] 
-32   298 Pyrsp.TOPz_X_A_F4HNE2_gi|332158871|ref|YP_004424150.1|_DNA_topoisomerase_I_[Pyrococcus_sp._NA2] 
-32   300 PyryayTOPz_X_A_F8AHG4_gi|337283960|ref|YP_004623434.1|_DNA_topoisomerase_I_[Pyrococcus_yayanosii_CH1] 
-32   354 ThebarTOPz_X_A_F0LKH1_gi|315230416|ref|YP_004070852.1|_DNA_topoisomerase_I_[Thermococcus_barophilus_MP] 
+32   192 MetfeiTOPz_T_A 
+32   210 MetmarTOPz_T_A 
+32   219 MetrumTOPz_M_A 
+32   223 MetsmiTOPz_M_A 
+32   225 Metsp.TOPz_M_A 
+32   228 MetstaTOPz_M_A 
+32   230 MettheTOPz_X_A 
 ##############################################
-# Groupe  33  -  10  proteines
-33   280 PyraerRGz_T_A_Q8ZXT5_gi|18312412|ref|NP_559079.1|_reverse_gyrase_[Pyrobaculum_aerophilum_str._IM2] 
-33   291 PyrhorRGz_T_A_O58530_gi|14590668|ref|NP_142736.1|_reverse_gyrase_[Pyrococcus_horikoshii_OT3] 
-33   293 PyrislRGz_T_A_A1RTX8_gi|119872746|ref|YP_930753.1|_reverse_gyrase_[Pyrobaculum_islandicum_DSM_4184] 
-33   297 Pyrsp.RGz_X_A_F4HIY5_gi|332159082|ref|YP_004424361.1|_reverse_gyrase_[Pyrococcus_sp._NA2] 
-33   299 PyryayRGz_X_A_F8AIJ6_gi|337284160|ref|YP_004623634.1|_reverse_gyrase_[Pyrococcus_yayanosii_CH1] 
-33   353 ThebarRGz_X_A_F0LL89_gi|315230527|ref|YP_004070963.1|_DNA_reverse_gyrase_[Thermococcus_barophilus_MP] 
-33   356 ThegamRGz_T_A_C5A7G9_gi|240103736|ref|YP_002960045.1|_reverse_gyrase_[Thermococcus_gammatolerans_EJ3] 
-33   362 TheonnRGz_T_A_B6YTC9_gi|212223477|ref|YP_002306713.1|_reverse_gyrase_[Thermococcus_onnurineus_NA1] 
-33   367 ThesibRGz_T_A_C6A1V1_gi|242398521|ref|YP_002993945.1|_Reverse_gyrase_[Thermococcus_sibiricus_MM_739] 
-33   369 Thesp.RGz_T_A_G0HNJ2_gi|341581805|ref|YP_004762297.1|_reverse_gyrase_[Thermococcus_sp._4557] 
+# Groupe  33  -  7  proteines
+33   193 MetferRGz_T_A 
+33   197 MetignRGz_X_A 
+33   199 MetinfRGz_T_A 
+33   202 MetjanRGz_T_A 
+33   213 MetokiRGz_T_A 
+33   224 Metsp.RGz_T_A 
+33   233 MetvulRGz_T_A 
 ##############################################
-# Groupe  34  -  2  proteines
-34   310 SalchoTOPb_X_B_Q57PY5_gi|62179890|ref|YP_216307.1|_DNA_topoisomerase_III_[Salmonella_enterica_subsp._enterica_serovar_Choleraesuis_str._SC-B67] 
-34   313 SaltypTOPb_M_B_P40687_gi|16764649|ref|NP_460264.1|_DNA_topoisomerase_III_[Salmonella_enterica_subsp._enterica_serovar_Typhimurium_str._LT2] 
+# Groupe  34  -  5  proteines
+34   194 MetferTOPz_T_A 
+34   198 MetignTOPz_X_A 
+34   203 MetjanTOPz_T_A 
+34   226 Metsp.TOPz_T_A 
+34   234 MetvulTOPz_T_A 
 ##############################################
 # Groupe  35  -  8  proteines
-35   316 ShebalTOPb_H_B_A6WPZ8_gi|153001269|ref|YP_001366950.1|_DNA_topoisomerase_III_[Shewanella_baltica_OS185] 
-35   325 StahelTOPz_T_A_D7D935_gi|297527156|ref|YP_003669180.1|_DNA_topoisomerase_I_[Staphylothermus_hellenicus_DSM_12710] 
-35   328 StamarTOPz_T_A_A3DP02_gi|126466161|ref|YP_001041270.1|_DNA_topoisomerase_I_[Staphylothermus_marinus_F1] 
-35   335 SulaciTOPz_T_A_Q4J922_gi|70607128|ref|YP_255998.1|_DNA_topoisomerase_I_[Sulfolobus_acidocaldarius_DSM_639] 
-35   338 SulislTOPz_T_A_C3NHM8_gi|229582161|ref|YP_002840560.1|_DNA_topoisomerase_I_[Sulfolobus_islandicus_Y.N.15.51] 
-35   341 SulsolTOPz_T_A_Q97ZJ8_gi|15897795|ref|NP_342400.1|_DNA_topoisomerase_I_[Sulfolobus_solfataricus_P2] 
-35   344 SultokTOPz_T_A_Q972B2_gi|15921479|ref|NP_377148.1|_DNA_topoisomerase_I_[Sulfolobus_tokodaii_str._7] 
-35   352 TheaggTOPz_T_A_D5U000_gi|296241915|ref|YP_003649402.1|_DNA_topoisomerase_I_[Thermosphaera_aggregans_DSM_11486] 
+35   277 Pybsp.RGz_X_A 
+35   281 PyraerRGz_T_A 
+35   283 PyrarsRGz_T_A 
+35   285 PyrcalRGz_T_A 
+35   294 PyrislRGz_T_A 
+35   361 TheneuRGz_T_A 
+35   375 ThetenRGz_X_A 
+35   381 TheuzoRGz_X_A 
 ##############################################
-# Groupe  36  -  8  proteines
-36   330 StrpneTOPz_M_B_Q8DPI9_gi|15903184|ref|NP_358734.1|_DNA_topoisomerase_I_[Streptococcus_pneumoniae_R6] 
-36   331 StrpyoTOPz_M_B_Q99ZM4_gi|15675140|ref|NP_269314.1|_DNA_topoisomerase_I_[Streptococcus_pyogenes_M1_GAS] 
-36   332 StrtheTOPz_M_B_Q5M4N3_gi|55820937|ref|YP_139379.1|_DNA_topoisomerase_I_[Streptococcus_thermophilus_LMG_18311] 
-36   346 SymtheTOPa_T_B_Q67PC7_gi|51892619|ref|YP_075310.1|_DNA_topoisomerase_I_[Symbiobacterium_thermophilum_IAM_14863] 
-36   366 TherosTOPz_T_B_B9L0B0_gi|221633579|ref|YP_002522805.1|_DNA_topoisomerase_I_[Thermomicrobium_roseum_DSM_5159] 
-36   375 ThetenTOPz_T_B_Q8R9Y1_gi|20807896|ref|NP_623067.1|_topoisomerase_IA_[Thermoanaerobacter_tengcongensis_MB4] 
-36   377 TheterTOPz_T_B_D1CEQ0_gi|269925605|ref|YP_003322228.1|_DNA_topoisomerase_I_[Thermobaculum_terrenum_ATCC_BAA-798] 
-36   391 VeiparTOPb_M_B_D1BMP2_gi|269798029|ref|YP_003311929.1|_DNA_topoisomerase_I_[Veillonella_parvula_DSM_2008] 
+# Groupe  36  -  11  proteines
+36   279 PyrabyRGz_T_A 
+36   290 PyrfurRGz_T_A 
+36   292 PyrhorRGz_T_A 
+36   296 PyrkodRGz_X_A 
+36   298 Pyrsp.RGz_X_A 
+36   300 PyryayRGz_X_A 
+36   354 ThebarRGz_X_A 
+36   357 ThegamRGz_T_A 
+36   363 TheonnRGz_T_A 
+36   368 ThesibRGz_T_A 
+36   370 Thesp.RGz_T_A 
 ##############################################
-# Groupe  37  -  3  proteines
-37   357 ThegamTOPz_T_A_C5A6E8_gi|240103365|ref|YP_002959674.1|_DNA_topoisomerase_I_(topA)_[Thermococcus_gammatolerans_EJ3] 
-37   363 TheonnTOPz_T_A_B6YTB3_gi|212223461|ref|YP_002306697.1|_topA_[Thermococcus_onnurineus_NA1] 
-37   371 Thesp.TOPz_T_A_G0HNL2_gi|341581825|ref|YP_004762317.1|_DNA_topoisomerase_I_[Thermococcus_sp._4557] 
+# Groupe  37  -  11  proteines
+37   280 PyrabyTOPz_T_A 
+37   291 PyrfurTOPz_T_A 
+37   293 PyrhorTOPz_T_A 
+37   297 PyrkodTOPz_X_A 
+37   299 Pyrsp.TOPz_X_A 
+37   301 PyryayTOPz_X_A 
+37   355 ThebarTOPz_X_A 
+37   358 ThegamTOPz_T_A 
+37   364 TheonnTOPz_T_A 
+37   369 ThesibTOPz_T_A 
+37   372 Thesp.TOPz_T_A 
 ##############################################
 # Groupe  38  -  2  proteines
-38   392 VibchoTOPa_M_B_A5F7G3_gi|147675774|ref|YP_001217276.1|_DNA_topoisomerase_I_[Vibrio_cholerae_O395] 
-38   401 YerpesTOPb_M_B_Q7CIL8_gi|22125950|ref|NP_669373.1|_DNA_topoisomerase_I_[Yersinia_pestis_KIM10+] 
+38   303 RhobalTOPz_M_B 
+38   312 SalrubTOPz_M_B 

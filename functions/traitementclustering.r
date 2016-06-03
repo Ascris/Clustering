@@ -263,7 +263,7 @@ get_res <- function(matRobustesse, res, liste_amis, force){
     if(ami %in% res){
       #rien ne se passe
     } else {
-        res <- union(res, ami) #ajout de l'ami courant a la liste
+        res <- union(res, ami) #ajout de l'ami courant a la liste s'il n'y est pas deja
         res <- union(res, get_res(matRobustesse, res, get_friends(matRobustesse, ami, force), force))
     }
   }
