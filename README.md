@@ -18,8 +18,12 @@ Packages utilisées :
 +  VennDiagram (version 1.6.17)
 
 ---
+---
+---
 
-Pour utiliser le programme, executez simplement le script "clustering.sh" situé dans le dossier 'scripts' et suivez les instructions. Il vous sera demandé le nombre de groupes à former, les méthodes à utiliser ainsi que les fichiers désirés en sortie (fichiers fasta associés aux groupes).
+Pour utiliser le programme, executez simplement le script "launch.sh" situé dans le dossier 'scripts' et suivez les instructions. Vous devrez alors fournir un fichier fasta qui va être utilisé par VLD pour réécrire les séquences et construire une matrice de distances.
+Ce fichier matrice de distances doit être modifié par vos soins, en plaçant la dernière ligne en première position dans le fichier. Attention à ne pas rajouter de lignes vides dans ce fichier.
+Il vous sera ensuite demandé le nombre de groupes à former, les méthodes à utiliser ainsi que les fichiers désirés en sortie (fichiers fasta associés aux groupes, clique etc).
 Certaines étapes sont assez longues, notamment le chargement des données.
 
 
