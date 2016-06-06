@@ -46,6 +46,7 @@ create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere,
     print("dans cas : milieu")
     legende_couleur <- c("T","M","P","H","?")
     couleur_prot <- get.vertex.attribute(clique, "type")
+    couleur_prot[is.na(couleur_prot)] <- "?"
     couleurs <- c("Red", "Green", "Blue", "Yellow", "Pink")
     for(i in 1:length(couleur_prot)){
       if("T" == couleur_prot[i]) couleur_prot[i] <- couleurs[1]
@@ -57,6 +58,7 @@ create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere,
     
     legende_taille <- c("A", "B", "E", "?")
     taille_points <- get.vertex.attribute(clique, "nom_prot")
+    taille_points[is.na(taille_points)] <- "?"
     tailles <- c(15, 10, 8, 3)
     for(i in 1:length(taille_points)){
       if("A" == taille_points[i]) taille_points[i] <- tailles[1]
@@ -74,6 +76,7 @@ create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere,
         print("dans cas : type")
         legende_couleur <- c("TOP", "RG", "?")
         couleur_prot <- get.vertex.attribute(clique, "regne")
+        couleur_prot[is.na(couleur_prot)] <- "?"
         couleurs <- c("Red", "Green", "Blue")
         for(i in 1:length(couleur_prot)){
           if("TOP" == couleur_prot[i]) couleur_prot[i] <- couleurs[1]
@@ -83,6 +86,7 @@ create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere,
         
         legende_taille <- c("A", "B", "E", "?")
         taille_points <- get.vertex.attribute(clique, "nom_prot")
+        taille_points[is.na(taille_points)] <- "?"
         tailles <- c(15, 10, 8, 3)
         for(i in 1:length(taille_points)){
           if("A" == taille_points[i]) taille_points[i] <- tailles[1]
@@ -99,6 +103,7 @@ create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere,
           two_elements <- FALSE
           legende_couleur <- c("A", "B", "E", "?")
           couleur_prot <- get.vertex.attribute(clique, "nom_prot")
+          couleur_prot[is.na(couleur_prot)] <- "?"
           couleurs <- c("Red", "Green", "Blue", "Yellow")
           for(i in 1:length(couleur_prot)){
             if("A" == couleur_prot[i]) couleur_prot[i] <- couleurs[1]

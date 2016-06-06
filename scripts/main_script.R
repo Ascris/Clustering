@@ -89,9 +89,9 @@ if("n" != clique) #fichier clique demande
   creer_fichier_arcs(root_dir, edge_fic_name, matRobustesse, namesX, matRobustesse[1,1])
   
   #creation de la clique a partir de la matrice de robustesse
-  clique_name <- paste("clique", nb_individus, ".png", sep= "")
   if("milieu" == clique) critere <- "T"
   else if ("type" == clique) critere <- "TOP"
+  clique_name <- paste("clique", nb_individus, "_", critere, ".png", sep= "")
   create_clique(root_dir, clique_name, vertex_fic_name, edge_fic_name, critere, nb_individus)
 }
 
@@ -123,7 +123,7 @@ if(10 == nb_arguments) #Classement hierarchique
   cat(sprintf("Classement non hierarchique"), "\n")
   
   cat(sprintf("Formation des groupes"), "\n")
-  robustesse_max <- length(min:max)
+  robustesse_max <- length(min:max) #a faire varier eventuellement
   amisX <- get_all_friends(matRobustesse, robustesse_max)
   
   cat(sprintf("Enregistrement dans le fichier de groupes"), "\n")
