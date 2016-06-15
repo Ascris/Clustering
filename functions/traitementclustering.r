@@ -282,19 +282,20 @@ get_res <- function(matRobustesse, res, liste_amis, force){
 get_all_friends <- function(matRobustesse, force){
   liste_liste_amis <- list() #ensemble des reseaux d'amis
   taille <- length(matRobustesse[1,])
+  force_max <- matRobustesse[1,1]
   for(i in 1:taille) #i = proteine courante
   {
     print(paste("get friends of protein ", i, "/", taille, sep=""))
     local_list <- list()
     friends_i <- get_friends(matRobustesse, i, force) #amies de proteine i
-    if(force == matRobustesse[1,1]) #le lien est maximal
-    {
+    # if(force == force_max) #le lien est maximal
+    # {
       liste_liste_amis[[i]] <- friends_i
-    } else #le lien n'est pas maximal
-    {
-      local_list <- get_res(matRobustesse, local_list, friends_i, force) #reseau d'amies de la proteine i
-      liste_liste_amis[[i]] <- local_list
-    }
+    # } else #le lien n'est pas maximal
+    # {
+      # local_list <- get_res(matRobustesse, local_list, friends_i, force) #reseau d'amies de la proteine i
+      # liste_liste_amis[[i]] <- local_list
+    # }
   }
   
   # enleve les doublons de liste_liste_amis et les groupes de taille 1 (singletons)
@@ -349,8 +350,12 @@ build_mat_rob <- function(dataX, taille, min_clusters, max_clusters){
     groupes <- current_pam$clustering #vecteur de 'taille' entiers
     print(paste("construction pam : ", c, " sur ", max_clusters))
     for(i in 1:taille){
-      for(j in 1:taille){
-        if(groupes[i] == groupes[j]) matRob[i,j] <- matRob[i,j] + 1
+      for(j in 1:i){
+        if(groupes[i] == groupes[j])
+        {
+          matRob[i,j] <- matRob[i,j] + 1
+          if(i != j) matRob[j,i] <- matRob[j,i] + 1
+        }
       }
     }
   }

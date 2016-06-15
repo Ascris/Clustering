@@ -74,7 +74,7 @@ getProteinNames <- function(fichier){
   mydata <- read.table(fichier, sep="\t", dec= '.', fill= TRUE)
   names <- c()
   #on ajoutera la "premiere proteine" a la fin car c'est la derniere en fait
-  for(i in 2:length(mydata)){
+  for(i in 2:length(mydata)-1){
     names <- append(names, as.character(mydata[i,1]))
   }
   names <- append(names, as.character(mydata[1,1]))
@@ -207,7 +207,7 @@ creer_fichier_sommets <- function(root_dir, fic_sommets, names){
     regne <- get_regne(name)
     type <- get_type(name)
     milieu <- get_milieu(name)
-    cat(sprintf(paste(name, regne, type, milieu), sep=" "), "\n")
+    cat(paste(name, regne, type, milieu), "\n")
   }
   sink(NULL)
   
@@ -239,7 +239,7 @@ creer_fichier_arcs <- function(root_dir, fic_arcs, matRobustesse, names, force){
         prot_i <- names[i]
         prot_j <- names[j]
         robustesse <- matRobustesse[i,j]
-        cat(sprintf(paste(prot_i, prot_j, robustesse, sep=" ")), "\n")
+        cat(paste(prot_i, prot_j, robustesse, sep=" "), "\n")
       }
     }
   }
@@ -398,6 +398,7 @@ get_next_filename <- function(fic_name){
 
 #' Cree un fichier classant les proteines en differents groupes
 #'
+#' @param base_dir : repertoire racine du programme
 #' @param folder_name : nom du dossier ou se placer (chaine de caracteres)
 #' @param fic_name : nom du fichier desire (chaine de caracteres)
 #' @param amisX : ensemble des groupes d'amis (liste de liste d'entiers)
@@ -474,7 +475,13 @@ ecriture_fichier_groupes <- function(base_dir, folder_name, fic_name, amisX, nam
 cutAndWrite <- function(mat, typeMat, methode= "ward.D2", nb_groupes, base_dir, folder_name, namesX){
   retMat <- mat
   clust_retMat <- hclust(as.dist(retMat), method = methode, members= NULL)
-  plot(clust_retMat) #affichage du dendogramme associe
+  plot_name <- paste(typeMat, length(mat[1,]), "_", methode, sep= "")
+  plot(clust_retMat, main = plot_name) #affichage du dendogramme associe
+  
+  print("")
+  print("L'arbre a couper se trouve dans le dossier resultats")
+  print("Combien de groupes voulez-vous ?")
+  nb_groupes <- read(nmax=1)
   
   coupe <- cutree(clust_retMat, k= nb_groupes)
   amis_coupe <- build_friend_list(coupe, nb_groupes)
@@ -778,7 +785,7 @@ create_fichier_fasta <- function(folder_name, fic_name, fullNamesAndSeq, amis){
 #' @return RIEN - cree des fichiers .fasta
 #' @export Creation de fichiers .fasta lies aux groupes de proteines classees ensemble
 #'
-#'@examples ecriture_all_fichiers_fasta(nomsEtsequences, amis)
+#'@examples ecriture_all_fichiers_fasta("fasta", nomsEtsequences, amis)
 ecriture_all_fichiers_fasta <- function(folder_name, fullNamesAndSeq, amis){
   currentDir <- getwd()
   dirName <- folder_name

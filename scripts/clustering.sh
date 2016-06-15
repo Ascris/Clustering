@@ -60,13 +60,13 @@ if [ $MODULE -eq 1 ]
 then
   echo "Non hierarchique selectionne" ; echo ""
   
-  if [ "y" == $FASTA ]
+  if [ "n" != $FASTA ]
   then
     read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
   
     while [ "n" != $FASTA ] && [ ! -e $DATA_DIR$FASTA ]
     do
-      echo "Fichier non trouve dans $DATA_DIR (taper \"n\" pour ne plus avoir les fichiers fasta)"
+      echo "Fichier non trouve dans $DATA_DIR (taper \"n\" pour ne plus demander les fichiers fasta)"
       read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
     done
     
@@ -148,8 +148,6 @@ else
     METHODE="ward.D2"
   fi
   
-  read -p "Combien de groupes voulez-vous ? " NB_GROUPES ; echo ""
-  
   if [ "y" == $FASTA ]
   then
     read -p "Veuillez donner le nom du fichier fasta repertoriant vos individus : " FASTA
@@ -208,7 +206,7 @@ else
   
   echo "Lancement du programme avec vos parametres."
   echo "Veuillez patienter..."
-  Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $OCC $CLIQUE $METHODE $NB_GROUPES #transfert des choix de l'utilisateur au script R
+  Rscript $MAIN_R $FIC_PATH $NB_INDIVIDUS $MIN $MAX $HEATMAP $FASTA $OCC $CLIQUE $METHODE #transfert des choix de l'utilisateur au script R
 fi
 
 echo "Fin du programme."
