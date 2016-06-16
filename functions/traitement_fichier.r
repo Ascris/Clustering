@@ -81,6 +81,27 @@ getProteinNames <- function(fichier){
   return (names)
 }
 
+#' Utilise les commandes systeme linux pour extraires les noms des proteines
+#'
+#' @param fichier : nom du fichier contenant les proteines (chaine de caracteres)
+#'
+#' @return noms des proteines du fichier (vecteur de chaines de caracteres)
+#' @export Utilise les commandes systeme linux pour extraires les noms des proteines
+#'
+#' @examples noms <- getProteinNamesSYS("~/R/data/mnemo-archees_bacteries_VLD.raw")
+getProteinNamesSYS <- function(fichier){
+  res <- c()
+  res <- system(command= paste("cat", fichier, "| cut -f1"), intern= TRUE)
+  res <- substr(res, 2, nchar(res)-1) # enleve les apostrophes
+  
+  ordered_res <- c()
+  for(i in 2:length(res)){
+    ordered_res <- append(ordered_res, res[i])
+  }
+  ordered_res <- append(ordered_res, res[1])
+  return (ordered_res)
+}
+
 #' Ecrit dans des fichiers propres aux groupes les noms des proteines qui les composent
 #'
 #' @param groupes : liste des groupes (pam$clustering)
@@ -235,18 +256,18 @@ creer_fichier_arcs <- function(root_dir, fic_arcs, matRobustesse, names, force){
   cat("prot_1 prot_2 force\n")
   for(i in 1:length(matRobustesse[1,])){
     for(j in 1:i){
-      if((i != j) && (force <= matRobustesse[i,j])){
+      if((i != j) && (force <= matRobustesse[i,j]))
+      {
         prot_i <- names[i]
         prot_j <- names[j]
         robustesse <- matRobustesse[i,j]
-        cat(paste(prot_i, prot_j, robustesse, sep=" "), "\n")
+        cat(paste(prot_i, prot_j, robustesse), "\n")
       }
     }
   }
   sink(NULL)
   setwd(currentDir)
 }
-
 
 #' Sauvegarde l'image d'une clique et la stocke dans le dossier clique
 #'

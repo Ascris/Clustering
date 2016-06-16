@@ -119,8 +119,16 @@ create_clique <- function(root_dir, clique_name, fic_sommets, fic_arcs, critere,
   taille_arcs <- get.edge.attribute(clique, "force")
   
   #CREATION FICHIER DESSIN
-  dirName <- paste(root_dir, "/resultats/clique/", sep= "")
-  setwd(dirName)
+  res_clique <- paste(root_dir, "/resultats/clique/", sep= "")
+  testDir <- paste("[ -d", res_clique,"]")
+  existDir <- system(testDir)
+  if(existDir >= 1) #creation du dossier s'il n'existe pas
+  {
+    newDir <- paste("mkdir", res_clique)
+    system(newDir)
+  }
+  setwd(res_clique)
+  
   fic_name <- clique_name
   new_image <- get_next_filename(fic_name) # nom de fichier non existant
   png(filename= new_image, width=500, height=500)

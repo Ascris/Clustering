@@ -56,12 +56,11 @@ if(file.exists(save_file)) #donnees deja sauvegardees
   #CHARGEMENT DONNEES
   cat(sprintf("Chargement des donnees\n"))
   dataX <- chargement_fichier(fic_path, nb_individus)
-  namesX <- substr(getProteinNames(fic_path), 1, 20)
+  namesX <- getProteinNamesSYS(fic_path)
 
   #CHARGEMENT MATRICE DE ROBUSTESSE
   cat(sprintf("Creation de la matrice de robustesse\n"))
-  matRobustesse <- retournementMat(build_mat_rob(dataX, nb_individus, min, max), 21)
-  # matRobustesse <- retournementMat(matRob, matRob[1,1])
+  matRobustesse <- build_mat_rob(dataX, nb_individus, min, max)
   
   #SAUVEGARDE DES DONNEES DANS UN FICHIER EXTERNE
   cat(sprintf("Sauvegarde de vos donnees dans un fichier externe\n"))
@@ -99,6 +98,15 @@ if("n" != clique) #fichier clique demande
 {
   cat(sprintf("Creation fichier clique de la matrice de robustesse\n"))
   
+  data_clique <- paste(root_dir, "/data/clique/", sep= "")
+  testDir <- paste("[ -d", data_clique,"]")
+  existDir <- system(testDir)
+  if(existDir >= 1) #creation du dossier s'il n'existe pas
+  {
+    newDir <- paste("mkdir", data_clique)
+    system(newDir)
+  }
+  
   #creation du fichier sommets
   vertex_fic_name <- paste("sommets", nb_individus, ".txt", sep= "")
   creer_fichier_sommets(root_dir, vertex_fic_name, namesX)
@@ -106,7 +114,7 @@ if("n" != clique) #fichier clique demande
   #creation du fichier arcs
   edge_fic_name <- paste("arcs", nb_individus, ".txt", sep= "")
   robustesse <- matRobustesse[1,1] #lien maximal entre individus
-  creer_fichier_arcs(root_dir, edge_fic_name, matRobustesse, namesX, matRobustesse[1,1])
+  creer_fichier_arcs(root_dir, edge_fic_name, matRobustesse, namesX, robustesse)
   
   #creation de la clique a partir de la matrice de robustesse
   if("milieu" == clique) critere <- "T"
@@ -128,8 +136,15 @@ if(9 == nb_arguments) #Classement hierarchique
   
   typeMat <- "matRobustesse"
   clust <- hclust(as.dist(matRobustesse), method= methode, members= NULL)
+
+  setwd(paste(root_dir, "/resultats/", sep= ""))  
+  
   plot_name <- paste(typeMat, nb_individus, "_", methode, sep= "")
+  png(plot_name, height= 500, width= 500)
   plot(clust, main= plot_name) #affichage du dendogramme associe
+  dev.off()
+  
+  setwd(root_dir)
   
   cat("")
   cat("L'arbre a couper se trouve dans le dossier resultats \n")
@@ -137,7 +152,7 @@ if(9 == nb_arguments) #Classement hierarchique
   
   nb_groupes <- scan("stdin", character(), n=1)
   if("" == nb_groupes) nb_groupes <- 1
-  # nb_groupes <- 18
+  # nb_groupes <- 12
   
   coupe <- cutree(clust, k= nb_groupes)
   amis_coupe <- build_friend_list(coupe, nb_groupes)

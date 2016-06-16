@@ -278,7 +278,7 @@ get_res <- function(matRobustesse, res, liste_amis, force){
 #' @return liste des reseaux d'amis
 #' @export Recupere la liste des reseaux d'amis, 2 proteines sont amies lorsqu'elle ont un lien fort (de valeur >= 'force')
 #'
-#' @examples liste_de_reseaux <- get_all_friends(matRobustesse, 19)
+#' @examples liste_de_reseaux <- get_all_friends(matRobustesse, 21)
 get_all_friends <- function(matRobustesse, force){
   liste_liste_amis <- list() #ensemble des reseaux d'amis
   taille <- length(matRobustesse[1,])
@@ -288,14 +288,15 @@ get_all_friends <- function(matRobustesse, force){
     print(paste("get friends of protein ", i, "/", taille, sep=""))
     local_list <- list()
     friends_i <- get_friends(matRobustesse, i, force) #amies de proteine i
-    # if(force == force_max) #le lien est maximal
-    # {
+    if(force == force_max) #le lien est maximal
+    {
+      friends_i <- get_friends(matRobustesse, i, force) #amies de proteine i
       liste_liste_amis[[i]] <- friends_i
-    # } else #le lien n'est pas maximal
-    # {
-      # local_list <- get_res(matRobustesse, local_list, friends_i, force) #reseau d'amies de la proteine i
-      # liste_liste_amis[[i]] <- local_list
-    # }
+    } else #le lien n'est pas maximal
+    {
+      local_list <- get_res(matRobustesse, local_list, friends_i, force) #reseau d'amies de la proteine i
+      liste_liste_amis[[i]] <- local_list
+    }
   }
   
   # enleve les doublons de liste_liste_amis et les groupes de taille 1 (singletons)
