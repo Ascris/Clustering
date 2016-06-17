@@ -38,10 +38,11 @@ source(paste(root_dir, "/functions/traitement_fichier.r", sep= ""))
 source(paste(root_dir, "/functions/traitementclustering.r", sep= ""))
 source(paste(root_dir, "/functions/clique.r", sep= ""))
 
-list.of.packages <- c("cluster")
+list.of.packages <- c("cluster, data.table")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages, repos="http://cran.rstudio.com/")
 library(cluster)
+library(data.table)
 
 save_file <- paste(substr(fic_path, 1, nchar(fic_path)-4), "_RET.RData", sep= "")
 if(file.exists(save_file)) #donnees deja sauvegardees
@@ -61,12 +62,12 @@ if(file.exists(save_file)) #donnees deja sauvegardees
   #CHARGEMENT MATRICE DE ROBUSTESSE
   cat(sprintf("Creation de la matrice de robustesse\n"))
   matRobustesse <- build_mat_rob(dataX, nb_individus, min, max)
+  matRobRET <- retournementMat(matRobustesse, matRobustesse[1,1])
   
   #SAUVEGARDE DES DONNEES DANS UN FICHIER EXTERNE
   cat(sprintf("Sauvegarde de vos donnees dans un fichier externe\n"))
   save(dataX, namesX, matRobustesse, file= save_file)
 }
-
 
 #CREATION DU FICHIER D'OCCURRENCE
 if("n" != occ)
@@ -136,12 +137,13 @@ if(9 == nb_arguments) #Classement hierarchique
   
   typeMat <- "matRobustesse"
   clust <- hclust(as.dist(matRobustesse), method= methode, members= NULL)
-
-  setwd(paste(root_dir, "/resultats/", sep= ""))  
+  clust_plot <- hclust(as.dist(matRobRET), method= methode, members= NULL)
+  
+  setwd(paste(root_dir, "/resultats/", sep= ""))
   
   plot_name <- paste(typeMat, nb_individus, "_", methode, sep= "")
   png(plot_name, height= 500, width= 500)
-  plot(clust, main= plot_name) #affichage du dendogramme associe
+  plot(clust_plot, main= plot_name) #affichage du dendogramme associe
   dev.off()
   
   setwd(root_dir)
